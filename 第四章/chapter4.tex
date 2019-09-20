@@ -1,0 +1,215 @@
+\chapter{双曲不动点及马蹄存在性定理}
+
+本章中我们将给出关于$\RR^2$中映射的几个定理。
+这些定理在第五章中是我们研究空间$\RR^3$中鞍点同宿分岔的基础，同时这些定理也有其自身的重要价值。
+在\ref{sec:0401}中我们将证明一个双曲不动点定理。
+在\ref{sec:0402}中引进符号动力学的基本概念。
+在\ref{sec:0403}中给出马蹄存在定理。
+在\ref{sec:0404}中给出一个关于两个线性映射的复合映射的双曲性的判断引理。
+在\ref{sec:0405}中作为\ref{sec:0402}~\ref{sec:0404}中诸结果的一个应用，我们将给出
+$\RR^4$中$Birhoff-Smale$定理的证明。
+\par
+本章和下一章的主要定理在$Sil'nikov'$的文章[Sil1-3]和$Wiggins$的书[Wi2]中都能找到，但此处所有定理的证明都是独立给出的。
+我们力图把几何直观与数学的严密性统一起来，并给予读者一套易于掌握的方法，用以解决高维空间中其他类似的问题。
+\section{双曲不动点定理}
+\subsection{定理的陈述}
+首先我们引进一些基本概念。令
+$$
+\RR^{1} \times \RR^{1}=\left\{(x, y) | x \in \RR^{1}, y \in \RR^{1}\right\}
+$$
+\begin{defination}
+  设$C>0$是一个常数，
+  平面$\RR^1 \times \RR^1$n上的一条$C$ \textbf{水平曲线}指的是一个李氏常数为$C$的$x$的函数$y=f(x),x\in (a,b)$的图像。
+  当$-\infty<a<b<+\infty$时，
+  称点$(a,f(a)),(b,f(b))$为该曲线的\textbf{端点}。
+  类似的，$\RR^1\times \RR^1$上一条$C$\textbf{垂直曲线} 指的是一个李氏常数为$C$的$y$的函数$x=g(y),y\in (a,b)$的图像。
+  特别的，当$a=-\infty,b=+\infty$时，则称其为\textbf{无限$C$水平曲线}或\textbf{无限$C$垂直曲线}。
+\end{defination}
+\begin{defination}
+  称平面$\RR^1\times \RR^1$上两条不交的无限$C$水平曲线所界区域为$C$\textbf{水平带域}；
+两条不交的无限$C$垂直曲线所界区域为$C$垂直带域。
+\end{defination}
+\par
+以下我们总是假设$\mu_h,\mu_v$是两个正常数，满足$\mu_h\dot \mu_v <1$.
+\begin{defination}
+  平面$\RR^1 \times \RR^1$上的区域$D$称为$(\mu_h,\mu_v)$\textbf{矩形}，
+  若它是一个$\mu_h$水平带域与一个$\mu_v$垂直带域的交，
+  那组$\mu_h$水平对边称为\textbf{边界的水平部分}，记作$\partial_hD$;
+  那组$\mu_v$垂直对边g称为\textbf{边界的垂直部分},记作$\partial_vD$.
+\end{defination}
+\par
+对$p \in \RR^1\times\RR^1$,我们记$T_p(\RR^1\times\RR^1)$为平面$\RR^1\times\RR^1$过点$p$的切空间。令
+$$K_{p}^{+}=\left\{\zeta_{p}=\left(\zeta_{p}^{-}, \zeta_{p}^{+}\right) \in T_{p}\left(\RR^{1} \times \RR^{1}\right)| | \zeta_{p}^{+}\left|\geqslant \mu_{0}^{-1}\right| \zeta_{p}^{-} |\right\},$$
+$$K_{p}^{-}=\left\{\zeta_{p}=\left(\zeta_{p}, \zeta_{p}^{+}\right) \in T_{p}\left(\RR^{1} \times \RR^{1}\right)| | \zeta_{p}^{+}\left| \leqslant \mu_{h}\right| \zeta_{p} |\right\},$$
+见图(\ref{pic:4-1}).
+\begin{defination}
+  令$D\subset\RR^1\times\RR^1$是一个区域.
+  $f:D\to\RR^1\times\RR^1$是一个微分同胚。
+  称$f$在$D$上满足$(\mu_h,\mu_v)$\textbf{锥形条件}，
+  如果有
+  \begin{enumerate}
+  \item $Df K_p^+ \subset K^+_f(p),\forall p \in D$;
+  \item $Df^{-1}K^- \subset K^-f^{-1}(p),\forall p \in fD$;
+    且存在常数$\lambda >1$,使得
+  \item
+$ {\left|\left(D f \zeta_{p}\right)^{+}\right| \geqslant \lambda\left|\zeta_{p}^{+}\right|} ,{\forall p \in D, \zeta_{p} \in K_{p}^{+}}$
+\item $\left|\left(D f^{-1} \xi_{p}\right)^{-}\right| \geqslant \lambda\left|\zeta_{p}\right|, \quad \forall p \in f D, \xi_{p} \in K_{p}^{-}$
+  \end{enumerate}
+\end{defination}
+
+直观地讲，
+映射$f$满足$(\mu_h,\mu_V)$锥形条件指的是$f$在水平方向压缩和在垂直方向拉伸，
+并且它将任意$\mu_0$垂直曲线变为$\mu_v$垂直曲线，
+而其逆$f^{-1}$将任何$\mu_h$水平曲线变为$\mu_h$水平曲线。
+\begin{theorem} [双曲不动点定理]
+  令$D$是平面$\RR^1 \times \RR^1$上一个$(\mu_h,\mu_v)$矩形，
+  $f:D\to \RR^1\times\RR^1$是一个微分同胚，
+  满足$(\mu_h,\mu_v)$锥形条件，并且有
+  \begin{enumerate}
+  \item　相交条件成立:$f D \cap D \neq \varnothing$;
+  \item  边界条件成列:$f D \cap \partial_{v} D=\varnothing;f \partial_{h} D \cap D=\varnothing$,
+  \end{enumerate}
+  则$f$在$D$中有唯一双曲不动点
+$$
+O=\prod_{i=-\infty}^{\infty} f^{i} D
+$$
+\end{theorem}
+上述定理的几何直观见图\ref{pic:4.2.a}.
+\subsection{证明的思路}
+令
+\begin{equation}
+  \label{eq:4.1.1}
+\begin{array}{ll}{D_{0}=D,} & {D_{i}=f\left(D_{i-1}\right) \cap D} \\ {D_{-i}=f^{-1}\left(D_{-i+1} \cap f D\right),} & {i \in \NN}.\end{array}
+\end{equation}
+第一步证明$D_{\pm i}$是$(\mu_h,\mu_V)$矩形，并满足条件
+\begin{equation}
+  \label{eq:4.1.2}
+\begin{array}{ll}{\partial_{k} D_{i} \subset \partial_{h} D,} & {\partial_{v} D_{-i} \subset \partial_{v} D} \\ {D_{i} \subset D_{i-1},} & {D_{-i} \subset D_{-i+1}, \quad i \in \NN}.\end{array}
+\end{equation}
+第二步证明　$V=\cap\limit_{i=0}^{\infty}D_i$和$H=\cap\limit_{i=0}^{\infty}D_{-i}$分别是端点属于$\partial_hD$和$\partial_vD$的$\mu_v$垂直曲线和$\mu_h$水平曲线。
+\par
+第三步证明$H\cap V$是$f$的一个双曲不动点。
+\par
+见图\ref{pic:4.2.b}.
+\subsection{几个引理}
+\begin{corollary}
+  \label{col:4.1.6}
+平面上$\RR^1\times \RR^1$上一条$\mu_h$水平曲线与一条$\mu_v$垂直曲线最多有一个交点。
+\end{corollary}
+
+\begin{proof}
+  令$h:x \mapsto y=h(x), \quad v: y \mapsto x-v(y)$是两个函数，它们的图像分别为$\mu_h$水平去曲线$H$及$\mu_v$垂直曲线$V$.再令$(x_1,y_1),(x_2,y_2)\in H \cap V,$则
+  $\left|x_{1}-x_{2}\right|=\left|v \circ h\left(x_{1}\right)-v \circ h\left(x_{2}\right)\right|$
+  $\leqslant \mu_{v}\left|h\left(x_{1}\right)-h\left(x_{2}\right)\right| \leqslant \mu_{h} \cdot \mu_{v}\left|x_{1}-x_{3}\right|$
+  因为$\mu_h\mu_v<1$,故$|x_1-x_2|=0$.
+  进一步$|y_1-y_2|=0$.
+\end{proof}
+
+\begin{corollary}
+  \label{col:4.1.7}
+  令$D\subset \RR^1 \times \RR^1$是一个$(\mu_h,\mu_v)$矩形，
+  $H,V\subset D$  分别是端点集属于$\partial_vD$和$\partial_hD$的$\mu_h$水平曲线及$\mu_v$垂直曲线，
+  则$H$与$V$相交于唯一一点。
+\end{corollary}
+\begin{proof}
+交点的存在性可由连续性得到，而唯一性由引理\ref{col:4.1.6}保证。
+\end{proof}
+
+\begin{corollary}
+  \label{col:4.1.8}
+  令$D_1,D_2 \subset\RR^1\times \RR^1$是两个$(\mu_h,\mu_v)$矩形.
+  设$f:D_1\to \RR^1 \times \RR^1$是一个微分同胚,
+  并满足$(\mu_h,\mu_v)$锥形条件及
+  \begin{enumerate}
+  \item 相交条件:$fD_1 \cap D_2 \ne \varnothing $
+  \item 边界条件:$f \partial_{h} D_{1} \cap D_{2}=\varnothing, \quad
+    f D_{1} \cap \partial_{v} D_{2}=\varnothing$,
+  \end{enumerate}
+  则
+  \begin{enumerate}
+  \item $ fD_1 \cap D_2$是一个$(\mu_h,\mu_v)$矩形，满足
+$$
+\partial_{h}\left(f D_{1} \cap D_{2}\right) \subset \partial_{h} D_{2};
+$$
+\item $f^{-1} (D_2 \cap fD_1)$是一个$(\mu_h,\mu_v)$矩形，满足
+$$
+\partial_{v}\left(f^{-1}\left(D_{2} \cap f D_{1}\right)\right) \subset \partial_{v} D_{1}.
+$$
+\end{enumerate}
+\end{corollary}
+上述引理可参见图\ref{pic:4.4.3}.
+
+\begin{proof}
+  因为$f$满足$(\mu_h,\mu_v)$锥形条件，故$f$将$\mu_V$垂直曲线变为$\mu_V$垂直曲线，
+  而$f^{-1}$将$\mu_h$水平曲线变为$\mu_h$水平曲线。
+  因此$f$将区域$D_1$变成一个左右两边为$\mu_v$垂直曲线的曲边矩形$fD_1$.
+  再由相交条件及边界条件，$fD_1$是上下穿过$D_2$的，
+  也就是说$fD_1\cup D_2$ 形成一个十字形.
+  因而$fD_1\cap D_2$也是一个曲边矩形，
+  其上下两边属于$D_2$的边界的水平部分，
+  而其左右两边属于$fD_1$的左右两边，
+  因而$fD_1 \cap D_2$是一个$(\mu_h,\mu_v)$矩形，
+  满足$\partial_h (fD_1 \cap D_2) \subset \partial_h D_2$.
+  类似地可以证明另一个结论。
+\end{proof}
+\par
+令$D_{\pm i},i \in \NN$,
+是由\eqref{eq:4.1.1}定义的区域，
+用数学归纳法及引理\ref{col:4.1.8}我们有
+\begin{corollary}
+  \label{cor:4.1.9}
+  $D_{\pm i}$是$(\mu_h,\mu_v)$矩形,满足~\ref{eq:4.1.2}.
+\end{corollary}
+
+\subsection{(\mu_h,\mu_v)矩形的高和宽}
+令
+$$
+\begin{array}{l}{K^{+}=\left\{(x, y) \in \mathbf{R}^{1} \times \mathbf{R}^{1}| | y\left|\geqslant \mu_{v}^{-1}\right| x |\right\}} \\ {K^{-}=\left\{(x, y) \in \mathbf{R}^{1} \times \mathbf{R}^{2}| | y\left| \leqslant \mu_{h}\right| x |\right\}}\end{array}
+$$
+
+给定$\RR^1\times \RR^1$上两点$p,q$,
+我们记$\overrightarrow{p q} \in K^{\pm}$,
+若连接$p,q$的向量属于$K^{\pm}$.
+\par
+令$D$是一个$(\mu_h,\mu_v)$矩形.
+下面我们定义$D$的\textbf{高}$h(D)$及D的\textbf{宽}$w(D)$如下:
+$$
+h(D)=\sup _{p, q \in D \atop p q \in K^{+}} \operatorname{dist}(p, q)
+$$
+
+$$
+w(D)=\sup _{p, q \in D \atop p q \in K^{-}} \operatorname{dist}(p, q)
+$$
+
+这里$\operatorname{dist}(\dot,\dot)$表示$\RR^1\times \RR^1$上两点之间的距离.
+
+\begin{corollary}
+  \label{cor:4.1.10}
+令 $D \subset \RR^1 \times \RR^1$是一个闭区域，
+$f:D \to \RR^1 \times \RR^1$是一个微分同胚,
+满足$(\mu_h,\mu_v)$锥形条件.
+设$\gamma \subset D$是一条$C^1$光滑的$\mu_v$垂直(或$\mu_h$水平)曲线.
+若对某自然数$i \in \NN$,
+$f^i$(或 f^{-i})在$\gamma$上有定义,
+则
+$ |f^i\gamma| \geqslant A_v \lambda^i |\gamma|$,
+(或 $f^{-i} \gamma \geqslant A_h \lambda^i |\gamma|$ ).
+这里$|\dot|$代表曲线的长度,
+$A_v=\frac{1}{\sqrt{1+\mu_v^2}}$,$A_h=\frac{1}{\sqrt{1+\mu_h^2}}$,
+而$\lambda>1$是定义 \ref{def:4.1.4}的常数.
+\end{corollary}
+\begin{proof}
+我们只对$\gamma$是$\mu_v$垂直曲线情况证明引理，
+另一种情况的证明可用类似方法得到.
+\par
+首先设$i=1$.
+令曲线$\gamma$是一个映射$\gamma(t):[0,1] \to D$的象,
+令$\zeta=(\zeta^-,\zeta^+)=\gamma(t)$,
+则$\zeta \in K^+$.令
+$$\eta(t) =(\eta^-,\eta^+)=Df\zeta, $$
+则
+\begin{equation}
+
+\end{equation}
+
+\end{proof}

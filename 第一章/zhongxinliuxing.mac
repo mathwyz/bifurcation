@@ -1,0 +1,112 @@
+dxdt:y;
+dydt:beta*y+x**2+x*y;
+
+/* 求平衡点 */
+
+equ:[dxdt,dydt];
+param:[x,y];
+
+Sol:solve(equ,param);
+Jaco:jacobian(equ,param);
+
+Jaco,Sol;
+
+/* 第一个平衡点*/
+eigenvalues(%);
+/* 线性变换化成对称阵 */
+/* 特征值特征向量 */
+A:Jaco,Sol;
+eigenvalues(A);
+[val,vec]:eigenvectors(A);
+val;
+vec;
+ 
+/* 变换矩阵对角阵 */
+T:matrix(vec[1][1],
+ vec[2][1]);
+T:transpose(%);
+iT:invert(T),ratsimp;
+iT.A.T,ratsimp;
+
+/* 化成标准形式 */
+/* 平移平衡点 */
+dxdt1:dxdt,y=y+0;
+dydt1:dydt,y=y+0;
+
+
+Tranx:T.matrix([u],[v]),ratsimp;
+Tranu:iT.matrix([x],[y]),ratsimp;
+
+tu:Tranu[1][1];
+tv:Tranu[2][1];
+
+
+diff(tu,x)*dxdt1+diff(tu,y)*dydt1;
+dudt:%,x=Tranx[1][1],
+y=Tranx[2][1],
+z=Tranx[3][1],
+f=1,
+ratsimp;
+
+diff(tv,x)*dxdt1+diff(tv,y)*dydt1+diff(tv,z)*dzdt1;
+dvdt:%,x=Tranx[1][1],
+y=Tranx[2][1],
+z=Tranx[3][1],
+f=1,
+ratsimp;
+
+diff(tw,x)*dxdt1+diff(tw,y)*dydt1+diff(tw,z)*dzdt1;
+dwdt:%,x=Tranx[1][1],
+y=Tranx[2][1],
+z=Tranx[3][1],
+f=1,
+ratsimp;
+
+/* 线性项与高阶项 */
+/* 平衡点与雅克比矩阵 */
+equu:[dudt,dvdt,dwdt];
+paramu:[u,v,w];
+solu:solve(equu,paramu);
+Jacou:jacobian(equu,paramu),ratsimp;
+
+/* 线性项 */
+jacoup:Jacou,u=0,v=0,w=0,f=1,ratsimp;
+
+/* 高阶项 */
+hign:equu-jacoup.transpose(paramu),ratsimp;
+hign2:hign,ratsimp;
+
+/* 中心流形 */
+/* 设出表达式(有限项) */
+hv:a1*u**2+a2*u**3;
+hw:b1*u**2+b2*u**3;
+
+/* 带入 */
+dudt1:dudt,v=hv,w=hw;
+dvdt1:diff(hv,u)*dudt1;
+dvdt2:dvdt,v=hv,w=hw;
+dwdt1:diff(hw,u)*dudt1;
+dwdt2:dwdt,v=hv,w=hw;
+
+/* 得出等式 */
+equ1:dvdt1-dvdt2,ratsimp;
+equ2:dwdt1-dwdt2,ratsimp;
+
+coef11:ratcoef(equ1,u**2),ratsimp;
+coef12:ratcoef(equ1,u**3),ratsimp;
+coef13:ratcoef(equ1,u**4),ratsimp;
+coef14:ratcoef(equ1,u**5),ratsimp;
+coef15:ratcoef(equ1,u**6),ratsimp;
+
+coef21:ratcoef(equ2,u**2),ratsimp;
+coef22:ratcoef(equ2,u**3),ratsimp;
+coef23:ratcoef(equ2,u**4),ratsimp;
+
+/* 解出来中心流形 */
+solab:solve([coef11,coef21,coef12,coef22],[a1,b1,a2,b2]);
+hvs:hv,solab[1];
+hws:hw,solab[1];
+
+/* 带入分岔方程 */
+dudt,v=hvs,w=hws,ratsimp;
+factor(%);

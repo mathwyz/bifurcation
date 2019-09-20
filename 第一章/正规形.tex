@@ -1,0 +1,775 @@
+\section{正规形}
+
+正规形(normal form)理论的基本思想，是在奇点（或不动点）附近经过光滑变换把向量场（或微分同胚）化成（在一定意义下）尽可能简单的形式，以便于研究。
+这是源于Poincare时代的一个课题。
+由于近年来分岔理论的发展，正规形的应用更加广泛，因而重新引起人们对它的重视，并得出若干计算正规形的新方法。
+
+众所周知，经非退化线性变换$x = \boldsymbol { T } y$，线性微分方程
+\[
+\dxdt = \boldsymbol { A } x
+\]
+变换为
+\[
+\dydt=
+  \left( \operatorname{T} ^ { - 1 } \operatorname{A}  \operatorname{T}  \right) y
+\]
+这里$x , y \in \RR^ { n }$，$\mathbf{A}$和$\mathbf{T}$为$n \times n$矩阵，且
+$\operatorname { det } x \neq 0$。
+因此，在讨论线性系统的轨道结构时，我们无妨假设\(\mathbf{A}\)为Jordan标准形，除了Jordan块的排列顺序外，它是唯一确定的。
+接下去的问题自然是：对非线性部分是否可以做类似的简化？
+在一定意义下，答案是肯定的，但一般不在有唯一性。
+无论如何，这种简化对进一步研究分岔问题是很有用的。
+
+\subsection{常微分方程在奇点附近的正规形}
+考虑以\(x=0\)为奇点的\(C^r\)微分方程$( r \geqslant 3 )$,它在\(x=0\)附近可表示为
+\begin{equation}
+\frac { d \boldsymbol{x} } { d t } = \mathbf{A} \boldsymbol{x} + f ( \boldsymbol{x}) + \dots + f ^ { r - 1 } ( \boldsymbol{x} ) + O \left( | \boldsymbol{x}| ^ { r } \right),
+\label{eq:1.4.1}
+\end{equation}
+
+其中$\boldsymbol{x} \in \mathbb { R } ^ { n }$(或 \(\mathbb{C}^n\)),
+\(\mathbf{A}\)是线性部分矩阵，$\boldsymbol{f}^ { k } ( \boldsymbol{x} ) \in H _ { m } ^ { k } $,$ H _ { n } ^ { k }$为n元n维k次齐次向量多项式所成的空间，$k = 2 , \cdots  , r - 1$.
+
+
+先进行变换
+\begin{equation}
+    \label{eq:1.4.2}
+x = y + h ^ { 2 } ( y ),
+\end{equation}
+其中$h ^ { 2 } ( y ) \in H _ { n } ^ { 2 }$待定，以使变换后的方程具有简单的形式，把变换\ref{equ4.2}代入\ref{equ4.1},并注意
+\[
+\left[\boldsymbol  I + \operatorname D h ^ { 2 } ( y ) \right] ^ { - 1 } =  \boldsymbol I -\operatorname D h ^ { 2 } ( y ) +\boldsymbol O\left( | y | ^ { 2 } \right),
+\]
+
+其中\(\boldsymbol I\)是 \(n \times n\)单位矩阵，Jacobi矩阵$\operatorname D h ^ { 2 } ( y )$的每一元素都是$O ( | y | )$，
+而$\mathscr O \left( | y | ^ { 2 } \right)$表示\(n \times n\)矩阵，它的每一个元素都是$O \left( | y | ^ { 2 } \right)$，由此把方程\ref{equ4.1}化为
+\begin{equation}
+  \frac { d y } { d t } =
+  A y + \left\{ f ^ { 2 } ( y ) -
+    \left[ D h ^ { 2 } ( y ) A _ { y } - A h ^ { 2 } ( y ) \right] \right\}
+  + \overline { f } ^ { 3 } ( y ) +\dots + \overline { f } ^ { r - 1 } ( y ) + O \left( | y | ^ { x } \right),
+  \label{eq:1.4.3}
+\end{equation}
+
+其中\(f^2\)与\ref{equ4.1}中的相同，而\(\overline{f}^k\)是经过运算得到的新的k次齐次多项式。
+
+引入算子$a d _ { A } ^ { 2 } : H _ { n } ^ { 2 } \rightarrow H _ { n } ^ { 2 }$，
+
+\begin{equation}
+\operatorname { ad } _ { \operatorname A } ^ { 2 } \left[ h ^ { 2 } ( y ) \right] = \operatorname { D } h ^ { 2 } ( y ) \operatorname A { y } - \operatorname A h ^ { 2 } ( y ),
+\label{eq:1.4.4}
+\end{equation}
+则\ref{equ4.3}变成
+\begin{equation}
+    \label{eq:1.4.5}
+\dydt= A y + \left[ f ^ { 2 } ( y ) - \operatorname { ad } _{\operatorname A}^2 \left( h ^ { 2 } ( y ) \right) \right] + \overline { f } ^ { 3 } ( y ) +\dots + f ^ { r - 1 } ( y ) + O \left( | y | ^ { r } \right),
+\end{equation}
+
+记$\mathscr { R } ^ { 2 }$为算子$\operatorname { ad } _ { \operatorname { A } } ^ { 2 }$在$H _ { n } ^ { 2 }$中的值域，
+而$\mathscr{S}^2$是\(\mathscr{R}^2\)在\(H_n^2\)中的一个补空间，既
+\[
+H _ { n } ^ { 2 } = \mathscr { R } ^ { 2 } \oplus \mathscr { S }^2.
+\]
+
+如果$f ^ { 2 } ( y ) \in \mathscr { R } ^ { 2 }$，
+则存在$h ^ { 2 } ( y ) \in H _ { n } ^ { 2 }$，
+使$f ^ { 2 } ( y ) = \operatorname { ad } _ { \operatorname A } ^ { 2 } \left( h ^ { 2 } ( y ) \right)$，
+既\ref{equ4.5}中的二次项可以消去；
+否则，只能找到
+$h^{2}(y) \in H_{n}^{2}$，
+使
+\begin{equation}
+\label{eq:1.4.6}
+f^{2}(y) - \operatorname { ad } _ { A } ^ { 3 } \left( h ^ { 2 } ( y ) \right) \in \mathscr{S}^2.
+\end{equation}
+这样，我们把\ref{equ4.1}化为
+\begin{equation}
+  \frac { d y } { d t } = A y + g ^ { 2 } ( y ) + \overline { f } ^ { 2 } ( y ) + \cdots + \overline { f } ^ { r - 1 } ( y ) + O \left( | y | ^ { r } \right),
+  \label{eq:1.4.7}
+\end{equation}
+
+其中\(g^2(y) \in \mathscr{S}\).
+
+其次，再考虑变换，
+\begin{equation}
+  \label{eq:1.4.8}
+y = x + h ^ { 3 } ( x )，
+\end{equation}
+
+其中$\mathbf { h } ^ { 3 } ( \mathbf { z } ) \in \boldsymbol { H } _ { \boldsymbol { n } } ^ { \mathbf { 3 } }$.
+重复上面的推理，并注意这个变换不影响线性项与二次项，容易得知\ref{equ4.7}变为
+
+\begin{equation}
+    \label{eq:1.4.9}
+ \dzdt= A z + g ^ { 2 } ( z ) +
+  \left[ \overline { f } ^ { 2 } ( z ) - a d _ { A } ^ { 3 } h ^ { 3 } ( z ) \right] + \tilde { f } ^ { 4 } ( x ) +
+  \cdots + \tilde { f } ^ { y - 1 } ( z ) + O ( | z |^ r ),
+\end{equation}
+
+其中\(g^2,\overline{f}^2\)与\ref{equ4.7}中的相同，而$\widetilde { f } ^ { 4 } , \cdots , \tilde { f } ^ { r - 1 }$是经计算得到的，而且
+\[
+\operatorname { ad } _ { A } ^ { 3 }:H _ { n } ^ { 3 } \rightarrow H _ { n } ^ { 3 },h ^ { 3 } ( z ) \mapsto - D h ^ { 3 } ( z ) A z - A h ^ { 3 } ( z ).
+\]
+
+记$\mathscr { R } ^ { 3 } = \mathscr { R } \left( \mathrm { ad } _ { A } ^ { 3 } \right) , \mathscr { S } ^ { 3 }$,\(\mathscr{S}^3\)为\(\mathscr{R}^3\)在\(H_n^3\)中的补空间，既
+\[
+H _ { n } ^ { 3 } = \mathscr { R } ^ { 3 } \oplus \mathscr S ^ { 3 }
+\]
+
+则当$\overline { f} ^ { 2 } ( z )  \in \mathscr { R } ^ { 3 }$时，存在
+\(h^3(z)\),使得经过变换\ref{equ4.8}可消去\ref{equ4.7}中的三次项；
+否则，只能找到$h ^ { 3 } ( z ) \in H _ { n } ^ { 3 }$,使\ref{equ4.7}变为
+\[
+\frac { d z } { d t } = A z + g ^ { 2 } ( z ) + g ^ { 3 } ( z ) + \tilde { f } ^ { 4 } ( z ) +\cdots + \tilde { f } ^ { r - 1 } ( z ) + O \left( | z | ^ { r } \right),
+\]
+
+其中$g ^ { h } ( z ) \in \mathscr { S } ^ { k } , k = 2,3$。由此递推下去，就可得到
+
+\begin{theorem}
+  设$X \in \mathscr { X } ^ { r } \left( \mathbf { R } ^ { n } \right)$
+  （或$\mathscr { X } ^ { r } \left( \mathbf { C } ^ { n } \right) $) ,$ X ( 0 ) = 0 , \mathbf { D } X ( 0 )=A$,并且X有表达式\ref{4.1},则在原点附近的领域内存在一系列变换
+  
+  \begin{equation}
+        \label{eq:1.4.10}
+x = y + h ^ { k } ( y ) , \quad k = 2 , \dots , r - 1,
+  \end{equation}
+
+  其中，$h ^ { k } ( y ) \in H _ { n } ^ { k }$，经过这一系列变换
+  （每次变换后把y换回x），可把\ref{equ4.1}变为如下形式
+  \begin{equation}
+        \label{eq:1.4.11}
+\dxdt= A x + g ^ { 2 } ( x ) + \cdots + g ^ { r - 1 } ( x ) + O \left( | x | ^ { r } \right)
+  \end{equation}
+
+  其中，$g ^ { k } ( x ) \in \mathscr { S } ^ { k } , \mathscr { S }$是
+  $\mathscr { R } ^ { k  }: = \mathscr { R } \left( \operatorname { ad } _ { A } ^ { k } \right)$在\(H_n^k\)中的补空间，
+  算子$\mathrm { ad } _ { \boldsymbol { A } } ^ { k }$由下式定义
+  \begin{equation}
+        \label{eq:1.4.12}
+    a d _ { A } ^ { k }:H _ { \vec { n } } ^ { k } \rightarrow H _ { \mathbf { n } } ^ { k },
+    \operatorname { ad } _ { A } ^ { k } \left( h ^ { k } ( x ) \right) = \operatorname { Dh } ^ { k } ( x ) A x - A h ^ { k } ( x )
+  \end{equation}
+  $k = 2 , \dots , r - 1$
+\end{theorem}
+
+\begin{defination}
+  微分方程\ref{equ4.11}的j次截取式$( 2 \leqslant j \leqslant r - 1 )$
+  \begin{equation}
+        \label{eq:1.4.13}
+\dxdt= A x + g ^ { 2 } ( x ) + \cdots + g ^ { j } ( x )
+  \end{equation}
+  其中，$g ^ { i } ( x ) \in \mathscr{S} ^ { i } , i = 2 , \cdots , j$，称为方程\ref{equ4.1}的\textbf{j次正规形}.
+\end{defination}
+
+\begin{corollary}
+    \label{corollary:1.4.3}
+  上面进行的只是有限步运算.
+  当\ref{equ4.1}右端可以展开成收敛的幂级数时，这种步骤原则上可以无限地进行下去，问题在于变化本身和所得到的（形式）正规形是否收敛。
+  在一定条件下是肯定的，这是Poincaré-Dulac定理,见\ref{al},或\ref{clw}.
+\end{corollary}
+\subsection{共振与非共振}
+在定理\ref{equ4.1}中，我们希望进一步确定，\ref{equ4.11}式中哪些
+\(g^k(x)=0\),也就是说，\ref{4.1}中哪些\(f^k(x)\)属于\(\mathscr{R}^k\)?
+为此，我们假定A已化为它的Jordan标准形，并引入共振的概念。
+
+\begin{defination}
+  特征值$\lambda = \left( \lambda _ { 1 } , \cdots , \lambda _ { n } \right)$称为\textbf{共振}的，如果存在自然数$s ( 1 \leqslant s \leqslant n )$和整数组$m = \left( m _ { 1 } , \cdots , m _ { n } \right)$，其中$m _ { i } \geqslant 0$并且$| m |$$\frac { d } { i = 1 } ^ { n } m _ { i } \geq 2$,使得
+  \begin{equation}
+\lambda_{ s } = ( m , \lambda ) \stackrel { d } { \longrightarrow } \sum _ { i = 1 } ^ { n } m _ { i } \lambda _ { i }
+    \label{eq:1.4.14}
+  \end{equation}
+  正数 \(|m|\)称为\textbf{共振的阶}。
+  \label{def1.4.11}
+\end{defination}
+
+例如$\lambda _ { 1 } = 2 \lambda _ { 2 }$是2阶共振的；
+$2 \lambda _ { 1 } = 3 \lambda _ { 1 }$不是共振的；
+$\lambda _ { 1 } + \lambda _ { 2 } =0$是3阶共振的，因为它可以改写为
+$\lambda _ { 1 } = 2 \lambda _ { 1 } + \lambda _ { 2 }$。
+
+考察\ref{4.11}中哪些\(g^k(x)\)不出现，就是要考察\textbf{同伦方程}
+\begin{equation}
+    \label{eq:1.4.15}
+  a d _ { A } ^ { k } \left( h ^ { k } ( x ) \right)
+  \equiv
+  \mathrm { D } h ^ { k } ( x ) \boldsymbol { A } \boldsymbol { x } - \boldsymbol { A } h ^ { k } ( x ) = f ^ { k } ( x )
+\end{equation}
+对给定的$f ^ { k } ( x ) \in H _ { n } ^ { k }$，是否有解$h ^ { k } ( x ) \in H _ { \mathrm { n } } ^ { k }$。
+
+设A是对角矩阵，特征值\(\lambda_i\)互不相同，
+\(e_i\)是A相应于\(\lambda_i\)的特征向量，
+则$\left( e _ { 1 } , \cdots , e _ { n } \right)$构成一组基。
+设$\left( x _ { 1 } , \cdots , x _ { n } \right)$是相对于
+$\left( e _ { 1 } , \cdots , e _ { n } \right)$的坐标，则
+
+\begin{equation}
+x ^ { m } \Longrightarrow x _ { 1 } ^ { m _ { 1 } \ldots x _ { n } ^ { m } } , \quad | m | = k
+\end{equation}
+
+就是\(H_n^k\)中元素某一分量中的最简形式。
+
+令$h ^ { k } ( x ) = x ^ { m } \varepsilon _ { s } , | m | = k$，
+则$\operatorname { Dh } ^ { k } ( x ) A x$中只有第s个分量非零，
+并且他等于
+\[
+  \frac { \partial x ^ { m } } { \partial x } A x
+  =\left( m _ { 1 } x _ { 1 } ^ { m - 1 } \dots x _ { n } ^ { m_n } , \dots , m _ { n } x _ { 1 } ^ { m_1 } \dots x _ { n } ^ { m_n - 1 } \right)
+  \left(
+    \begin{array} { c c c }
+      { \lambda _ { 1 } } & { } & { } \\
+      { } & { \ddots } & { } \\
+      { } & { } & { \lambda _ { n } }
+    \end{array}
+  \right)
+  \left(
+    \begin{array} { l }
+      { x _ { 1 } } \\
+      { \vdots } \\
+      { x _ { n } }
+    \end{array}
+  \right)
+  =( m , \lambda ) x ^ { m }
+\]
+
+另一方面，由于$\boldsymbol { e } _ { \mathbf { s } }$是A相应于\(\lambda_s\)的特征向量，因此
+\[
+A x ^ { m } e _ { s } = \lambda _ { s } x ^ { m } e _ { s }.
+\]
+
+把上面的结果带入\ref{equ4.15}的左端，得到
+\begin{equation}
+    \label{eq:1.4.17}
+a d _ { A } ^ { k } x ^ { m } e _ { s } = \left[ ( m , \lambda ) - \lambda _ { s } \right] x ^ { m } e _ { s },
+\end{equation}
+
+这说明\(ad_A^k\)也是对角的，并且它的所有特征值具有
+$\left[ ( m , \lambda ) - \lambda _ { s } \right]$的形式。
+由此可知，当A的特征值非共振时，\(ad_A^k\)的所有特征值均非零，
+故算子\(ad_A^k\)可逆，同伦方程\ref{equ4.15}可解。
+
+当A有重特征值时，A的Jordan标准形是上三角矩阵。
+此时\(ad_A^k\)也有相应的Jordan块，
+并且\(ad_A^k\)的特征值任具有$\left[ ( m , \lambda ) - \lambda _ { s } \right]$的形式。
+
+\begin{defination}
+  向量值多项式$x ^ { m } e _ { s }$称为\textbf{共振多项式}，如果
+  \[
+\lambda _ { s } = ( m , \lambda ) , \quad | m | \geqslant 2,
+\]
+其中\(\lambda,e_s,m\),和\(|m|\)的意义同前。
+  \label{def:1.4.5}
+\end{defination}
+
+利用上面的讨论，我们可以得到下面
+
+\begin{theorem}
+  设A是上三角的Jordan标准形，则可适当选取变换\ref{equ4.10},
+  使\ref{equ4.11}右端的诸\(g^i(x)\)仅由共振多项式组成。
+
+\end{theorem}
+
+\subsection{正规形的计算}
+
+\begin{example}
+  求$\frac { d x } { d t } = A x + f ^ { 2 } ( x ) + \dots$的二次正规形，其中\(x\in \RR^2\),
+  $A = \left\{
+    \begin{array} { l l }
+      { 0 } & { 1 } \\
+      { 0 } & { 0 }
+    \end{array}
+  \right)$
+\end{example}
+
+\begin{solve}
+  先在\(H_2^2\)中取一组基
+  \[
+    \varepsilon _ { 1 } = \left(
+      \begin{array} { l }
+        { 0 } \\
+        { x _ { 1 } ^ { 2 } }
+      \end{array}
+    \right) ,
+    \varepsilon _ { 2 } = \left(
+      \begin{array} { c }
+        { 0 } \\
+        { x _ { 1 } x _ { 2 } }
+      \end{array}
+    \right) ,
+    \varepsilon _ { 3 } = \left(
+      \begin{array} { l }
+        { 0 } \\
+        { x _ { 3 } ^ { 2 } }
+      \end{array}
+    \right)
+  \]
+  \[
+    \varepsilon _ { 4 } = \left(
+      \begin{array} { l }
+        { x _ { 1 } ^ { 2 } } \\
+        { 0 }
+      \end{array}
+    \right) ,
+    \varepsilon _ { \mathrm { s } } = \left(
+      \begin{array} { c }
+        { \boldsymbol { x } _ { 1 } x _ { 2 } } \\
+        { 0 }
+      \end{array}
+    \right) ,
+    \varepsilon _ { 6 } = \left(
+      \begin{array} { l }
+        { x _ { 2 } ^ { 3 } } \\
+        { 0 }
+      \end{array}
+    \right)
+  \]
+  设\(ad_A^2\)在这组基下的矩阵为\(L_A^2\),既
+  \[
+    \operatorname { ad } _ { A } ^ { 2 }
+    \left( \varepsilon _ { 1 } , \cdots , \varepsilon _ { 6 } \right)
+=   \left( \varepsilon _ { 1 } , \cdots , \varepsilon _ { 6 } \right)
+L_A^2,
+\]
+容易算出
+\begin{equation}
+  \boldsymbol { L } _ { \hat { 3 } } ^ { 2 } = \left(
+    \begin{array} { r r r r r r }
+      { 0 } & { 0 } & { 0 } & { 0 } & { 0 } & { 0 } \\
+      { 2 } & { 0 } & { 0 } & { 0 } & { 0 } & { 0 } \\
+      { 0 } & { 1 } & { 0 } & { 0 } & { 0 } & { 0 } \\
+      { 1 } & { 0 } & { 0 } & { 0 } & { 0 } & { 0 } \\
+      { 0 } & { - 1 } & { 0 } & { 2 } & { 0 } & { 0 } \\
+      { 0 } & { 0 } & { - 1 } & { 0 } & { 1 } & { 0 }
+    \end{array}
+  \right).  
+\label{eq:1.4.18}
+\end{equation}
+现将空间\(H_2^2\)与\(\mathbb{R}^6\)等同：
+$\varepsilon _ { i } = e _ { i }$，
+其中$\varepsilon_1,dots,varepsilon_6$为\(\mathbb{R}^6\)中的标准正交基，由Fredholm定理可知
+\[
+\mathbb { R } ^ { 6 } = \mathscr { R } \left( \boldsymbol { L } _ { A } ^ { 2 } \right) + \mathscr { N } \left( L _ { A } ^ { 2 } \right),
+\]
+
+其中$\mathscr { N } \left( L _ { A } ^ { 2 } \right)$表示$L _ { A } ^ { 2 }$零空间。
+由\ref{equ4.18}容易看出，
+\[
+\mathscr { N } \left( L _ { A } ^ { 2 } \right) = \operatorname { Span } \left( e _ { 1 } , e _ { 2 } + 2 e _ { 4 } \right\}
+\]
+由此得到
+\[
+H _ { 2 } ^ { 2 } = \mathscr { R } ( ad_A^2 ) \oplus \mathscr {  S} ^ { 2 }
+\]
+
+其中$\mathscr { S } ^ { 2 } = \operatorname { Span } \left\{ \boldsymbol { \varepsilon } _ { 1 } , \boldsymbol { \varepsilon } _ { 2 } + 2 \boldsymbol { \varepsilon } _ { \mathbf { 4 } } \right\}$，
+由此得出二次正规形为
+\[
+  \frac { d } { d z } \left(
+    \begin{array} { l }
+      { x _ { 1 } } \\
+      { x _ { 2 } }
+    \end{array}
+  \right)
+  = \left(
+    \begin{array} { l l }
+      { 0 } & { 1 } \\
+      { 0 } & { 0 }
+    \end{array}
+  \right)
+  \left(
+    \begin{array} { l }
+      { x _ { 1 } } \\
+      { x _ { 2 } }
+    \end{array}
+  \right)
+  + a \left(
+    \begin{array} { l }
+      { 0 } \\
+      { x _ { 1 } ^ { 3 } }
+    \end{array}
+  \right)
+  + b \left(
+    \begin{array} { c }
+      { 2 x _ { 1 } ^ { 2 } } \\
+      { x _ { 1 } x _ { 2} }
+    \end{array}
+  \right)
+\]
+
+或化成等价形式
+\[
+  \left\{
+    \begin{array} { l }
+      { \frac { d x _ { 1 } } { d t } = x _ { 2 } + 2 b x _ { 1 } ^ { 2 } } \\
+      { \frac { d x _ { 2 } } { d t } = a x _ { 1 } ^ { 2 } + b x _ { 1 } x _ { 2 } }
+    \end{array}
+  \right.
+\]
+\end{solve}
+
+注意，$\operatorname { Span } \left\{ \varepsilon _ { 1 } , \varepsilon _ { 2 } \right\}$同样构成$\mathscr { R } \left( \mathrm { ad } _ { A } ^ { 2 } \right)$的一个补空间。
+事实上，取
+$v _ { 1 } = \varepsilon _ { 1 } , v _ { 2 } = \varepsilon _ { 2 } + 2 \varepsilon _ { 4 } , w _ { 1 } = \varepsilon _ { 1 } , w _ { 2 } = \varepsilon _ { 2 }$，
+则内积
+\[
+  \left\langle
+    \boldsymbol { v } _ { i } , \boldsymbol { w } _ { j }
+  \right\rangle
+  = \delta _ { i j } =
+  \left\{
+    \begin{array} { l }
+      { 1 },当i=j \\
+      { 0 },当i\neq j.
+    \end{array}
+  \right.
+\]
+因此，可取$\operatorname { Span } \left\{ \varepsilon _ { 1 } , \varepsilon _ { 3 } \right\}$为
+$\mathscr { R } \left( \operatorname { ad } _ { A } ^ { 2 } \right)$的另一个补空间，
+而相应的二次正规形为
+\begin{ode}
+\ddt[x_{1}]= x _ { 2 } } ,\\
+\ddt[x_{2}]= a x _ { 1 } ^ { 2 } + b x _ { 1 } x _ { 2 } }.
+  \label{eq:1.4.19}
+\end{ode}
+用类似的方法，可以算出k次$( k \geqslant 2 )$正规形为
+
+\begin{ode}
+\label{eq:1.4.20}
+\ddt[x_1]= x _ {2 } } ,\\
+\ddt[x_2]= a x _ { 1 } ^ { 2 } \left( 1 + P \left( x _ { 1 } \right) \right) + b x _ { 1 } x _ { 2 } \left( 1 + Q \left( x _ { 1 } \right) \right) }.
+\end{ode}
+
+其中\(P(x_1)\)与\(Q(x_1)\)是\(x_1\)的\(k-2\)次多项式，
+并且$P ( 0 ) = Q ( 0 )=0$，当$a b \neq 0$，可经过尺度变换把\ref{equ4.20}化为
+\begin{ode}
+  \label{eq:1.4.21}
+\ddt[x_{1}] = x _ { 2 } } \\
+\ddt[x_{2}]= x _ { 1 } ^ { 2 } \left( 1 + P \left( x _ { 1 } \right) \right) + \eta x _ { 1 } x _ { 2 } \left( 1 + \mathrm { Q } \left( x _ { 1 } \right) \right) }
+\end{ode}
+
+其中$\eta = \operatorname { sign } ( a b )$（+1或-1）.
+
+\begin{corollary}
+  由于$\mathscr { C R } \left( \mathrm { ad } _ { \mathrm { A } } ^ { k } \right)$的补空间不唯一，因此正规形也不是唯一的，从上面的例子中已经看出了这一点。
+  但当取定一个补空间后，正规形中的系数就唯一确定了。
+  在例\ref{equ4.7}中，求正规形的方法称为\textbf{矩阵表示法}。
+  由于
+  $
+  \operatorname { dim } H _ { k } ^ { k }
+  = n  \left(
+    \begin{array}
+      { c } { x + k - 1 } \\
+      { n - 1 }
+    \end{array}
+  \right)
+  $,矩阵表示法的计算量随着n或k的增大而迅速增大。
+  近年来又发现了计算正规形的共轭算子法和群表示论法等，见王铎的综述文章\ref{Wd}及其所引的文献。
+\end{corollary}
+
+
+\begin{example}
+  考虑复方程
+  \[
+    \frac { d } { d t }
+    \left(
+      \begin{array} { l }
+        { z } \\
+        { \overline{z} }
+      \end{array}
+    \right)
+    =    A \left(
+      \begin{array} { l }
+        { z } \\
+        { \overline{z} }
+      \end{array}
+    \right)
+  +\mathbf{O}\left(|z|^2\right),
+\]
+其中，
+\[
+  A = \left(
+    \begin{array} { c c }
+      { i \omega } & { 0 } \\
+      { 0 } & { - i \omega }
+    \end{array}
+  \right),
+  \omega > 0.
+\]
+既A有一对共轭纯虚特征根，求它的（形式）正规形。
+\end{example}
+
+\begin{solve}
+  我们用共振原理求解。
+  记$\lambda _ { 1 } = i \omega , \lambda _ { 2 } = - i \omega _ { n }$,
+  则共振条件是
+  \[
+\lambda _ { 1 } = ( k + 1 ) \lambda _ { 1 } + k \lambda _ { 2 } , \quad k = 1,2 , \dots
+\]
+
+\begin{center}
+(或$\lambda _ { 2 } = k \lambda _ { 1 } + ( k + 1 ) \lambda _ { 2 } , \quad k = 1,2 , \cdots$)
+\end{center}
+由定理\ref{thm4.6}可知，复正规形为
+\begin{equation}
+\frac { d z } { d t } = i \omega z + c _ { 1 } | z | ^ { 2 } z + \cdots + c _ { k } | z | ^ { 2k } z + \cdots
+  \label{eq:1.4.22}
+\end{equation}
+(第二个方程与之共轭，故略去不写)。
+\end{solve}
+
+\subsection{映射在不动点附近的正规形}
+考虑以\(x=0\)为不动点的\(C^r\)映射$F ( r \geq 3 )$,它在\(x=-0\)附近可表示为
+\begin{equation}
+F ( x ) = A x + f ^ { 2 } ( x ) + \dots + f ^ { r - 1 } ( x ) + O \left( | x | ^ { r } \right),
+  \label{eq:1.4.23}
+\end{equation}
+
+其中\(x\in \mathbb{R}^n\)(或\(\mathbb{C}^n\))，A是线性映射（我们把它在某组基下的矩阵仍记为A），$f ^ { k } ( x ) \in H _ { n  } ^ { k } , H _ {  n  } ^ { k }$为n元n维齐次向量多项式所成的空间，
+$k = 2 , \dots , r - 1$。
+
+考虑变换
+\begin{equation}
+x = H ( y ) \stackrel { \mathrm { d } } { \longrightarrow } y + h ^ { k } ( y ),
+\label{eq:1.4.24}
+\end{equation}
+
+其中$h ^ { k } ( y ) \in H _ { n } ^ { k } , I + h ^ { k } ( \cdot )$在原点附近可逆，
+则\ref{equ4.24}有如下的逆变换
+\[
+y = x - h ^ { k } ( x ) + O \left( | x | ^ { k + 1 } \right) , \quad | x | \ll 1.
+\]
+令
+\[
+G ( y ) = H ^ { - 1 } \circ F \circ H ( y ),
+\]
+则可把\ref{equ4.23}化为  
+\[
+  G ( y ) = A y + f ^ { 2 } ( y ) + \cdots + f ^ { k - 1 } ( y ) +
+  \left[ f ^ { k } ( y ) - \left( h ^ { k } ( A y ) - A h ^ { k } ( y ) \right) \right] + O \left( | y | ^ { k + 1 } \right),
+\]
+
+$| y | \ll 1$.因此，与定理\ref{thm4.1}平行，可得到
+
+
+\begin{theorem}
+  设$F \in D i f f ^ { r } \left(\mathbb{ R} ^ { n } \right)$
+  （或$Diff^ { r } \left( \mathbb { C } ^ { n } \right)$）,
+  并且有表达式\ref{equ4.23},则在原点附近的领域内存在一系列变换
+  \begin{equation}
+x = y + h ^ { k } ( y ) , \quad k = 2 , \cdots , r - 1,
+\label{eq:1.4.25}
+  \end{equation}
+
+  其中$h ^ { k } ( y ) \in H _ { n } ^ { k }$，经过这一系列变换(每次变换后把y换回x)，可把\ref{equ4.23}变成如下形式
+  \begin{equation}
+G ( x ) = A x + g ^ { 2 } ( x ) + \dots + g ^ { r - 1 } ( x ) + O \left( | x | ^ { r } \right),
+    \label{eq:1.4.26}
+\end{equation}
+
+其中$g ^ { k } ( x ) \in \mathscr { S } ^ { k } , \mathscr{S}^k$是
+$\mathscr { R } ^ { k } = \mathscr { R } \left( L _ { A } ^ { k } \right)$在\(H_n^k\)中的补空间，算子\(L_A^k\)由下式定义
+\[
+  L _ { A } ^ { k } : H _ { n } ^ { k } \rightarrow H _ { n } ^ { k },
+  \quad
+  L _ { A } ^ { k } \left( h ^ { k } ( x ) \right) = h ^ { k } ( A x ) - A h ^ { k } ( x ),
+\]
+$k = 2 , \cdots , r - 1$.
+\end{theorem}
+
+\begin{defination}
+
+  映射\ref{equ4.26}的j次截取式$( 2 \leqslant j \leqslant r - 1 )$
+  \[
+A x + g ^ { 2 } ( x ) + \cdots + g ^ { j } ( x )
+\]
+其中$g ^ { i } ( x ) \in \mathscr { S } ^ { i } , i = 2 , \dots , j$，
+称为映射\ref{equ4.23}的\textbf{j次正规形}.
+\end{defination}
+
+\begin{defination}
+  Jordan型矩阵A的特征值
+  $\lambda= \left( \lambda _ { 1 } , \cdots , \lambda _ { n } \right) \subset \mathbb{C} ^ { n }$称为\textbf{共振}的，
+  如果存在$s ( 1 \leqslant s \leqslant n )$
+  和整数组$m = \left( m _ { 1 } , \cdots , m _ { n } \right) , m _ { i }\gg 0$,$| m | = \sum _ { i = 1 } ^ { n } m _ { i } \geqslant 2$,使得
+  \begin{equation}
+    \lambda _ { s } = \lambda ^ { m } = \lambda _ { 1 } ^ { m _ { 1 } } \dots \lambda _ { n } ^ { m _n}.
+        \label{eq:1.4.27}
+  \end{equation}
+  正数\(|m|\)称为\textbf{共振的阶}.
+\end{defination}
+
+\begin{defination}
+  向量值多项式\(x^me_s\)称为\textbf{共振多项式},如果m和s满足共振条件\ref{equ4.27},
+  其中$\left\{ e _ { 1 } , \dots , e _ { n } \right\}$是\(\mathbb{C}^n\)的一组基，
+  \((x_1,\dots,x_n)\)为相对于这组基的坐标,
+  并且矩阵A在此基下的Jordan标准形以$\left\{ \lambda _ { 1 } , \dots \infty , \lambda _ { n } \right\}$为对角元素。
+  \label{def:1.4.13}
+\end{defination}
+
+类似于定理\ref{thm4.6},可以得到下面的
+
+\begin{theorem}
+  设$\boldsymbol { A } = \operatorname { Diag } \left\{ \lambda _ { 1 } , \cdots , \lambda _ { n } \right\}$,则可以选取适当的变换\ref{equ4.25},使得\ref{equ4.26}右端的诸\(g^i(x)\)仅由共振多项式组成.  
+\end{theorem}
+
+\begin{example}
+  求以\(x=0\)为不动点的一维映射
+  \(F(x)=-x+\dots\)
+  的六次正规形。
+\end{example}
+
+\begin{solve}
+  $\lambda = - 1$是唯一的特征值，所以共振条件为
+  \[
+\lambda ^ { k } - \lambda = 0 , \quad k \geqslant 2,
+  \]
+  也就是
+  \[
+( - 1 ) ^ { k - 1 } = 1 , \quad k \geqslant 2.
+\]
+所以共振多项式为$x ^ { 3 } ， x ^ { 5 } \cdot x ^ { 7 } , \dots$
+由定理\ref{4.14}，六次正规形为
+\[
+G ( x ) = - x + a x ^ { 3 } + b x ^ { 5 }
+\]
+其中a,b为常数。
+\end{solve}
+
+\subsection{光滑线性化}
+\begin{defination}
+  设\(k \geqslant 2\)是一个自然数，称光滑向量场（或微分同胚）的双曲奇点（或双曲不动点）为\textbf{k阶非共振}的，如果它的特征根不满足所有\(\geqslant k\)阶的共振关系。
+  如果一个奇点（或不动点）是任意有限阶非共振的，则陈它为\textbf{无穷阶非共振}的，或简称\textbf{非共振}。
+  \label{def:1.4.16}
+\end{defination}
+
+从前面的讨论可以看出，一个k阶非共振奇点（或不动点）的k次正规形是线性的。
+换句话说，在奇点（或不动点）的领域里可以找到一个多项式的坐标变换，使得在新坐标系下系统可以表示为一个线性部分加上一个k阶小量。
+一个自然的问题是，进一步可以通过什么样的坐标变换能把这个k阶小量去掉。
+
+\begin{defination}
+  设k是一个自然数或\(k=\infty\).
+  称\(\mathbb{R}^n\)的光滑向量场（或微分同胚）在它的奇点（或不动点）O处可以\(C^k\)\textbf{线性化},如果存在点O的领域U和\(C^k\)微分同胚$H : U \rightarrow \mathbb { R } ^ { n } , H ( O ) = O$，使得经过坐标变换$x \mapsto H ( x )$后，系统在O点领域内变为线性的。
+\end{defination}
+
+\begin{theorem}[IY]
+  设k是一个自然数或\(k=\infty\),A是一个n阶方程，则存在一个依赖于k和A的数\(k^{\prime}\),满足
+  \[
+    k ^ { \prime } =
+    \left\{
+      \begin{array} { l }
+        { n \in \mathbb { Z } } ,当k < \infty\\
+        { \infty },当k= \infty,
+      \end{array}
+    \right.
+  \]
+  使得如果原点是\(C^\infty\)微分方程
+  
+\begin{equation}
+\frac { d x } { d t } = A x + \dots \quad x \in \mathbb{R}^{n}
+\label{eq:1.4.28}
+\end{equation}
+
+  或微分同胚
+  \begin{equation}
+x \mapsto A x + \cdots \quad x \in \mathbb { R } ^ { n }
+    \label{eq:1.4.29}
+  \end{equation}
+  
+  的\(k^\prime\)阶非共振双曲奇点（或非共振双曲不动点），
+  则系统\ref{equ4.28}(或系统\ref{4.29})可以\(C^k\)线性化。  
+\end{theorem}
+
+\begin{note}
+  由于$k ^ { \prime } = k ^ { \prime } ( k , A )$的表达式比较复杂，此处没有给出。
+  当\(k\to \infty\)时，\(k^\prime\)线性地依赖于k的增长。
+\end{note}
+
+\begin{example}
+  考虑\(\mathbb{R}\)上的\(C^\infty\)光滑微分方程
+  \[
+  \frac { d x } { d t } = a x + \dots \therefore \quad a \neq 0;
+\]
+或微分同胚
+\[
+x \mapsto \mu x + \cdots \quad | \mu | \neq 0,1.
+\]
+因为特征根\(\lambda=a\)(或\(\lambda=\mu\))不满足任意阶的共振关系，
+故由定理\ref{thm4.18},系统在原点处可以\(C^\infty\)线性化。
+既\(\mathbb{R}^1\)上的\(C^\infty\)向量场（或微分同胚）在它们的双曲奇点（或双曲不动点）处可以\(C^\infty\)线性化。
+\end{example}
+
+\begin{example}
+  由于\(\mathbb{R}^2\)上的向量场在双曲集点的特征根为$\lambda \pm \mathrm { i } \omega$,\(\lambda \neq 0,\omega \neq 0\).
+  它不满足任意阶的共振关系，故\(\mathbb{R}^2\)上的\(C^\infty\)向量场在它的双曲集点处可以\(C^\infty\)线性化。  
+\end{example}
+在考虑分岔问题时，我们常常只需要\(C^1\)线性化。
+对此，有下面较为简单的结果。
+
+\begin{theorem}
+  设点O是\(\mathbb{R}^n\)中一个\(C^\infty\)光滑向量场（或微分同胚）X的双曲奇点（或双曲不动点）。
+  如果X在点O的线性部分算子的特征根
+  $\lambda_{ 1 } , \lambda_{ 2 } , \dots , \lambda_{ n }$满足下列不等式
+  \begin{equation}
+    \mathbf{ R } e \lambda_{ i } \neq \mathbf{ R } e \lambda _ { j } + \mathbf{ R } e \lambda _ { k }
+  \end{equation}或
+
+  \begin{equation}
+    \left| \lambda _ { i } \right| \neq \left| \lambda _ { j } \right| \cdot \left| \lambda_ { k } \right|
+    \label{eq:1.4.30}
+  \end{equation}
+  
+  $\forall i , j , k \in \{ 1,2 , \cdots , n \}$，
+  则系统在点O处可以\(C^1\)线性化。
+\end{theorem}
+
+
+上述定理的证明对向量场和映射的情况分别由\ref{be}和\ref{go}给出。
+
+\begin{example}
+平面上的\(C^\infty\)光滑向量场（或微分同胚）在它的双曲鞍点（或双曲鞍不动点）处可以\(C^1\)线性化。
+\end{example}
+
+\begin{example}
+  如果\(\mathbb{R}^3\)中的向量场的一个双曲奇点有一对复特征根$\lambda \pm \mathrm { i } \omega$和一个实根\(\mu\),满足$\omega \neq 0 , \lambda \mu < 0$，则称奇点为\textbf{鞍焦点}.
+  鞍焦点的特征根显然满足\ref{equ4.30}.
+  故\(\mathbb{R}^3\)中\(C^\infty\)向量场在它的鞍焦点处可以\(C^1\)线性化。
+\end{example}
+\begin{example}
+如果\(\mathbb{R}^3\)中\(C^\infty\)向量场在它的奇点O处的特征根满足
+$ { \lambda } _ { 2 } < \lambda _ { 1 } < 0 < \mu$,并且
+\[
+\lambda _ { 2 } + \mu \neq \lambda _ { 1 } , \quad \lambda _ { 2 } \neq 2 \lambda _ { 1 },
+\]
+则它在该点可以\(C^1\)线性化。
+\end{example}
+
+在第五章讨论非局部分岔时，遇到的向量场都是依赖与参数的。
+因此，下面我们讨论带参数的向量场或者映射的线性化问题。
+
+\begin{defination}
+设k是一个自然数或\(k=\infty\),$X _ { \varepsilon } \left( \varepsilon \in \mathbb { R } ^ { m } \right)$
+是\(\mathbb{R}^n\)上的一个依赖于参数的向量场（或微分同胚）族。
+设
+\(\varepsilon=\varepsilon_0\)时，
+\(X_{\varepsilon_{0}}\)
+有一个双曲奇点（或双曲不动点）O。
+称族\(X_\varepsilon\)\textbf{在点(O,\(\varepsilon_0\)附近可以\(C^k\)线性化)}，如果存在参数空间\(\varepsilon=\varepsilon_0\)的领域V,相空间\(\mathbb{R}^n\)中点O的领域U，以及一个\(C^k\)映射
+$H , U \times V \rightarrow \mathbb { R } ^ { n }$，满足
+
+（1）$H \left( O , \varepsilon _ { 0 } \right) = O _ { 1 }$；
+
+（2）对每一个参数$\varepsilon \in V , H ( \bullet , \varepsilon ) : U \rightarrow \mathbb { R } ^ { n }$是一个微分同胚，
+使得通过依赖于参数\(\varepsilon\)的坐标变换$x \mapsto H ( x , \varepsilon )$后，系统在O点的领域变成一个线性系统。
+\end{defination}
+
+\begin{theorem}[IY]
+  设\(X_\varepsilon\)是\(\mathbb{R}^n\)中的\(C^\infty\)向量场（或微分同胚）族，
+  且$\varepsilon = \varepsilon _ { 0 }$时点O是系统$X _ { \varepsilon _ { 0 } }$的非共振双曲奇点（或双曲不动点），则对任意自然数k，
+  \(X_\varepsilon\)可以在点$\left( O , \varepsilon _ { 0 } \right)$附近  \(C^k\)线性化。
+\end{theorem}
+
+\begin{note}
+  由上述定理的结论并不能推出\(X_\varepsilon\)可以在点$\left( O , \epsilon _ { 0 } \right)$附近\(C^\infty\)线性化。
+  因为随着k的增加，可以实现线性化的点O的领域U和\(\varepsilon\)的领域V可能不断减小。
+\end{note}
+
+本小节给出的定理是我们在第四章和第五章中讨论问题的基础。

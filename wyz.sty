@@ -1,0 +1,167 @@
+% =====================================================================
+% 基础包引用
+% =====================================================================
+% 美国数学学会的数学包
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{latexsym}
+\usepackage{upref}
+% 引用总是垂直的数字
+\usepackage{eucal}
+% 数学字体
+\usepackage{mathrsfs}
+\usepackage{marginnote}
+\usepackage{hyperref}                  
+% 长公式断行
+\usepackage{breqn}
+\usepackage{enumerate}
+\usepackage{enumitem}
+\usepackage{geometry}
+% 定理环境
+\usepackage{mdframed}
+\usepackage{kvoptions}
+\usepackage{xparse}
+\usepackage{etoolbox}
+\usepackage{color}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage{pstricks}
+% 插入图片
+\usepackage{graphics}
+\usepackage{graphicx}
+% =====================================================================
+% 定理环境
+% =====================================================================
+% 定理类环境
+\theoremstyle{plain}% default
+\newtheorem{theorem}{\hskip 2em 定理}[section]
+\newtheorem{lemmma}[thm]{\hskip 2em 引理}
+\newtheorem{proposition}[thm]{\hskip 2em 命题}
+\newtheorem*{corollary}{\hskip 2em 推论}
+% 定义类环境
+\theoremstyle{definition}
+\newtheorem{defination}{\hskip 2em 定义}[section]
+\newtheorem{example}{\hskip 2em 例}[section]
+\newtheorem{exercise}[exmp]{\hskip 2em 练习}
+% 注意类环境
+\theoremstyle{remark}
+\newtheorem*{remark}{\hskip 2em 注}
+\newtheorem*{note}{\hskip 2em 注意}
+\newtheorem{case}{\hskip 2em Case}
+\newtheorem{solve}{\hskip 2em 解}
+% =====================================================================
+% % 定理类环境
+% \theoremstyle{plain}% default
+% \newtheorem{theorem}{Theorem}[section]
+% \newtheorem{lemma}[theorem]{Lemma}
+% \newtheorem{proposition}[theorem]{Proposition}
+% \newtheorem*{corollary}{Corollary}
+% % 定义类环境
+% \theoremstyle{definition}
+% \newtheorem{defination}{Defination}[section]
+% \newtheorem{example}{Example}[section]
+% \newtheorem{exercise}[example]{Exercise}
+% % 注意类环境
+% \theoremstyle{remark}
+% \newtheorem*{remark}{Remark}
+% \newtheorem*{ennote}{Note}
+% \newtheorem{encase}{Case}
+% =====================================================================
+% 页边设置
+% =====================================================================
+% 四川大学毕业论文
+% \geometry{
+%   top=2.5cm,            % <-- you want to adjust this
+%   inner=2.5cm,
+%   outer=2cm,
+%   bottom=2.5cm,
+%   headheight=0.5cm,       % <-- and this
+%   headsep=0.5cm,          % <-- and this
+% }
+% 比例0.8
+% \geometry{scale=0.8}
+% 引用设置
+% \hypersetup{pageanchor=true}
+% \hypersetup{backref,pdfpagemode=FullScreen,colorlinks=true}
+\hypersetup{colorlinks,linkcolor=red,anchorcolor=blue,citecolor=green}
+% 公式跨页
+\allowdisplaybreaks[4]
+% enumerate 环境
+\setlist[enumerate,1]{label=(\arabic*).,font=\textup,
+leftmargin=7mm,labelsep=1.5mm,topsep=0mm,itemsep=-0.8mm}
+\setlist[enumerate,2]{label=(\alph*).,font=\textup, 
+  leftmargin=7mm,labelsep=1.5mm,topsep=-0.8mm,itemsep=-0.8mm}
+% =====================================================================
+% 字体设置
+% =====================================================================
+
+% =====================================================================
+% box
+% =====================================================================
+% 黑框框
+\newgray{mygray}{0.9}
+\newenvironment{graybox}[1][0pt]{%
+  \def\FrameCommand{\psshadowbox[shadowsize=0.3em,
+    framesep=1.0em,
+    fillstyle=solid,
+    fillcolor=mygray]}
+  \MakeFramed{\advance\hsize-\width \advance\hsize-#1 \FrameRestore}}
+{\endMakeFramed}
+% =====================================================================
+% 自定义命令
+% =====================================================================
+\newcommand{\RR}{\mathbb{R}}
+% \newcommand{\C}{\mathbb{C}}
+\newcommand{\ZZ}{\mathbb{Z}}
+% Intergration-d
+\newcommand{\diff}{\mathhip{}\!\mathrm{d}}
+% Markov Chains
+\newcommand{\markov}{
+  \mathrel\multimap\joinrel\mathrel-%
+  \mspace{-9mu}\joinrel\mathrel-}
+% 微分方程
+\newcommand{\dxdt}{\frac{\mathrm{d}x}{\mathrm{d}t}}
+\newcommand{\dydt}{\frac{\mathrm{d}y}{\mathrm{d}t}}
+\newcommand{\dzdt}{\frac{\mathrm{d}z}{\mathrm{d}t}}
+\newcommand{\ddt[1]}{\frac{\mathrm{d} {#1}}{ \mathrm{d}t}}
+\newcommand{\dd[2]}{\frac{\mathrm{d} {#1}}{ \mathrm{d}{#2}}}
+% =====================================================================
+% 自定义环境
+% =====================================================================
+% emphasized proof
+\newenvironment{Proof}
+{\begin{proof}\em}
+  {\end{proof}}
+% named theorem
+\newtheorem*{namedtheorem}{\theoremname}
+\newcommand{\theoremname}{testing}
+\newenvironment{named}[1]{
+\renewcommand{\theoremname}{#1}
+\begin{namedtheorem}}
+{\end{namedtheorem}}
+% enumeratei
+\newenvironment{enumeratei}{
+\begin{enumerate}%
+[\upshape (i)]}%
+{\end{enumerate}}
+% 微分方程
+\newenvironment{ode}{
+  \begin{equation}%
+     \left \{ %
+     \begin{aligned} }
+    {
+    \end{aligned}%
+      \right.%
+  \end{equation}%
+}
+\newenvironment{ode*}{
+  \begin{equation*}%
+     \left \{ %
+     \begin{aligned} }
+    {
+    \end{aligned}%
+      \right.%
+  \end{equation*}%
+}

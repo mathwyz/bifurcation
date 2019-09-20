@@ -1,0 +1,543 @@
+\section{中心流形定理}
+在考虑一个向量场的分岔问题之前，一般要进行简化处理。
+一方面，希望在不改变力学性质的前提下把相空间维数尽可能降低；
+另一方面，力求在等价的意义下把微分方程的形式尽可能化简。
+前者要用到中心流形定理，将在本节介绍，后者要用正规形理论，将在下节介绍。
+这两节中讨论主要对$\mathbf { R } ^ { n }$中向量场进行，不难把结果推广到微分同胚的情形(例如，参见\ref{Wi}).
+观察上节图\ref{pic1-6}可以发现，二维空间上的分岔其实主要是由动力系统在一维不变流形\(y=0\) 上结构变化所决定（参照图\ref{pic1-5}）,而在这不变流形之外的轨线，无非是向者不变流形的压缩。
+出现这种规律并不是偶然的，系统\ref{equ2.3}在\((0,0)\) 点的线性部分矩阵为
+\[
+	\left(
+	\begin{array} { c c }
+			{ 0 } & { 0 }   \\
+			{ 0 } & { - 1 }
+		\end{array}
+	\right)
+\]
+它分别以0和-1为特征值，它的非双曲部分是一维的。
+由此猜想：
+当微分方程右端在某一奇点的线性部分矩阵有\(n_1\) 个零实部特征根，\(n_2\) 个非零实部特征根时，可以把分岔现象的研究，在奇点附近限制在某一个\(n_1\) 维的不变流形上，i从而使问题的难度得以降低。
+
+\subsection{线性情形}
+先考虑线性方程
+
+\begin{equation}
+	\frac {\mathrm { d } x } { \mathrm { d } t } = \boldsymbol { A } x,
+	\label{eq:1.3.1}
+\end{equation}
+
+其中\(x \in\mathbf{R} ^ { n }\) ,\(A\) 为n阶实数矩阵。
+我们知道，方程\ref{equ3.1}的解
+
+\begin{equation}
+	\varphi _ { t } ( x ) = e ^ { tA} x
+	\label{eq1.3.2}
+\end{equation}
+
+的性态完全被矩阵A的特征值的性质所决定。
+
+设矩阵A的特征值的集合为$\sigma = \sigma ( \boldsymbol { A } )$，则
+
+\[
+	\sigma=\sigma_{s} \cup\sigma_ {u}\cup\sigma_{ c },
+\]
+
+其中
+\begin{equation}
+	\begin{aligned}
+		\sigma _ { s } \stackrel { \mathrm { d } } { \longrightarrow } \{ \lambda \in \sigma | \operatorname { Re } \lambda < 0 \} \\
+		\sigma _ { u } = \{ \lambda \in \sigma | \operatorname { Re } \lambda > 0 \}                                               \\
+		\sigma _ { c } = \{ \lambda \in \sigma | \operatorname { Re } \lambda = 0 \}
+	\end{aligned}
+	\label{eq:1.3.3}
+\end{equation}
+
+记$E ^ { s }$为$\mathbf {
+		R} ^ { \boldsymbol { n} }$中相应于$\lambda \in \sigma _ { s }$的那些特征值的广义特征向量所张成的子空间;
+并可类似定义\(E^u\) 和\(E^c\),则有直和分解。
+
+\begin{equation}
+	\mathbf { R } ^ { n } = \boldsymbol { E } ^ { s }\oplus E ^ { u } \oplus E ^ { c }，
+	\label{eq:1.3.4}
+\end{equation}
+
+和相应的投影
+\[
+	\pi_{s} : \mathbf{R}^ { n } \rightarrow E ^ { s },
+	\pi _ { u } : \mathbf { R } ^ { n } \rightarrow E ^ { u },
+	\pi _ { c } : \mathbf { R } ^ { n } \rightarrow E ^ {  c  }.
+\]
+bb
+这些投影映射的零空间分别为
+\begin{align}
+	\operatorname { ker } \left( x _ { s } \right) = E ^ { cu } \stackrel { d } { \longrightarrow } E ^ { c } \oplus E ^ { u }, \\
+	\operatorname { ker } \left( x _ { u } \right) = E ^ { cs } \stackrel { d } { \longrightarrow } E ^ { c } \oplus E ^ {s },  \\
+	\operatorname { ker } \left( x _ { c } \right) = E ^ { h } \stackrel { d } { \longrightarrow } E ^ { s } \oplus E ^ { w },
+\end{align}
+上述投影都与A可交换，故$E ^ { s } , E ^ { u } , E ^ { \mathrm { c } }$都是\ref{equ3.1}的不变子空间。
+
+
+当$t \rightarrow + \infty$时，从非奇点出发的轨道在\(E^s\) 中是指数型“压缩”的，而在\(E^u\) 中则是指数型“增长的”（$t \rightarrow - \infty$时情况相反）。
+所有对$t \leftarrow + \infty$有界的轨道（特别地，所有奇点，闭轨）都停留在\(E^c\)内。
+由于这些性质，通常称\(E^s\)为\textbf{稳定子空间},\(E^u\)为\textbf{不稳定子空间}，\(E^c\)为\textbf{中心子空间}，$E ^ { h} = E ^ { s } \oplus E ^ { u}$为\textbf{双曲子空间},并记投影$\pi _ { h } : R ^ { n } \rightarrow E^h$.
+轨道的动力学行为在双曲子空间内是单纯的，而复杂现象发生在中心子空间\(E^c\)内。
+
+\subsection{非线性情形}
+
+现在考虑非线性方程
+
+\begin{equation}
+	\frac { \mathrm { d } x } { \mathrm { d } t } = \mathbf { A } \boldsymbol { x } + f ( x ),
+	\label{eq:1.3.5}
+\end{equation}
+
+其中$f \in C ^ { k } \left( \mathbf{R} ^ { n } , \mathbf{R} ^ { n } \right) , k \geqslant 1 , f ( 0 ) = 0$且$\operatorname { Df } ( 0 ) = 0$。
+
+问题是:
+方程\ref{equ3.5}的轨道结构是否任然具有方程\(equ3.1\)的上述规律？
+下面的结果表明，线性方程\ref{equ3.1}的中心子空间\(E^c\)推广为非线性方程\ref{equ3.5}的中心流形\(W^c\).
+虽然在较强条件下\(W^c\)可以整体存在，但通常实用的还是在奇点\(x=0\)的局部。
+那些“复杂现象”（特别地，所有奇点、闭轨、同宿轨、异宿轨等）都发生在\(W^c\)上：
+在一定条件下，\(W^c\)外的解指数型地趋于\(W^c\)上的解;
+且流形\(W^c\)上解的性质，可通过对\(E^c\)上诱导的方程的研究而得到。
+本节的内容主要参考了[V]和[CLW].
+我们先称述整体的结果。
+\begin{defination}
+	设X , Y为Banach空间, $ k \in \mathbf { Z } ^ { + }$ ,定义映射空间
+	\begin{equation*}
+		C_ { b } ^ { k } ( X , Y )
+		\left\{ g \in C ^ { k } ( X , Y )|g%的C^k模有界
+		\right\}
+	\end{equation*}
+	在本节中，记 $\tilde { x } ( t , x )$为\ref{equ3.5}的满足初值条件$\tilde { x } ( 0 , x ) = x$ 的解。
+	并记 $\| \mathrm { Dg } \| = \sup _ { x \in \mathbf { X } } | \operatorname { Dg } ( x ) |$ .
+\end{defination}
+
+\begin{theorem}[全局中心流形定理]
+	对于系统\ref{equ3.5},存在与矩阵A和数k有关的正数\(\delta_k\),
+	如果$f \in C _ { b } ^ { k } \left( \mathbf { R } ^ { n } , \mathbf { R } ^ { n } \right)$，且$\left| \mathrm { D } f \left\| < \delta _ { k }\right. \right.$，则有下列结论：
+	
+	
+	（1）集合
+	% \begin{equation}
+	%                 W ^ { c } = \left\{ x \in \mathbf { R } ^ { n }
+	%                 |\sup _ { \theta \in \mathbb { R } }|\pi _ { h }\mathbb { x } ( t , x )< \infty\}
+	% \end{equation}
+	?????????????????????????????????
+	是\ref{equ3.5}的不变集，它是\(\mathbb{R}^n\)的\(C^k\)子流形，
+	既存在唯一的\(\varphi \in C _ { b } ^ { k } \left( E ^ { \mathrm { c } } , E ^ { k } \right)\),使
+	\begin{equation}
+		W ^ { c } = \left\{ x _ { \mathrm { c } } + \varphi \left( x _ { \mathrm { c } } \right) | x _ { c } \in E ^ { c } \right \}；
+		\label{eq:1.3.7}
+	\end{equation}
+	
+	
+	（2）如果有$\psi \in C _ { b } ^ {  0 } \left( E ^ { c } , E ^ { h } \right)$，使集合
+	\[
+		M ^ { c } = \left\{ x _ { c } + \psi \left( x _ { c } \right) | x _ { c } \in E ^ { c } \right\}
+	\]
+	是\ref{equ3.5}的不变集，则$M ^ { c } = W ^ { c }$，且$\phi = \varphi$;
+	
+	
+	(3)如果$\boldsymbol { y } \in W ^ { c }$,令$x _ { c } ( t ) = \pi _ { c } \widetilde { x } ( t , y )$，则$x _ { c } ( t )$满足方程
+	\begin{equation}
+		\frac { \mathrm { d } x _ { \mathrm { c } } } { \mathrm { d } t } = \mathbf { A } x _ { c } + \pi _ { \mathrm { c } } f \left( x _ { c } + \varphi \left( x _ { c } \right) \right)，
+		x _ { c } \in E ^ { \mathrm { c } }.
+		\label{eq:1.3.8}
+	\end{equation}
+	\label{thm1.3.2}
+\end{theorem}
+
+\begin{defination}
+	定理\ref{thm3.2}中的不变集\(W^c\)称为\ref{equ3.5}的\textbf{全局中心流形}。
+\end{defination}
+
+\begin{corollary}
+	定理\ref{thm3.2}中有关全局中心流形唯一性的结论(2)指出，若\(W^c\)在\ref{equ3.5}的流下不变，则$\varphi \in C _ { b } ^ { 0 } \left( E ^ { c } , E ^ { h } \right)$是唯一确定的。
+	如果改为$\varphi \in C ^ { 0 } \left( E ^ { c } , E ^ { h } \right)$，则结论一般不对，见\ref{sij}.
+	
+	定理\ref{thm3.2}中的条件$\| \mathbf { D } f \| < \delta _ { k }$是很强的，它使得该定理实际上很难应用。
+	由于$f ( 0 ) = 0 , \operatorname { Df } ( 0 ) = 0$，故在奇点\(x=0\) 附近这个条件却是自然成立的。
+	因此，采用截断(cut-off)函数从定理\ref{thm3.2}得出的局部结果更自然，从而更实用。
+	取截断函数$\eta ( x ) \in C ^ { \infty } \left( \mathbb { R } ^ { n } , \mathbb { R } \right)$,
+	满足$ 0 \leqslant \eta ( x ) \leqslant 1$，且
+	\[
+		\eta ( x ) =
+		\left\{
+		\begin{array} { l l }
+			{ 1 , } & { text{当 }\| x \| \leqslant 1} ， \\
+			{ 0 , } & { text{当}\| x \| \geqslant 2 .}
+		\end{array}
+		\right.
+	\]
+	
+	再令
+	\begin{equation}
+		f _ { \rho } ( x ) = f ( x ) \eta \left( \frac { x } { \rho } \right) , \quad \forall \mathbf{x} \in \mathbb { R } ^ { n }
+		\label{eq:1.3.9}
+	\end{equation}
+	此时，为了研究方程\ref{equ3.5}在\(x=0\) 附近的中心流形，我们考虑方程
+	\begin{equation}
+		\frac { \mathrm { d } x } { \mathrm { d } t } = \boldsymbol { A } x + f _ { \rho } ( \boldsymbol { x } )
+		\label{eq1.3.10}
+	\end{equation}
+	显然，当\(\|x\| \leqslant \rho \) 时，$f ( x ) \equiv f _ { \rho } ( x )$,且不难证明
+	\begin{equation}
+		\left\| \operatorname { D } f _ { \rho } ( x ) \right\| \rightarrow 0,
+		\text{当}\rho \rightarrow 0.
+		\label{eq1.3.11}
+	\end{equation}
+\end{corollary}
+
+\begin{theorem}[局部中心流形定理]
+	设$f \in C ^ { k } \left( \mathbb { R } ^ { n } , \mathbb { R } ^ { n } \right) , k \geqslant 1$，
+	$f ( 0 ) = 0 , \operatorname{ D } f ( 0 ) = 0$，
+	则$\exists \varphi \in C ^ { k } \left( E ^ { c } , E ^ { h } \right)$在\(\mathbb{R}^n\) 中的开领域U，使得
+	
+	（1）流形
+	\begin{equation}
+		W _ { \varphi } = \left\{ x _ { c } + \varphi \left( x _ { c } \right) \right) | x _ { c } \in E ^ { c } \}
+		\label{eq:1.3.12}
+	\end{equation}
+	对\ref{equ3.5}的流\textbf{局部不变}，既
+	\[
+		\tilde { x } ( t , x ) \in W _ { \varphi } , \forall x \in W _ { \varphi } \cap U , \forall t \in J _ { U } ( x ).
+	\]
+	这里\(\tilde{x}(t,x)\)为\ref{equ3.5}的满足$\widetilde { x } ( 0 , x ) = x$的解，
+	\(J_U(x)\)为x在U内极大流相应时间的时间区间；
+	
+	（2）$\varphi ( 0 ) = 0 , \operatorname{D }\varphi ( 0 ) = 0$;
+	
+	(3)如果$x \in U$，且$J _ { U } ( \boldsymbol { x } ) = \mathbb{ R }$，则$x \in W_\varphi$.
+	
+\end{theorem}
+
+\begin{proof}
+	设与\(\operatorname{A}\)相关的\(\delta_k\)已经确定(见定理\ref{thm3.2}的条件)，则由\ref{equ3.9}和\ref{equ3.11}，可取\(\rho>0\)使$f _ { \rho} ( x ) \in C _ { b } ^ { k } \left( \mathbb { R } ^ { n } , \mathbb { R } ^ { n } \right)$，
+	且$\left\| \operatorname { D } f _ { \rho } \right\| < \delta_k$.
+	对系统\ref{equ3.10}应用定理\ref{thm3.2}可知，存在由\ref{equ3.7}给出的\(C^k\) 子流形\(W^c\),其中
+	$\varphi \in C _ { b } ^ { k } \left( E ^ { c } , E ^ { h } \right)$，且
+	$\varphi ( 0 ) = 0 , \operatorname{D} \varphi ( 0 ) = 0$。
+	
+	另一方面，由\ref{equ3.9}可知，
+	若取$U \stackrel { \mathrm { d } } { \longrightarrow } \left\{ x \in \mathbb { R } ^ { n } |\ | x \| < \rho \right\}$,
+	则系统\ref{equ3.10}与系统\ref{equ3.5}在U中完全相同，故结论（1），（2）成立。
+	限制在U内，此处的\(W_\varphi\)就是\ref{equ3.6}或\ref{equ3.7}式定义的\(W^c\).
+	
+	现设$\boldsymbol { x } \in U , J _ { U } ( \boldsymbol { x } ) = \mathbb { R }$。
+	则$ \forall t \in \mathbb { R } , \tilde { \boldsymbol { x } } ( t , \boldsymbol { x } ) \equiv \tilde { \boldsymbol { x } } _ { \rho } ( t , \boldsymbol { x } ) \subset U$，
+	从而$\sup _ { a \in \mathbb { R } } \left| \pi _ { h } \tilde { x } ( t , x ) \right| < \infty$，由\ref{equ3.6}式，$\boldsymbol { x } \in \mathbf { W } ^ { c }$。
+	限制在U内，也就是$x \in W _ { \varphi }$。
+	故结论（3）成立。
+\end{proof}
+
+\begin{defination}
+	如果$\psi \in C ^ { k } \left( E ^ { c } , E ^ { h } \right) , k \geqslant 1 , \psi ( 0 ) = 0 , \operatorname{D} \varphi ( 0 ) = 0$，
+	使
+	$W_\psi \underbrace { \mathrm { d } }\left\{ x _ { c } + \psi \left( x _ { c } \right) | x _ {c } \in E ^ { c } \right\}$
+	在\ref{equ3.5}的流下局部不变，则称\(W_\psi\)为\ref{equ3.5}的一个\(k\)\textbf{局部中心流形}。
+\end{defination}
+
+
+\begin{corollary}
+	显然，可以对\ref{equ3.5}取不同的截断函数，而得到不同的局部中心流形（尽管对每一个截断函数而言，\ref{equ3.10}的全局中心流形是唯一的）。
+	例如，在图\ref{tu1-6}$( \mu = 0 )$中的原点附近，取右半平面上与x轴相切的任一轨线，在拼接上坐标原点及负x轴，都构成一个局部中心流形。
+	但从定理\ref{rhm3.5}的结论(3）可知，
+	\ref{equ3.5}保持在U内的任何有界轨道（包括奇点、周期轨、同宿轨、异宿轨等）都出现在\ref{thm3.5}的任一局部中心流形上。
+	因此，对于研究分岔现象而言，局部中心流形的不唯一性不是一个重要的问题。
+	还要指出，虽然\(f\)的\(C^k\)光滑性保证了\(W_\varphi\)的\(C^k\)光滑性，一般来说，\(f\)的\(C^\infty\)光滑性（甚至解析性）却不足以保证\(W_\varphi\)是\(C^\infty\)的。
+	事实上，从定理的证明中可以看出，U是以\(\rho\)为半径的球形领域，而\(\rho\)的选取要保证$\left\| \operatorname { D } f _ { \rho } \right\| < \delta _ { k }$.
+	一般来说，当$k \rightarrow \infty$，$\delta _ { k } \rightarrow 0$，这可能导致$\rho\rightarrow 0$。
+	
+	现在我们把局部中心流形、稳定、不稳定流形的结果合写成下面的定理。
+\end{corollary}
+
+\begin{theorem}
+	对于方程\ref{equ3.5},设$f \in C ^ { k } \left( \mathbb { R } ^ { n } , \mathbb { R } ^ { n } \right) , f ( 0 ) = 0$，
+	$\operatorname{D}f ( 0 ) = 0$；
+	相对于\(\operatorname{A}\),
+	由如上所述的子空间\(E^s\),\(E^u\)和\(E^c\).
+	则在\(\mathbb{R}^n\)中\(x=0\)附近存在开领域U，
+	和U中的\(C^k\)流形
+	\(W^s\),\(W^u\)和\(W^c\),它们的维数分别与这三个子空间相同，
+	在x=0点分别与\(E^s\),\(E^u\)和\(E^c\)相切，并且在U内是方程\ref{equ3,5}的不变流形；
+	\(W^s\)和\(W^u\)有定义\ref{def1.12}所表示的形式，
+	\(W^c\)有表达式\ref{equ3.12},其中$\varphi \in C ^ { k } \left( E ^ { \mathrm { c } } , E ^ { \mathrm{k} } \right) , \varphi ( 0 )= 0 , \operatorname{D} \varphi ( 0 ) = 0$.
+\end{theorem}
+
+类似于中心流形的讨论，可以定义并讨论\ref{equ3.5}的中心稳定流形\(W^{cs}\)和中心不稳定流形\(W^{cu}\),这里不再详述。
+上面已经说道，系统在奇点附近的“复杂现象”发生在它的任一局部中心流形上，下面的两个定理说明了中心流形的其他重要作用。
+
+\begin{theorem}[渐进性质定理]
+	设$f \in C ^ { 1 } \left( \mathbb { R } ^ { n } , \mathbb { R } ^ { n } \right) , f ( 0 ) = 0，\operatorname { D } f ( 0 ) = 0$，
+	且对矩阵\(\operatorname{A}\),$\delta _ { x } = \varnothing$,
+	令\(W_\varphi\)为\ref{equ3.5}的一个\(C^2\)局部中心流形，
+	则可在\(\mathbb{R}^n\)中找到O的一个领域V和正数\(\gamma\),
+	如果\(x \in V\)，
+	且 \( \{ \tilde{x} ( t , x ) | t \geqslant 0 \} \) 的闭包含在V内，
+	则$\exists t _ { 0 } \geqslant 0 , M > 0$和\(y \in W _ { \varphi } \cap V\)，使得
+	\begin{equation}
+		\left| \tilde { x } ( t , x ) - \tilde { x } \left( t - t _ { 0 } , y \right) \right| \leqslant M e ^ { - \gamma _ { t } } , \quad \forall t \geqslant t _ { 0 }
+		\label{eq1.3.13}
+	\end{equation}
+	\label{thm1.3.9}
+\end{theorem}
+
+\begin{theorem}[Pliss约化原理]
+	在定理\ref{thm3.9}的条件下，设
+	\(y \in W _ { \varphi } \cap V\)，
+	且$\{ \tilde { x } ( t , x ) | t \geqslant 0 \}$的闭包含在于V中。
+	则$\tilde { x } ( t , y )$作为\ref{equ3.5}的解是稳定的（渐进稳定，或不稳定）的，当且仅当\(x_c(t)\)作为\ref{equ3.8}的解是稳定的（渐进稳定，或不稳定）的。
+	\label{thm1.3.9}
+\end{theorem}
+
+定理\ref{thm3.9}说明，在一定条件下，在奇点O的一个小领域V内，中心流形外的解可以指数型地趋于中心流形上的某一解
+（当\(t\to +\infty\)，如果\(\sigma_u=\varnothing\);
+或当\(t\to -\infty\),如果\(\sigma_s=\varnothing\)）.
+而定理\ref{thm3.10}说明，在类似条件下，为了得到局部中心流形上O点附近的轨道结构，只需要对它在线性子空间\(E^c\)上诱导的方程\ref{equ3.8}来研究即可。
+事实上，\ref{equ3.8}的轨道是\ref{equ3.5}在\(W^c\)上的真实轨道向\(E^c\)的投影，见图\ref{pic1-14}.
+一般而言，从原方程\ref{equ3.5}得到诱导方程\ref{3.8}不是容易的，需要先知道\(\phi\),为此我们给出下面的定理。
+
+
+\begin{theorem}
+	设$f \in C ^ { k } \left( \mathbb{ R } ^ { n } , \mathbb{ R } ^ { n } \right) , k \geqslant 1 , f ( 0 ) = 0 , \operatorname { D } f ( 0 ) = 0$；
+	$\varphi \in C ^ { 1 } \left( E ^ { c } , E ^ { h } \right) , \varphi ( 0 ) = 0 , \operatorname{D} \varphi ( 0 ) = 0$.
+	则
+	$W _ { \varphi } \stackrel { d } { \longrightarrow } \left\{ x _ { c } + \varphi \left( x _ { c } \right) x _ { c } \in E ^ { c }\right\}$是\ref{equ3.5}的一个局部中心流形，当且仅当存在\(E^c\)中原点的开领域\(\Omega\),使得$\forall x _ { c } \in \Omega$，有
+	\begin{equation}
+		\begin{aligned}
+			\operatorname{D} \varphi \left( x _ { c } \right) \pi _ { c } \left( \operatorname{A} x _ { c } + f \left( x _ { c } + \varphi \left( x _ { c } \right) \right)\right. \\
+			= \pi _ { h } \left( \operatorname{A} \varphi \left( x _ { c } \right) + f \left( x _ { c } + \varphi \left( x _ { c } \right) \right)\right.
+		\end{aligned}
+		\label{eq:1.3.14}
+	\end{equation}
+\end{theorem}
+
+在很多情形下，我们并不需要知道\(\varphi(x_c)\)的确切表达式，而是利用\ref{equ3.14}式算出它的Taylor展开的前几项。
+
+为了简单，先把\ref{equ3.5}化成如下的标准形式：
+
+\begin{equation}
+	\left\{
+	\begin{array} { l }
+		{ \frac { \mathrm { d } x } { \mathrm { d } t } = \operatorname { B } x + f ( x , y ) } \\
+		{ \frac { \mathrm { d } y } { \mathrm { d } t } = \operatorname { C }y + g ( x , y ) }
+	\end{array}
+	\right.
+	\label{eq:1.3.15}
+\end{equation}
+
+其中$x \in \mathbb { R } ^ { n } , y \in \mathbb { R } ^ { m } , f , g = O \left( | x , y | ^ { 2 } \right)$；
+\(\mathbf{B}\) 的特征根的实部为零，而
+
+\[
+	\boldsymbol { C } =
+	\left[
+		\begin{array} { l l }
+			{ \boldsymbol { C } _ { 1 } } & { \mathbf { 0 } }             \\
+			{ \mathbf { 0 } }             & { \boldsymbol { C } _ { 2 } }
+		\end{array}
+		\right]
+	,
+\]
+
+上面的\(\operatorname{C_1}\) 与 \(\operatorname{C_2}\) 的特征根实部分别为负数与正数。
+因此 \(  E ^ { c} = \{ ( x,0)\} ,E ^ { h } = \{ ( 0 , y ) \} , W ^ { c } = \{ ( x , \varphi ( x ) ) | x \in \mathbb { R } ^ { n } \}\).下面尝试寻找\(y=\varphi(x)\) 的展式，
+$x \in \mathbb { R } ^ { n }$，
+\ref{equ3.14}现在成为
+\[
+	\operatorname { D} \varphi  ( x ) \left[ \operatorname { B }  { x } + f ( x , \varphi ( x ) ) \right] = \operatorname{C} \varphi ( x ) + g ( x , \varphi ( x ) )
+\]
+既
+\begin{equation}
+	\operatorname { D } \varphi ( x ) [ \operatorname { B } x + f ( x , \varphi ( x ) ) ] - \operatorname { C } \varphi ( x ) - g ( x , \varphi ( \boldsymbol { x } ) ) = 0
+	\label{eq:1.3.16}
+\end{equation}
+以及条件
+\[
+	\varphi ( 0 ) = 0 , \operatorname { D } \varphi ( 0 ) = 0.
+\]
+利用待定系数法，可逐项计算\(\varphi(x)\).
+
+\begin{example}
+	考虑二维方程
+	\begin{equation}
+		\left\{
+		\begin{array} { l }
+			{ \frac { \mathrm { d } x } { \mathrm { d } t } = y } \\
+			{ \frac { \mathrm { d } y } { \mathrm { d } t } = \beta y + x ^ { 2 } + x y }
+		\end{array}
+		\right.
+		\label{eq1.3.17}
+	\end{equation}
+	
+	经过扰动在在奇点\((0,0)\)附近可能发生的分岔现象，
+	其中\(\beta \neq 0\).
+	注意\ref{equ3.17}在\((0,0)\)点的线性部分矩阵为$\left(
+		\begin{array} { l l }
+				{ 0 } & { 1 }     \\
+				{ 0 } & { \beta }
+			\end{array}
+		\right)$，
+	因此当$\beta \neq 0$时，它有且只有一个零根，中心流形是一维的。
+	我们首先设法找出方程\ref{equ3.17}在\(E^c\)上诱导出的方程，由此推断在中心流形上轨道的结构。
+	为此，先把\ref{equ3.17}化为\ref{3.15}的形式。
+	令
+	\[
+		\left(
+		\begin{array}  { l }
+				{ u } \\ { v }
+			\end{array}
+		\right)
+		= \left(
+		\begin{array} { l l }
+				{ \beta } & { - 1 } \\
+				{ 0 }     & { 1 }
+			\end{array}
+		\right)
+		\left(
+		\begin{array} { l }
+				{ x } \\
+				{ y }
+			\end{array}
+		\right)
+	\]
+	,既
+	\[
+		\left(
+		\begin{array} { l }
+				{ x } \\
+				{ y }
+			\end{array}
+		\right)
+		= \left(
+		\begin{array} { l l }
+				{ \frac { 1 } { \beta } } & { \frac { 1 } { \beta } } \\
+				{ 0 }                     & { 1 }
+			\end{array}
+		\right)
+		\left(
+		\begin{array} { l }
+				{ u } \\
+				{ v }
+			\end{array}
+		\right)
+	\]
+	则\ref{equ3.17}化为
+	\begin{equation}
+		\left\{
+		\begin{array} { l }
+			{ \frac { \mathrm { d } u } { \mathrm { d } t } = - \frac { 1 } { \beta ^ { 2 } } ( u + v ) ^ { 2 } - \frac { 1 } { \beta } ( u + v ) v }, \\
+			{ \frac { \mathrm { d } v } { \mathrm { d } t } = \beta v + \frac { 1 } { \beta ^ { 2 } } ( u + v ) ^ { 2 } + \frac { 1 } { \beta } ( u + v ) v }.
+		\end{array}
+		\right.
+		\label{eq:1.3.18}
+	\end{equation}
+	
+	注意到\ref{3.16}式下面的条件，我们可以设\ref{equ3.18}的中心流形函数
+	\[
+		v = \varphi ( u ) = a u ^ { 2 } + b u ^ { 3 } + \dots
+	\]
+	所表达。
+	对方程\ref{equ3.18}应用\ref{equ3.16}式，并把$\varphi ( u )$的如上表达式代入，由待定系数法不难得到
+	\[
+		\varphi (u ) = - \frac { 1 } { \beta ^ { \alpha } } u ^ { 2 } + \cdots
+	\]
+	再把上式代入\ref{equ3.18}的第一个方程，
+	得出\ref{equ3.18}在\(E^c\)上诱导的方程为
+	\[
+		\frac { \mathrm { d } u } { \mathrm { d } t } = - \frac { 1 } { \beta ^ { 2 } } u ^ { 2 } + \dots
+		\quad
+		\beta \neq 0.
+	\]
+	由定理\ref{thm3.10},附注\ref{fuzhu2.13}和例\ref{exam2.7}可知，系统经扰动在中心流形上发生鞍结点分岔。
+	当\(\beta<0\)时，它的拓扑结构与图\ref{pic1-6}相同。
+\end{example}
+
+最后，我们考考虑系统\ref{equ3.5}依赖于参数的情形。
+设
+\begin{equation}
+	\frac { \mathrm { d } x } { \mathrm { d } t } = \operatorname{A} x + f ( x , \mu ),
+	\label{eq:1.3.19}
+\end{equation}
+
+这里对矩阵A的假设同上，\(E^u,E^s\)和\(E^c\)的维数分别是
+\(n^+,n^-\)和\(n^0\);
+$f \in C ^ { r } \left( \mathbb{ R } ^ { n } \times \mathbb { R } ^ { k } , \mathbb{ R } ^ { n } \right) , r \geqslant 1 , f (\boldsymbol{ x} , 0 ) = \boldsymbol { O } \left( \| \boldsymbol{ x} \| ^ { 2 } \right)$.
+为简单起见，还设\(f(0,\mu)=0\),
+既\(x=0\)总是\ref{equ3.19}的一个奇点。
+
+\begin{theorem}
+	在上面的假设下，\ref{equ3.19}拓扑轨道等价于如下系统
+	\begin{equation}
+		\left\{
+		\begin{array}{l}
+			\frac { d \xi } { d t } = g ( \xi , \mu ) ,
+			\quad
+			\xi \in \mathbb { R } ^ { n _ { 0 } } , \mu \in \mathbb { R } ^ { k }, \\
+			\frac { d \eta } { d t } = - \eta ,
+			\quad
+			\eta \in\mathbb{ R} ^ { n _-}                                          \\
+			\frac { \mathrm { d } \xi } { \mathrm { d } t } = \xi ,
+			\quad
+			\zeta \in \mathbb{ R } ^ { n_+ } .
+		\end{array}
+		\right.
+		\label{eq:1.3.20}
+	\end{equation}
+\end{theorem}
+
+
+这个定理的证明可参考\ref{sh}.
+实际上，它的第一个方程就是\ref{equ3.8}.
+
+\begin{corollary}
+	为了研究\ref{equ3.19}的中心流形，我们把\(\mu\)也视作（空间变量），考虑
+	\begin{equation}
+		\frac { \mathrm { d } x } { \mathrm { d } t } = \operatorname { A } x + f ( x , \mu ) ,
+		\quad
+		\frac { \mathrm { d } \mu } { \mathrm { d } t } = 0.
+		\label{eq:1.3.21}
+	\end{equation}
+	则在奇点
+	$( \mathbf{x} ,\mathbf{ \mu} ) = (\mathbf{ 0},\mathbf{0} )$
+	附近，稳定与不稳定子空间任为\(E^s\)与\(E^u\),而中心子空间为
+	$E^{c} \times \mathbb{R}^{k}$。
+	故\ref{equ3.21}的局部稳定流形与不稳定流形\(W^s\)与\(W^u\)的结构与$\mu \equiv 0$时类似。
+	此时中心流形
+	$W ^ { c } = \left\{ \left( x _ { c } , \mu \right)+ \varphi \left( x _ { c } , \mu \right) \left| \left( x _ { c } , \mu \right) \in E ^ { \mathrm { c } } \times \mathbb { R } ^ { k }\right.\right\}$,
+	其中$\varphi \left( x _ { c } , \mu \right) \in C ^ { r } \left( E ^ { c } \times \mathbb{ R } ^ { k },E^h\right)$。
+	由\ref{equ3.21}的第二个方程易知，
+	$\{ ( x , \mu ) | \mu =常数\}$是\ref{equ3.21}的不变集，从而对固定的\(\mu\),\(W^c|_{\mu=常数}\)是\ref{equ3.21}的不变流形。
+	注意$( x , \mu ) = ( 0,0 )$是\ref{equ3.21}的非双曲奇点。
+	一般而言，对于不同的\(\mu\),\(W^c|_{\mu=常数}\)上的轨道结构可能不同，见下例。
+\end{corollary}
+
+\begin{example}
+	设$x , y , \mu \in \mathbb { R }$，考虑光滑系统
+	\begin{equation}
+		\ label{eq:1.3.22}
+		\left\{
+		\begin{array}{l}
+			{\dxdt= \mu x - x ^ { 3 } + f ( x , y , \mu ) }, \\
+			{\dydt= - y + g ( x , y , \mu ) } ,              \\
+			{ \frac{\mathrm{d}\mu}{\mathrm{d} t } = 0 },
+		\end{array}
+		\right.
+	\end{equation}
+	
+	其中$f = O \left( | x , y | ^ { 4 } \right) , g = O \left( | x , y | ^ { 2 } \right)$
+	且$g ( x , 0 , \mu ) = 0$。
+	由附注\ref{fuzhu3.14}和例\ref{exam 2.6}可知，在$\left( x , y , { \mu } \right) = ( 0,0,0 )$的小领域内，中心流形\(W^c\)如图\ref{pic1-15}所示。
+	显然，当$\mu \leqslant 0$或$\mu > 0$时，\(W^c|_\mu=常数\)有不同的结构。
+	利用定理\ref{thm3.13}及简单计算可知，系统\ref{equ3.22}拓扑轨道等价于
+	\[
+		\frac { d \xi } { d t } = \mu \xi  - \xi ^ { 3 } ,
+		\frac { d \eta } { d t } = - \eta ,
+		\frac { d \mu } { d t } = 0
+	\]
+	
+	它在$( \xi , \eta , \mu ) = ( 0,0,0 )$附近的中心流形如图\ref{tu1-167}所示，它不过是把图\ref{pic1-15}中的中心流形“摊平”在$( \xi , \mu )$空间而已。
+\end{example}
+
+在下文对局部分岔的讨论中，我们大都假定已经把问题化归到它的中心流形上，既对所讨论方程的线性部分矩阵\(\operatorname{A}\)而言，$\sigma ( \mathbf { A } )= \sigma _ { c }$(既$\sigma _ { u } , a _ { s } = \varnothing$)。
