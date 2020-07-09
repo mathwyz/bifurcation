@@ -1,9 +1,0 @@
-dxdt:y;
-dydt:beta*y+x**2+x*y;
-
-/* 求平衡点 */
-equ:[dxdt,dydt,dzdt];
-param:[x,y,z];
-
-Sol:solve(equ,param);
-Jaco:jacobian(equ,param);
