@@ -1,0 +1,538 @@
+\section{平面上的同宿分岔}
+由二维流形上的结构稳定性定理(见第一章定理~\ref{thm1.1.13})知道,
+当存在鞍点的同宿轨(或异宿轨)时,
+系统是结构不稳定的.
+事实上,这种连接鞍点的轨线在扰动下可能破裂,
+从而改变系统的拓扑结构.
+第一章例~\ref{exam:1.2.10}就是一个典型的实例.
+在本节里,我们要进一步讨论,当这种分岔产生时产生闭轨的规律.
+\par
+我们先从几何上考虑,
+以获得一些启示.
+设平面上的单参数向量场族$X_{\mu}$对应于如下的方程
+\begin{equation}
+  \label{eq:2.4.1}
+  $\frac{\mathrm{d} x}{\mathrm{d} t}=v(x, \mu)$,
+\end{equation}
+
+其中$v \in C^{\infty}\left(\RR^{2} \times \RR, \RR^{2}\right)$.
+设$X_0$的轨道结构如第一章图1-9(b)???所示;
+它有一条初等鞍点的同宿轨$\Gamma$,$\Gamma$内部是结构稳定焦点的吸引域.
+当$\mu\neq 0$时,$\gamma$可能破裂为两条分界线(鞍点的稳定流形和不稳定流形),
+见图$1-9$的(a)与(c).
+\par
+显然,在图1-9(c)的情形,
+分界线破裂的方向与破裂前$\Gamma$的稳定性相配合,
+就构成了一个Poincaré-Bendixson环域,
+从而系统$X_{\mu}$存在闭轨.
+当$|\mu|$充分小时,可以使这个环域充分靠近原来的同宿轨线.
+因此,我们可以认为闭轨是从$\Gamma$经过扰动破裂而产生的(或反过来说,
+当$\mu \to 0$时,闭轨趋于$\Gamma$而成为同宿轨).
+这种分岔现象称为\textbf{同宿轨的分岔},或简称为\textbf{同宿分岔}.
+\par
+考虑向量场族
+\begin{equation}
+  \label{eq:2.4.2}
+  $\left(X_{k}\right) : \quad \dxdt=f(x, \mu)$,
+\end{equation}
+
+中其$f \in C^{2}\left(\RR^{2} \times \RR, \RR^{2}\right), f(0,0)=0, X_{0}$以
+$x=0$为双曲鞍点(既$\operatorname{det} \frac{\partial f}{\partial x}(0,0)<0$),
+并且具有同宿轨$\Gamma_{0}$,
+如图2-4(a)所示(对情况(b)可类似讨论).
+\par
+从前面的讨论中可以看出,在研究同宿分岔时,下面两个问题是重要的:
+\begin{enumerate}
+\item\label{item:22}
+  如何判断
+  $X_{0}$的同宿轨$\Gamma_0$在其内侧的稳定性?
+  (在第一章例~\ref{exam:1.2.10}中,
+  这是利用$\Gamma_0$内的焦点的稳定性得出来的.
+  我们希望从向量场在鞍点和$\Gamma_{0}$的特性来获得这个信息.)
+\item\label{item:17}
+  如何判断$X_{\mu}$的稳定流形和不稳定流形的相对位置?
+\end{enumerate}
+
+为了解决问题~\ref{item:22},我们先对$X_{0}$在$\Gamma_0$内侧引入
+Poincare映射(见第一章定义~\ref{def:1.1.6}).
+取$p_{0} \in \Gamma_{0}, L_{0}$为过$p_0$点与$\Gamma_0$正交的无切线(向内为正).则在$p_0$附近存在一个领域$U$,
+使得$\forall p \in U \cap L_{0}^{+}$,
+从$p$出发的轨线$\phi(t,p)$经过$t=T(p)$将再次与$L_0$交于一点$P(p)=\phi(T(p),p)$(见图2-5).
+令$n_0$为沿着$L_0^{+}$的单位向量,
+则$\forall p \in U\cap L_{0}^{+}$,
+它有如下的坐标表示
+\begin{equation}
+  \label{eq:2.4.3}
+  p=p_{0}+\alpha n_{0},
+\end{equation}
+其中$\alpha>0.$相应地,$P(p)$有坐标表示
+
+\begin{equation}
+  \label{eq:2.4.4}
+  P(p)=\varphi(T(p), p)=p_{0}+\beta(\alpha) n_{0},
+\end{equation}
+
+其中$\beta(a) \in C^{1}$,只要$0<\alpha \ll 1$(因为$X_{0}\text{是}C^2$的).定义函数
+$$
+d(\alpha)=\beta(\alpha)-\alpha, \quad \alpha>0.
+$$
+
+\begin{defination}
+  \label{def:2.4.4}
+  $X_0$的同宿轨$\Gamma_0$称为是\textbf{渐近稳定}(或\textbf{不稳定})的,
+  如果存在
+$
+\eta>0,
+$
+使得
+$d(a)<0$(或$>0$)对所有的$0<a<\eta$成立.
+\end{defination}
+\begin{collory}
+  \label{col:2.4.2}
+  注意$\lim _{\alpha \rightarrow 0} d(\alpha)=0,$
+  因此$\Gamma_{0}$的稳定性由极限
+  $$
+  \lim _{\alpha \to 0} d^{\prime}(\alpha)=\lim _{\alpha \to 0} \beta^{\prime}(\alpha)-1
+  $$
+  所决定:
+  当$\lim _{\alpha \rightarrow 0} d^{n}(\alpha)<0$(或$>0$),
+  也就是$\lim _{\alpha \rightarrow 0} \beta^{\prime}(\alpha)<1$(或$>1$)时,
+  $\Gamma_0$是渐近稳定(或不稳定)的.
+\end{collory}
+
+引入记号
+$$
+\sigma_{0}=\operatorname{tr} \frac{\partial f}{\partial x}(0,0)
+$$
+
+\begin{theorem}
+  \label{thm:2.4.3}
+  设$X_0$具有双曲鞍点$O$及同宿轨$\Gamma_{0}$,
+  如果$\sigma_0 \neq 0$,
+  则当$\sigma_0 <0$时,
+  $\Gamma_0$是渐近稳定的,
+  而当$\sigma_0>0$时,
+  $\Gamma_0$是不稳定的.
+\end{theorem}
+
+\begin{proof}[[CH]]
+  如上所述,
+  取$p_0 \in \Gamma_0$,
+  可建立$X_0$在$p_0$领域的Poincare映射
+$$
+P: \quad U \cap L_{0}^{+} \rightarrow L_{0}, P(p)=\varphi(T(p), p),
+$$
+并且$p,P(p)$分别有表示式~(\ref{eq:2.4.3})和~(\ref{eq:2.4.4}).
+把~(\ref{eq:2.4.4})式对$\alpha$求导,
+得到
+\begin{equation}
+  \label{eq:2.4.5}
+  \begin{aligned} \beta^{\prime}(\alpha) n_{0} &=\left[\frac{\partial}{\partial t} \varphi(T(p), p)\right] \frac{\partial T(p)}{\partial p} n_{0}+\left.\frac{\partial \varphi}{\partial p}\right|_{t=T(p)} n_{0} \\ &=f_{\beta} \frac{\partial T(p)}{\partial p} n_{0}+\left.\frac{\partial \varphi}{\partial p}\right|_{t \rightarrow T(p)} n_{0} \end{aligned}
+\end{equation}
+其中$f_{\alpha}=f\left(\alpha n_{0}+p_{0}, 0\right), \alpha \in \RR$,
+而$f_{\beta}=f_{\beta(\alpha)}$.
+注意$n_0$是沿$f_{0}^{\perp}$的方向,
+当$\alpha$足够小时,
+內积$\left\langle f_{\beta}^{\perp}, n_{0}\right\rangle \neq 0$,
+在~(\ref{eq:2.4.5})式两端以$f_{\beta}^{\perp}$作內积,
+得到
+$$
+\beta^{\prime}(\alpha)=\frac{\left\langle f_{\beta}^{\perp},\left.\frac{\partial \varphi}{\partial p}\right|_{t=T(p)} n_{0}\right\rangle}{\left\langle f_{\beta}^{\perp}, n_{0}\right\rangle}
+$$
+如果记
+\begin{equation}
+  \label{eq:2.4.6}
+  \left.\frac{\partial \varphi}{\partial p}\right|_{t=T(p)} n_{0}=\xi f_{\beta}+\eta n_{0},
+\end{equation}
+其中$\xi, \eta \in \RR$,则
+\begin{equation}
+  \label{eq:2.4.7}
+  \beta^{\prime}(\alpha)=\eta.
+\end{equation}
+下面,我们设法把$\lim _{\alpha \to 0} \eta$与 $\sigma_0$建立联系.
+首先,由f的连续性,
+可以把$f_{\beta}$表示为
+\begin{equation}
+  \label{eq:2.4.8}
+  f_{\beta}=\left(1+\varepsilon_{1}\right) f_{a}+\varepsilon_{2} n_{0},
+\end{equation}
+其中$\varepsilon_{1}, \varepsilon_{2} \rightarrow 0$当$\alpha \to 0$.
+另一方面,由于
+$$
+\varphi(T(p), p) : \quad U \cap L_{0}^{+} \rightarrow L_{0}, p_{0}+\alpha n_{0} \mapsto p_{0}+\beta(\alpha) n_{0},
+$$
+
+它的导映射$\left.\frac{\partial \varphi}{\partial p}\right|_{t=T(p)}$
+把$p_0+\alpha n_0$处的切向量 $f_{\alpha}$映到$p_{0}+\beta(\alpha) n_{0}$
+处的切向量$f_{\beta}$,既
+\begin{equation}
+  \label{eq:2.4.9}
+  \left.\frac{\partial \varphi}{\partial p}\right|_{t=T(p)} f_{\alpha}=f_{\beta}.
+\end{equation}
+
+由~(\ref{eq:2.4.8}),~(\ref{eq:2.4.9})和~(\ref{eq:2.4.6})得出
+\begin{equation}
+  \label{eq:2.4.10}
+  \left.\frac{\partial \varphi}{\partial p}\right|_{t=T(p)} f_{\beta}=\left(1+\varepsilon_{1}+\varepsilon_{2} \xi\right) f_{\beta}+\varepsilon_{2} \eta n_{0}.
+\end{equation}
+(\ref{eq:2.4.10})和~(\ref{eq:2.4.6})给出$\left.\frac{\partial \varphi}{\partial p}\right|_{t=T(p)}$在基向量$(f_{\beta},n_{0})$下的矩阵为
+$$
+\left(\begin{array}{cc}{1+\varepsilon_{1}+\varepsilon_{2} \xi} & {\xi} \\ {\varepsilon_{2} \eta} & {\eta}\end{array}\right),
+$$
+从而
+\begin{equation}
+  \label{eq:2.4.11}
+  \operatorname{det}\left.\frac{\partial \varphi}{\partial p}\right|_{t=T_{(p)}}=\left(1+\varepsilon_{1}\right) \eta.
+\end{equation}
+其次,我们来计算上式左端的行列式(它与坐标系的选取无关).
+注意$\frac{\partial}{\partial p} \varphi(t, p)$
+是变分方程
+$$
+\frac{\mathrm{d} u}{\mathrm{d} t}=\frac{\partial f}{\partial x}(\varphi(t, p), 0) u
+$$
+的基本解矩阵,
+并且$\left.\frac{\partial \varphi}{\partial p}\right|_{t=0}$是单位矩阵,
+由Liouville公式可知
+\begin{equation}
+  \label{eq:2.4.12}
+  \operatorname{det}\left(\frac{\partial}{\partial p} \varphi(t, p)\right)=\exp \int_{0}^{t} \operatorname{tr} \frac{\partial}{\partial x} f(\varphi(t, p), 0) \mathrm{d} t.
+\end{equation}
+由~(\ref{eq:2.4.7}),~(\ref{eq:2.4.11})和~(\ref{eq:2.4.12})最后得出
+\begin{equation}
+  \label{eq:2.4.13}
+  \beta^{\prime}(a)=\frac{1}{1+\varepsilon_{1}} \exp \int_{0}^{T(p)} \operatorname{tr} \frac{\partial}{\partial x} f(\varphi(t, p), 0) \mathrm{d} t.
+\end{equation}
+条件$\sigma_{0}=\operatorname{tr} \frac{\partial}{\partial x} f(0,0)<0$
+(或$>0$),
+保证存在$O(0,0)$的领域$V$,
+使得当$x \in V$时,
+有$\operatorname{tr} \frac{\partial}{\partial x} f(x, 0)<\frac{\sigma_{0}}{2}<0$(或$>\frac{\sigma_{0}}{2}>0$).
+当$0<\alpha<\delta, \delta$足够小时,
+$T(p)=T_{1}+T_{2}, T_{1}$是流$\phi(t,p)$停留在$V$中的时间.
+当$\alpha \to 0$时,
+$T_1 \to +\infty$,
+而$T_{2}=T(p)-T_{1}$是有界的.
+因此,
+由~(\ref{eq:2.4.13})式容易推得
+$$
+\lim _{\alpha \rightarrow 0} \beta^{\prime}(\alpha)=0
+(\text{或} +\infty),
+\text{当}
+\sigma_0<0
+(\text{或} >0),
+$$
+由附注~\ref{col:2.4.2}立得定理的结论.
+\end{proof}
+
+\begin{theorem}
+  \label{thm:2.4.4}
+  设向量场$X_{\mu}$由~(\ref{eq:2.4.2})给定.
+  假定$X_0$以$O$为双曲鞍点,
+  有同宿轨$\Gamma_0$,
+  并且$\sigma_{0}=\operatorname{tr} \frac{\partial}{\partial x} f(0,0) \neq 0$.
+  则存在$\delta>0$和$\eta>0$,
+  使得当$|\mu|<\delta$时,
+  如果$X_{\mu}$在$\Gamma_{0}$的$\eta$领域内有闭轨$\Gamma_{\mu}$,
+  那么$\Gamma_{\mu}$是唯一的闭轨;
+  并且当$\sigma_0<0(>0)$时,
+  $\Gamma_{\mu}$是渐近稳定(不稳定)的.
+\end{theorem}
+
+\begin{proof}
+  我们只需考虑这样的闭轨$\Gamma_{\mu},$
+  当$\mu \to 0$时,
+  它趋于$\Gamma_0$.
+  取$p_0 \in \Gamma_0$,
+  并取$L_0$和$n_0$同前,
+  则当$|\mu|$足够小时,
+  $\Gamma_{\mu}$必与$L_0$横截相交,
+  记$p_{\mu}=\Gamma_{\mu} \cap L_{0}$.
+  对于$p_0$点附近的$p\in L_0$,
+  引入坐标表示$p=p_{0}+\alpha n_{0},|\alpha|<\delta$.
+  则有
+  $p_{\mu}=p_{0}+\alpha_{\mu} n_{0},\left|\alpha_{\mu}\right|<\delta$,
+  当$|\mu|$足够小时.
+  对于任意固定的$\mu$,
+  可在$L_0$上$p_{\mu}$点附近建立$X_{\mu}$的Poincare映射$P_{\mu}:$
+  $$
+p=\alpha n_{0}+p_{0} \mapsto P_{\mu}(p)=\beta_{\mu}(\alpha) n_{0}+p_{0}, \quad\left|\alpha-a_{\mu}\right| \ll 1,
+$$
+并且
+$\beta_{\mu}\left(\alpha_{\mu}\right)=\alpha_{\mu}$,
+则$\Gamma_{\mu}$的稳定性由$\left[\beta_{\mu}^{\prime}\left(\alpha_{\mu}\right)-1\right]$的符号决定.
+重复定理~\ref{thm:2.4.3}的证明方法,
+并注意当$\mu\to 0$时,
+$\Gamma_{\mu} \rightarrow \Gamma_{0}, \alpha_{\mu} \rightarrow 0,$
+因此
+\begin{equation}
+  \lim _{n \rightarrow 0} \beta_{\mu}^{\prime}\left(\alpha_{\mu}\right)=
+  \left\{
+    \begin{array}{l}
+            &{0,} &\text{当} \sigma_0<0,\\
+      &{+\infty,} &\text{当} \sigma_0>0.
+    \end{array}
+  \right.
+\end{equation}
+这说明当$\sigma_0<0$时,
+$\Gamma_{\mu}$渐近稳定;
+当$\sigma_0>0$时,
+$\Gamma_{\mu}$不稳定.
+\par
+另一方面,两个具有相同稳定性的闭轨不可能并列共存,
+因此$\Gamma_{\mu}$是$X_{\mu}$的唯一闭轨.
+\end{proof}
+
+现在,剩下要解决的就是我们在前面所提的问题~\ref{item:17},
+既$X_0$的同宿轨$\Gamma_0$经扰动破裂后,
+如何判断$X_{\mu}$的稳定流形$W_{\mu}^{s}$与不稳定流形$W_{\mu}^{u}$的相对位置?
+Mel$^{,}$nikov函数就是用以描述$W_{\mu}^{s}$与$W_{\mu}^{u}$之间"有向缝隙"的判定量,
+从而解决这个问题.
+\par
+先把方程~(\ref{eq:2.4.2})改写为
+\begin{equation}
+  \label{eq:2.4.14}
+  \left(X_{\mu}\right) : \quad \dxdt=f(x)+\mu g(x, \mu),
+\end{equation}
+其中$f \in C^r(\RR^2},\RR^2),g \in C^r(\RR^2 \times \RR,\RR^2),r \geq 2.$
+设$X_0$以$x_{0}$为双曲鞍点,
+有同宿轨$\Gamma_0$.
+设$\Gamma_0$有表达式
+$$
+\Gamma_{0} : \quad x=\varphi(t), \quad \varphi(t) \rightarrow x_{0}
+\text{当}
+t \rightarrow \pm \infty.
+$$
+\par
+对于平面上的向量
+$\boldsymbol{a}=\left(\begin{array}{l}{a_{1}} \\ {a_{2}}\end{array}\right), \boldsymbol{b}=\left(\begin{array}{l}{b_{1}} \\ {b_{2}}\end{array}\right]$
+定义,
+$$
+\boldsymbol{a}^{\perp}=\left(\begin{array}{r}{-a_{2}} \\ {a_{1}}\end{array}\right), \quad \boldsymbol{a} \wedge \boldsymbol{b}=\left\langle\boldsymbol{a}, \boldsymbol{b}^{\perp}\right\rangle.
+$$
+容易验证,对于任意二阶方阵$\mathbf{A}$,有
+\begin{equation}
+  \label{eq:2.4.15}
+  (A a) \wedge b+a \wedge(A b)=\operatorname{tr} A(a \wedge b).
+\end{equation}
+过$\Gamma_0$上的$\phi(0)$点截线L,
+使它沿着法向$n(0)=\left(\varphi^{\prime}(0)\right)^{\perp}=f^{\perp}(\varphi(0))$.
+当$|\mu| \ll 1$时,
+$X_{\mu}$有双曲鞍点$x_{\mu}$及其稳定流形$W_{\mu}^{s}$与不稳定流形$W_{\mu}^u$.
+这里$x_{\mu} \to x_0$,
+当$\mu \to 0$.
+利用[SH]关于鞍点分界线光滑依赖于参数定理,
+当$|\mu|\ll 1,t \geq 0(\text{或} t\leq 0)$时,
+$X_{\mu}$有唯一有界解$W_{\mu}^{s}(t)(\text(或)W_{\mu}^u(t))$,
+它与$\phi(t)$充分靠近,
+且当$t\to +\infty(\text{或} -\infty)$时,
+$W_{\mu}^{s}(t)\text{或}(W_{\mu}^{u}(t)) \to x_{\mu}$.
+为了描述$W_{\mu}^{s}$与$W_{\mu}^u$的相对位置,
+我们引进下面的定义,
+它可以看成是$W_{\mu}^s$与$W_{\mu}^u$间"缝隙"
+沿$n(0)$的投影(相差一个非零常数倍).
+\begin{equation}
+  \label{eq:2.4.16}
+  d(\mu)=\left\langle W_{\mu}^{u}(0)-W_{\mu}^{s}(0), f^{\perp}(\varphi(0))\right\rangle
+\end{equation}
+令
+\begin{equation}
+  \label{eq:2.4.17}
+  D(t)=g(\varphi(t), 0) \wedge f(\varphi(t))=\left|\begin{array}{ll}{f_{1}(\varphi(t))} & {g_{1}(\varphi(t), 0)} \\ {f_{2}(\varphi(t))} & {g_{2}(\varphi(t), 0)}\end{array}\right|
+\end{equation}
+
+\begin{equation}
+  \label{eq:2.4.18}
+  \sigma(t)=\int_{0}^{t} \operatorname{tr} \frac{\partial f}{\partial x}(\varphi(t)) \mathrm{d} t
+\end{equation}
+\begin{theorem}
+  \label{thm:2.4.5}
+  设$f,g\in C^r,r\geq 2,X_0$有同宿于双曲鞍点$x_0$的轨线$\Gamma_0$,
+  则对扰动系统$X_{\mu}$,有
+  \begin{equation}
+    \label{eq:2.4.19}
+    d(\mu)=\mu \Delta+O\left(|\mu|^{2}\right),
+  \end{equation}
+  其中
+  \begin{equation}
+    \label{eq:2.4.20}
+    \Delta=\int_{-\infty}^{+\infty} D(t) \mathrm{e}^{-\sigma(t)} \mathrm{d} t,
+  \end{equation}
+  而$D(t),\sigma(t)$由~(\ref{eq:2.4.17})和~(\ref{eq:2.4.18})定义.
+\end{theorem}
+
+\begin{proof}
+  记
+  \begin{align}
+    \frac{\partial}{\partial \mu} W_{\mu}^{s}\left.(t)\right|_{\mu=0}=z^{s}(t), \quad t \geqslant 0,\\
+    \frac{\partial}{\partial \mu} W_{\mu}^{u}\left.(t)\right|_{\mu=0}=z^{b}(t), \quad t \leqslant 0,\\
+    \Delta^{s}(t)=z^{s}(t) \wedge f(\varphi(t)), \quad t \geqslant 0,\\
+    \Delta^{U}(t)=z^{U}(t) \wedge f(\varphi(t)), \quad t \leqslant 0.
+  \end{align}
+  注意$W_{\mu}^s(t)$是~(\ref{eq:2.4.14})的解($t\geq0$),
+  把它代入~(\ref{eq:2.4.14}),
+  对$\mu$求导后取$\mu=0$,
+  得到
+  \begin{equation}
+    \label{eq:2.4.22}
+    \frac{\mathrm{d} z^{s}(t)}{\mathrm{d} t}=\frac{\partial f(\varphi(t))}{\partial x} s^{s}(t)+g(\varphi(t), 0), \quad t \geqslant 0.
+  \end{equation}
+
+  因此,把~(\ref{eq:2.4.21})对t求导,
+  再利用~(\ref{eq:2.4.22})和~(\ref{eq:2.4.15})得
+  \begin{equation*}
+    \begin{aligned} \frac{\mathrm{d}}{\mathrm{d} t} \Delta^{s}(t)=& \frac{\mathrm{d} z^{s}(t)}{\mathrm{d} t} \wedge f(\varphi(t))+z^{s}(t) \wedge \frac{\mathrm{d}}{\mathrm{d} t} f(\varphi(t)) \\
+      =& \frac{\partial f(\varphi(t))}{\partial x} z^{s}(t) \wedge f(\varphi(t))+g(\varphi(t), 0) \wedge \\
+      & f(\varphi(t))+z^{s}(t) \wedge \frac{\partial f(\varphi(t))}{\partial x} f(\varphi(t))\\
+      =&\left(\operatorname{tr} \frac{\partial f(\varphi(t))}{\partial x}\right) \Delta^{s}(t)+g(\varphi(t), 0) \wedge f(\varphi(t)),
+    \end{aligned}
+  \end{equation*}
+
+  利用常数变易公式可得
+  \begin{equation}
+    \label{eq:2.4.23}
+    \Delta^{s}(t)=\mathrm{e}^{\sigma(t)}\left(\Delta^{s}(0)+\int_{0}^{t} \mathrm{e}^{-\sigma(t)}(g(\varphi(t), 0) \wedge f(\varphi(t)) \mathrm{d} t)\right).
+  \end{equation}
+
+  另一方面,因为$t\to \infty$时$\phi(t) \to x_0$,
+  所以$f(\varphi(t)) \rightarrow f\left(x_{0}\right)=0,$
+  且趋于零的衰减率为$e^{\lambda_1t}$,
+  这里$\lambda_1,\lambda_2$为$X_0$在双曲鞍点$x_0$的线性部分矩阵
+  $\frac{\partial f}{\partial x}\left(x_{0}\right)$的特征根,
+  $\lambda_{1}<0<\lambda_2$.
+  再次利用[Sh]关于鞍点分界线光滑依赖于参数的定理可知,
+  当$t\geq0$时,$z^s(t)$有界.
+  从而由~(\ref{eq:2.4.21})知,
+  $t\to \infty$时$\Delta^{s}(t) \sim e^{\lambda_{1} t} \rightarrow 0$.
+  记$\sigma_{0}=\operatorname{tr} \frac{\partial f}{\partial x}\left(x_{0}\right)$,
+  则易知
+  $\lambda_1<\sigma_0<\lambda_2$,
+  故当$t \to \infty$时$e^{-\sigma(t)} \sim e^{-\sigma_{0} t}$,
+  因此有
+  $$
+\lim _{t \rightarrow \infty} \mathrm{e}^{-\alpha(t)} \Delta^{s}(t)=0,
+$$
+从而由~(\ref{eq:2.4.23})式及上式得到
+$$
+\Delta^{s}(0)=-\int_{0}^{+\infty} D(t) \mathrm{e}^{-\sigma(t)} \mathrm{d} t,
+$$
+同理可得
+$$
+\Delta^{U}(0)=-\int_{0}^{-\infty} D(t) \mathrm{e}^{-\sigma(t)} \mathrm{d} t.
+$$
+从~(\ref{eq:2.4.16}),~(\ref{eq:2.4.20})和~(\ref{eq:2.4.21})易知:
+$d(0)=0, d^{\prime}(0)=\Delta^{U}(0)-\Delta^{S}(0)=\Delta.$
+定理得证.
+\end{proof}
+
+由定理~\ref{thm:2.4.3},定理~\ref{thm:2.4.4}和定理~\ref{thm:2.4.5}立即得到
+
+\begin{theorem}
+  \label{thm:2.4.6}
+  设$X_{\mu}$由~(\ref{eq:2.4.14})给定,$X_0$以$x_0$为双曲鞍点,
+  且有顺(或逆)时针定向的同宿轨$\Gamma_0$,
+  并且$\sigma_0 \neq 0,$
+  则存在$\delta >0$和$\eta >0$,
+  使得当$|\eta|<\delta$时,
+  \begin{enumerate}
+  \item\label{item:23} 若$\sigma_{0} \mu \Delta>0$(或$<0$),
+    则$X_{\mu}$在$\Gamma_0$的$\eta-$领域内恰有一个从$\Gamma_0$分岔出来的极限环.
+    当$X_{\mu}<0$时,它是稳定的;
+    当$\sigma_0>0$时,它是不稳定的.
+  \item\label{item:24}
+    若$\sigma_0\mu\Delta<0$(或$>0$),
+    则$X_{\mu}$在$\Gamma_0$的$\eta-$领域内不存在极限环.
+  \end{enumerate}
+\end{theorem}
+
+注意在$\Delta$的表达式中含有$\phi(t)$,
+这使应用定理~\ref{thm:2.4.6}受到限制.
+但在某些情形下无须求$\phi(t)$便知$D(t)$是定号的,
+从而$\Delta$与$D(t)$有相同符号,
+参见下面的例子.
+
+\begin{example}
+  \label{exam:2.4.7}
+  设$x,y\in \RR$,平面系统
+  \begin{ode*}
+    {\dot{x}=P(x, y)}, \\
+    {\dot{y}=Q(x, y)},
+  \end{ode*}
+  以原点为双曲鞍点,
+  有顺时针定向的同宿轨$\Gamma_0$,
+  并且$\sigma_{0}=\frac{\partial P}{\partial x}(0,0)+\frac{\partial Q}{\partial y}(0,0) \neq 0$,
+  则对充分小的$|\mu|$,
+  当$\mu\sigma_0>0$时,
+  扰动系统
+  \begin{ode}
+    \label{eq:2.4.24}
+    {\dot{x}=P(x, y)-\mu Q(x, y)} ,\\
+    {\dot{y}=Q(x, y)+\mu P(x, y)},
+  \end{ode}
+  在$\Gamma_0$的小领域内恰有一个极限环(其稳定性由$\sigma_0$的符号决定);
+  而当$\mu\sigma_0<0$时,
+  (\ref{eq:2.4.24})在$\Gamma_0$附近没有极限环.
+  \par
+  事实上,
+$$
+D(t)=\operatorname{det}\left(\begin{array}{cc}{P} & {-Q} \\ {Q} & {P}\end{array}\right)=\left.\left(P^{2}+Q^{2}\right)\right|_{x=\varphi(t)} \geqslant 0,
+$$
+
+并且等号仅在个别点上成立,
+因此$\Delta>0$.
+利用定理~\ref{thm:2.4.6},
+上面的结论立即可得.
+\end{example}
+
+\begin{collory}
+  \label{col:2.4.8}
+  在上面的定理~\ref{thm:2.4.4}和定理~\ref{thm:2.4.6}中都有条件$\sigma_0\neq 0$.
+  $\sigma_0=0$称为\textbf{临界情形},
+  此时称鞍点为\textbf{细鞍点},
+  这就出现了\textbf{退化同宿分岔}.
+  Roussarie[R2]和Joyal[Jo]分别讨论了从(退化的)同宿分岔出多个闭轨的问题.
+  他们的基本思想是在奇点附近利用鞍点的性质,
+  与大范围的微分同胚相结合,
+  得出Poincare映射的表达式,
+  从而在退化程度较高时,可以经过逐次适当的扰动,
+  反复改变同宿轨内侧的稳定性,
+  产生多个闭轨,
+  并在最后一次扰动时,使同宿轨破裂面产生最后一个闭轨.
+  此时,系统~(\ref{eq:2.4.14})右端的扰动项$g$中除了$\mu$外还含有其他参数.
+  由于介绍退化情形的同宿分岔需要较大篇幅,此处从略.
+  但对于Hamilton向量场的扰动系统,
+  我们将在~\ref{sec:2.6}定理~\ref{thm:2.6.4}中介绍一个常用的结果.
+  \par
+  罗定军、韩茂安和朱德明在[LHZ]和[HLZ]中,
+  对孤立和非孤立同宿轨在扰动下产生极限环的唯一性作了详细的介绍;
+  冯贝叶[F]得出了在临界情形下判别同宿轨或异宿轨的稳定性方法;
+  Mourtada[Mo]对含有两个鞍点的异宿环的分岔问题进行了深入的研究.
+\end{collory}
+
+\subsection{对参数一致的同宿分岔}
+类似于对参数一致的Hopf分岔问题,
+现在考虑含双参数$\delta,\mu$的平面Hamilton系统
+\begin{ode}
+  \label{eq:2.4.25}
+  \dxdt=-\frac{\partial H}{\partial y}+\delta f(x, y, \mu, \delta)} ,\\
+\dydt=\frac{\partial H}{\partial x}+\delta g(x, y, \mu, \delta)},
+\end{ode}
+
+其中$\delta$为小参数;
+$H=H(x,y)$为Hamilton函数;
+而且$H,f,g$有足够的光滑性.
+设当$0\leq \delta \delta_1$时,
+系统有双曲鞍点$(x_{\delta},y_{\delta})$,
+而且存在函数$\mu=\mu(\delta)$,
+使当$\mu=\mu(\delta)$时,
+系统~(\ref{eq:2.4.25})有鞍点$(x_{\delta},y_{\delta})$的同宿轨$\Gamma_{\delta}$.
+则在适当的条件下,
+对每一个固定的$\delta>0$,
+存在$\varepsilon(\delta)>0$,
+使当$|\mu-\mu(\delta)|<\varepsilon(\delta)$时,
+在$\Gamma_{\delta}$的领域内有定理~\ref{thm:2.4.6}的两条结论,
+我们关心的是:
+当$\delta \to 0$时,
+如何保证$\varepsilon(\delta)$不趋于零,
+参见图$2-3$.
+我们不在此处给出一般的定理,
+只在第三章引理~\ref{col:3.1.6}中对一类特殊的系统介绍这种对参数一致的同宿分岔的结果.

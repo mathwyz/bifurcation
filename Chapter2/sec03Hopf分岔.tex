@@ -1,0 +1,767 @@
+\section{Hopf 分岔}
+\label{sec:2.3}
+
+当向量场在奇点的线性部分矩阵有一对复特征根,
+并且随参数变化为穿越虚轴时,
+在奇点附近的一个二维中心流形上,
+奇点的稳定性发生翻转,
+从而在奇点附近产生闭轨的现象,
+称为Hopf分岔,第一章~(\ref{exam1.2.9})就是一个典型的实例.
+既然Hopf分岔发生在二维中心流形上,
+为了简单,
+下面讨论二维方程.
+
+\subsection{金典的Hopf分岔定理}
+\label{sec:2.3.1}
+考虑$C^{\infty}$向量场
+\begin{equation}
+  \label{eq:2.3.1}
+\left(X_{\mu}\right) : \quad \frac{\mathrm{d} x}{\mathrm{d} t}=A(\mu) x+F(x, \mu)
+\end{equation}
+其中
+$x=\left(x_{1}, x_{2}\right) \in \mathbf{R}^{2}, \mu \in \mathbf{R}^{1}, F(0,0)=0, D_{x} F(0,0)=0$.
+设线性部分矩阵$\mathbf{A}(\mu)$有特征值$\alpha(\mu) \pm i \beta(\mu)$,
+满足条件
+\begin{enumerate}
+\item\label{item:1}[($H_{1}$)]
+ $ \alpha(0)=0, \beta(0)=\beta_{0} \neq 0 $;
+\item\label{item:2}
+  $\alpha^{\prime}(0) \neq 0 $;
+\item\label{item:3}
+  $\operatorname{Re} c_{1} \neq 0$;
+\end{enumerate}
+
+其中$c_1$为向量场$X_0$的如下复正规型中的系数(见第一章例~\ref{exam:1.4.9}),
+\begin{equation}
+  \label{eq:2.3.2}
+\frac{\mathrm{d} w}{\mathrm{d} t}=\mathrm{i} \beta_{0} w+c_{1}|w|^{2} w+\cdots+c_{k}|w|^{2 k} w+O\left(|w|^{2 k+3}\right)
+\end{equation}
+
+\begin{theorem}[Hopf分岔定理]
+  \label{thm:2.3.1}
+  设条件~\ref{item:1}和~\ref{item:3}成立,
+  则$\exists \sigma >0$和 $x=0$的领域$U$,
+  使得当$|\mu|<\sigma$时,
+  方程~(\ref{eq:2.3.1})在$U$内至多有一个闭轨(从而是极限环).
+  如果条件~\ref{item:2}也成立,
+  则$\exists \sigma>0$和在 $0< x_1 \leq \sigma$上定义的函数
+  $\mu=\mu\left(x_{1}\right)$,满足
+  $\mu(0)=0$,而且
+  
+\begin{enumerate}
+\item\label{item:4}
+  当$\mu=\mu\left(x_{1}\right), 0<x_{1} \leqslant 0$时,
+  系统~(\ref{eq:2.3.1})过点$(x_1,0)$的轨道是它唯一的轨道.
+  当$\operatorname{Re} c_{1}<0$时,它是稳定的;
+  当$\operatorname{Re} c_{1}>0$时,它是不稳定的;
+\item\label{item:5}
+  当$\mu\alpha^{\prime}(0) \operatorname{Rec}_{1}<0$时,$\mu^{\prime}\left(x_{1}\right)>0$;
+    当$\mu\alpha^{\prime}(0) \operatorname{Rec}_{1}>0$时,$\mu^{\prime}\left(x_{1}\right)<0$;
+  \end{enumerate}
+\end{theorem}
+
+在下文中,我们先证明一个更广泛的定理,再证明定理~\ref{thm:2.3.1}.
+
+\begin{corollary}
+  \label{corollary:2.3.2}
+  Hopf分岔定理有多种形式和多种证法.
+  例如可参考[FLLL].
+  实际应用定理~\ref{thm:2.3.1}时,重要的是计算$\mathbf{R e}c_{1}$.
+  对某些常见的方程,导出计算公式将为应用带来方便.
+  下面给出一个例子.
+\end{corollary}
+
+\begin{example}[GH]
+  \label{example:2.3.3}
+  如果二维系统$X_{0}$具有如下形式
+  $$
+\frac{\mathrm{d}}{\mathrm{d} t}\left(\begin{array}{l}{x} \\ {y}\end{array}\right)=\left(\begin{array}{cc}{0} & {-\beta_{0}} \\ {\beta_{0}} & {0}\end{array}\right)\left(\begin{array}{l}{x} \\ {y}\end{array}\right)+\left(\begin{array}{l}{f(x, y)} \\ {g(x, y)}\end{array}\right),
+$$
+其中$f(0,0)=g(0,0)=0,$ D $f(0,0)=\operatorname{Dg}(0,0)=0, \beta_{0} \neq 0$,
+则有如下计算公式:
+\begin{equation}
+  \label{eq:2.3.3}
+  \begin{array}{l}
+    \operatorname{Re} c_{1}=\frac{1}{16}\left\{\left(f_{x x x}+f_{x v y}+g_{x x y}+g_{y y y}\right)\right.\\
+    {+\frac{1}{\beta_{0}}\left[f_{x y}\left(f_{x x}+f_{y y}\right)-g_{x y}\left(g_{x x}+g_{y y}\right)\right.} \\
+    {-f_{x x} g_{x x}+f_{y y} g_{y y} ]\left.\}\right|_{x=y=0}}
+  \end{array}
+\end{equation}
+\end{example}
+
+\subsection{退化Hopf分岔定理}
+\label{sec:2.3.2}
+
+当条件~\ref{item:1}与\label{sec:hopf}~\ref{item:3}至少有一个不成立时,仍有可能出现Hopf分岔,这就是所谓的退化Hopf分岔问题.
+
+考虑二维m参数向量场
+\begin{equation}
+  \label{eq:2.3.4}
+\left(X_{\mu}\right) : \quad \frac{\mathrm{d} x}{\mathrm{d} t}=f(x, y, \mu), \quad \frac{\mathrm{d} y}{\mathrm{d} t}=g(x, y, \mu)
+\end{equation}
+其中$$
+x, y \in \mathbf{R}^{1}, \mu \in \mathbf{R}^{m}, f, g \in C^{\infty}, f(0,0,0)=g(0,0,0)=0
+$$.
+
+\begin{corollary}
+  \label{corollary:2.3.4}
+  设在奇点$(x, y)=(0,0)$,
+  系统~(\ref{eq:2.3.4})的线性部分矩阵有一对复特征根
+  $\alpha(\mu) \pm \mathrm{i} \beta(\mu)$,
+  满足条件~\ref{item:1},则对任意自然数$k$,
+  存在$\delta>0$和光滑依赖于参数$\mu$的多项式变换,
+  当  $|\mu|<\delta$时,
+  可以把~(\ref{eq:2.3.4})化为
+  \begin{equation}
+    \label{eq:2.3.5}
+\begin{aligned}
+    \frac{\mathrm{d} w}{\mathrm{d} t}= &[\alpha(\mu)+\mathrm{i} \beta(\mu)] w+c_{1}(\mu) w^{2} \overline{w}+\\
+ &   \dots+c_{k}(\mu) w^{2+1} \overline{w}^{2}+O\left(|w|^{2 k+3}\right),
+\end{aligned}
+\end{equation}
+其中$\alpha(0)=0, \beta(0)=\beta_{0}, c_{i}(0)=c_{i}, i=1,2, \cdots, k$,
+这里$c_i$是把$X_0$化为~(\ref{eq:2.3.2})后的系数.
+\end{corollary}
+
+\begin{proof}
+  记$\lambda(\mu)=\left(\lambda_{1}(\mu), \lambda_{2}(\mu)\right)$,
+  其中$\lambda_{1}(\mu)$和$\lambda_{2}(\mu)$为复特征根
+  $\alpha(\mu) \pm \mathrm{i} \beta(\mu);m=\left(m_{1}, m_{2}\right)$,
+  其中$m_{1}, m_{2}$为自然数;
+  $M_{k} \stackrel{\mathrm{d}}{\longrightarrow} \left\{m | 2 \leqslant m_{1}+m_{2} \leqslant 2 k+2\right\}$;
+  并且
+  $$
+(m, \lambda(\mu))=m_{1} \lambda_{1}(\mu)+m_{2} \lambda_{2}(\mu)
+$$.
+由条件~\ref{item:1}知,
+$\lambda_{1}(0)=(m, \lambda(0))$给出
+$\leqslant 2 k+2$阶的共振条件,
+当且仅当$m \in M^{*} \stackrel{\mathrm{d}}{\longrightarrow}\left\{m | m_{1}=m_{2}+1, m_{3}=1, \cdots, k\right\} \subset M_{k}$.
+由于$\lambda_{j}(\mu)$是光滑函数(j=1,2),故存在$\delta>0,$使当
+$|\mu|<\delta$时,
+$\lambda_{1}(\mu) \neq(m, \lambda(\mu))$,
+当$m \in M_{k} \backslash M^{*}$.
+因此,用第一章定理~\ref{thm:1.4.6}和例~(\ref{exam:1.4.9})同样的推理可得引理的结论.
+\end{proof}
+
+\begin{defination}
+  \label{def:2.3.5}
+  称$X_0$以$(x,y)=(0,0)$为 \textbf{k阶细焦点}($k\geq 1$),
+  如果条件~\ref{item:1}成立,并且把$X_0$化成正规形~(\ref{eq:2.3.2})后,
+  满足条件
+  \begin{equation}
+    \label{eq:2.3.6}
+\operatorname{Re} c_{1}=\dots=\operatorname{Re} c_{k-1}=0, \operatorname{Re}_{c_{k}} \neq 0
+\end{equation}
+\end{defination}
+
+\begin{theorem}
+  \label{thm:2.3.6}
+  设向量场$X_0$以$(0,0)$点为$k$阶细焦点,
+  则$X_0$在扰动下可发生 \textbf{$k$阶Hopf分岔},
+  既
+  
+\begin{enumerate}
+\item\label{item:6}
+  对它的任一开折系统$X_{\mu}$,存在$\sigma>0$和$(x,y)=(0,0)$点的领域$U$,
+  使得当$|\mu|<\sigma$时,
+  $X_{\mu}$在$U$内至多有$k$个极限环;
+\item\label{item:7}
+  对任意整数$j, 1 \leqslant j \leqslant k$,任意常数$\sigma^{*}$,
+  $0<\sigma^{*}<\sigma$,
+  以及$(x,y)=(0,0)$的任意领域$U^{*} \subset U$,
+  存在一个开折系统$X_{\mu}^{*} $,
+  使得$X_{\mu}^{*}$在$U^{*}$内恰有$j$个极限环,
+  其中$|\mu|<\sigma^{*}$.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}[RS]
+  由引理~\ref{corollary:2.3.4},可经光滑依赖于参数的多项式变换化为~(\ref{eq:2.3.5}).
+  对~(\ref{eq:2.3.5})及其共轭方程引入极坐标,
+  注意$r^{2}=w \overline{w}, \mathrm{e}^{2 \varphi \mathrm{i}}=w \overline{w}^{-1}$,
+  可得到
+  \begin{equation}
+    \label{eq:2.3.7}
+    \left\{\begin{array}{l}
+             
+             {\dot{r}=\alpha(\mu) r+\operatorname{Re}\left(c_{1}(\mu)\right) r^{3}+\cdots+\operatorname{Re}\left(c_{k}(\mu)\right) r^{2 k+1}+O\left(r^{2 k+3}\right)} \\
+             {\dot{\varphi}=\beta(\mu)+O\left(r^{2}\right)}
+           \end{array}\right.
+       \end{equation}
+       由于$\beta \neq 0$,
+       所以当$|\mu| \ll 1$时,
+       可从~(\ref{eq:2.3.7})得到,
+\begin{equation}
+\label{eq:2.3.8}
+\frac{\mathrm{d} r}{\mathrm{d} \varphi}=h_{0}(\mu) r+h_{1}(\varphi, \mu) r^{2}+\cdots+h_{k}(\varphi, \mu) r^{2 k+1}+O\left(r^{2 k+3}\right)
+\end{equation}
+其中$r \ll 1$,并且
+\begin{align*}
+  h_{0}(\mu)=\frac{\alpha(\mu)}{\beta(\mu)},\\
+  h_{1}(\varphi, \mu)=\frac{\operatorname{Re}\left(c_{1}(\mu)\right)}{\beta(\mu)}+\eta_{1,0} \alpha(\mu),\\
+  \cdots\cdots\cdots\cdots\\
+  h_{k}(\varphi, \mu)=& \frac{\operatorname{Re}\left(c_{k}(\mu)\right)}{\beta(\mu)}+\eta_{k, k-1} \operatorname{Re}\left(c_{k-1}(\mu)\right)+\\
+ \cdots+\eta_{k, 1} \operatorname{Re}\left(c_{1}(\mu)\right)+\eta_{k, 0} \alpha(\mu),(k \geqslant 2),
+\end{align*}
+这里$\eta_{i, j}=\eta_{i, j}(\varphi, \mu)$
+是$\varphi \in[0,2 \pi]$和$\mu$(在0附近)的光滑函数.
+当$\mu=0$时,
+(\ref{eq:2.3.8})成为
+\begin{equation}
+  \label{eq:2.3.9}
+\frac{\mathrm{d} r}{\mathrm{d} \varphi}=\frac{\operatorname{Re} c_{k}}{\beta_{0}} r^{2 k+1}+O\left(r^{2 k+3}\right)
+\end{equation}
+在$x_1$轴上建立方程~(\ref{eq:2.3.8})的Poincare映射$P(x_1,\mu)$,并令
+\begin{equation}
+  \label{eq:2.3.10}
+  V\left(x_{1}, \mu\right)=P\left(x_{1}, \mu\right)-x_{1},
+\end{equation}
+显然,
+\begin{equation}
+  \label{eq:2.3.11}
+V\left(x_{1}, \mu\right)=V(r, \mu),text{当}x_{1} \geqslant 0.
+\end{equation}
+$V\left(x_{1}, \mu\right)$在$x_{1}>0$的零点个数对应于方程~(\ref{eq:2.3.8})非零周期解的个数.
+\par
+令函数
+$$
+R(r, \varphi, \mu)=u_{1}(\varphi, \mu) r+u_{2}(\varphi, \mu) r^{2}+\cdots+u_{2 k+1}(\varphi, \mu) r^{2 k+1}+\cdots
+$$
+是~(\ref{eq:2.3.8})满足
+$
+R(r, 0, \mu)=r
+$
+的解;
+而函数$\psi(r, \varphi)$是方程~(\ref{eq:2.3.9})满足$\psi(r, 0)=r$的解,
+则有
+$$P\left(x_{1}, 0\right)=\psi(r, 2 \pi)=R(r, 2 \pi, 0)$$.
+由此可知,当$x_{1} \geqslant 0$时
+\begin{align}
+  \label{eq:2.3.12}
+  \frac{\partial V}{\partial x_{1}}(0,0)=\frac{\partial P}{\partial x_{2}}(0,0)-1=\frac{\partial \psi}{\partial r}(0,2 \pi)-1,\\
+  \frac{\partial^{m} V}{\partial x_{1}^{m}}(0,0)=\frac{\partial^{m} P}{\partial x_{1}^{m}}(0,0)=\frac{\partial^{m} \psi}{\partial r^{m}}(0,2 \pi), m>1.
+\end{align}
+由于$\phi(r, \varphi)$是方程~(\ref{eq:2.3.9})的解,我们有
+
+% \begin{equation*}
+% \left.\frac{\partial}{\partial \varphi} \frac{\partial^{m}}{\partial r^{m}} \psi(\kappa, \varphi)\right|_{r=0}
+% =
+% \left\{
+% \begin{aligned}
+%   0, &\text{当}1 \leqslant m<2 k+1,\\
+%   [(2 k+1) !] \frac{\operatorname{Re} c_{k}}{\beta_{0}},&\text{当}m=2 k+1.
+% \end{aligned}
+% \right.
+% \end{equation*}
+?????????????????????????????????
+因此
+\begin{equation}
+\label{eq:2.3.13}
+\left.\frac{\partial^{m}}{\partial r^{m}} \psi(r, 2 \pi)\right|_{r=0}
+=
+\left\{
+\begin{aligned}
+  &1, &\text{当} m=1,\\
+  &0, &\text{当} 1<m<2k+1,\\
+  &2 \pi[(2 k+1) !] \frac{\operatorname{Rec}_{k}}{\beta_{0}} \neq 0,
+  \text{当} m=2k+1.
+\end{aligned}
+  \right.
+\end{equation}
+由~(\ref{eq:2.3.12})和~(\ref{eq:2.3.13})可得
+\begin{equation}
+\label{eq:2.3.14}
+\frac{\partial^{m} V}{\partial x_{1}^{m}}(0,0)
+=
+\left\{
+\begin{aligned}
+  &0,&\text{当} 1 \leqslant m<2 k+1\\
+  &2 \pi[(2 k+1) !] \frac{\operatorname{Re} c_{k}}{\beta_{0}},
+  &当m=2k+1.
+\end{aligned}
+  \right.
+\end{equation}
+注意方程~(\ref{eq:2.3.8})与~(\ref{eq:2.3.9})右端的函数当$r=0$时恒为零,
+并可以光滑地开拓到$r<0$.
+因此$V\left(x_{1}, \mu\right)=P\left(x_{1}, \mu\right)-x_{1}$
+在$(x_1,\mu)=(0,0)$的领域内是光滑函数,
+由条件~(\ref{eq:2.3.14}),
+利用Malgrange定理(第一章定理~(\ref{thm:1.2.12})),在$(x_1,\mu)=(0,0)$附近存在光滑函数
+$h\left(x_{1}, \mu\right), h(0,0) \neq 0$,
+以及对$x_1$的$2k+1$阶多项式函数$Q(x_1,\mu),$使
+$$
+V\left(x_{1}, \mu\right)=Q\left(x_{1}, \mu\right) h\left(x_{1}, \mu\right).
+$$
+另一方面,$V(0, \mu) \equiv 0$,
+且$V(x_1,\mu)$对$x_1$的正根和负根成对出现
+(这里要用到,当$(x_1,\mu)$在$(0,0)$)附近的一个小领域内,
+$V(x_1,\mu)$对$x_1$至多有k个正根,
+定理的结论~\ref{item:6}得证.
+\par
+为了证明结论~\ref{item:7},
+我们假设$X_0$以$x=0$为k阶细焦点,
+既它具有如下的正规形
+$$
+\dot{z}=\mathrm{i} \beta_{0} z+c_{k}|z|^{2 k} z+O\left(|z|^{2k+3}\right) \stackrel{d}{\longrightarrow} F(z), \quad \operatorname{Re} c_{k} \neq 0
+$$
+取它的扰动系统
+\begin{equation}
+  \label{eq:2.3.15}
+\dot{z}=F(z)+\mu_{k-j}|z|^{2(k-j)} z+\cdots+\mu_{k-1}|z|^{2(k-1)} z,
+\end{equation}
+其中$\mu_{0} \in \mathbf{R}, k-j \leqslant m \leqslant k-1, j$
+固定$(1 \leqslant j \leqslant k)$.
+化为极坐标方程
+\begin{align}
+  \dot{r}=\mu_{k-j} r^{2(k-j)+1}+\cdots+\mu_{k-1} r^{2 k-1}+\operatorname{Re} c_{k} r^{2 i+1}+O\left(r^{2 k+3}\right)\\
+  \stackrel{\mathrm{d}}{\longrightarrow} G\left(\mu_{k-j}, \cdots, \mu_{k-1} ; \mathrm{r}\right).
+\end{align}
+为了使系统~(\ref{eq:2.3.15})存在j个闭轨,
+我们按下述方式依次选取
+$\mu_{k-1}, \cdots, \mu_{k-j}$,
+设$\operatorname{Re} c_{k}>0$
+(当$\operatorname{Re} c_{k}<0$时,讨论是类似的),
+则可选取$0<r_{k}<1$使
+$$ G\left(0, \cdots, 0 ; r_{k}\right)>0 .$$
+选$\mu_{k-1}<0,\left|\mu_{k-1}\right| \ll \operatorname{Re} c_{k}$,
+及$r_{k-1} \in\left(0, r_{k}\right)$,使得
+$$
+G\left(0, \cdots, 0, \mu_{k-1} ; r_{k}\right)>0, \quad G\left(0, \cdots, 0, \mu_{k-1}, r_{k-1}\right)<0.
+$$
+类似地,可选$\mu_{k-2}, r_{k-2}, \cdots, \mu_{k-j}, r_{k-j}$,
+使得$\operatorname{Re} c_{k}, \mu_{k-1}, \cdots, \mu_{k-j}$具有交替的符号,
+并且
+$0<\left|\mu_{k-j}\right| \ll \cdots \ll\left|\mu_{k-1}\right| \ll\left|\operatorname{Rec}_{k}\right|, 0<r_{k-j}<\dots<r_{k-1}<r_{k},$
+使得
+\begin{equation*}
+  \begin{aligned}
+    {\dot{r}>0} & \text{当}r=r_{k}, r_{k-2}, \cdots \\
+    {\dot{r}<0} & \text{当}r=r_{k-1}, r_{k-3}, \cdots
+  \end{aligned}
+\end{equation*}
+由Poincare-Bendixson环域定理,
+扰动系统~(\ref{eq:2.3.15})至少存在j个极限环.
+\par
+这里$r_k$的选取使产生的极限环都在$U^{*}$内,
+而$\mu$的选取满足$|\mu|<\sigma^{*}$.
+我们断言,
+能对任意的$\sigma>0$和$r=0$的领域U,
+(\ref{eq:2.3.15})在$U$内多于j个极限环,
+则我们可以仿照上面的方法选取
+$\mu_{k-j-1},r_{k-j}-1, \cdots, \mu_{1}, r_{1}$
+以及
+$a,r_{0}$,
+从而在$U$内的极限环总数大于$k$,这与结论~\ref{item:6}矛盾.
+至此,定理~\ref{thm:2.3.6}证毕.
+\end{proof}
+
+\begin{proof}[定理~\ref{thm:2.3.1}的证明]
+  当$k=1$时,可以从定理~\ref{thm:2.3.6}得到~\ref{thm:2.3.1}.
+  事实上,从定理~\ref{thm:2.3.1}的条件~\ref{item:3}和~\ref{item:5}得知
+  $x=0$是方程~(\ref{eq:2.3.2})的一阶细焦点,
+  因此定理~\ref{thm:2.3.1}的前一部分结论成立.
+  再设条件~\ref{item:4}也成立,
+  由~(\ref{eq:2.3.8})-~(\ref{eq:2.3.11})可知,
+  后继函数
+\begin{equation}
+    \label{eq:2.3.16}
+V\left(x_{1}, \mu\right)=x_{1} \tilde{V}\left(x_{1}, \mu\right),
+\end{equation}
+其中
+\begin{equation}
+  \label{eq:2.3.17}
+\tilde{V}\left(x_{1}, \mu\right)=\left[\exp \left(2 \pi \frac{\alpha(\mu)}{\beta(\mu)}\right)-1\right]+u_{2}(2 \pi, \mu) x_{1}+O\left(x_{1}^{2}\right),
+\end{equation}
+再由~(\ref{eq:2.3.14})可知
+\begin{equation}
+  \label{eq:2.3.18}
+\tilde{V}\left(x_{1}, 0\right)=2 \pi \frac{\operatorname{Re}_{1}}{\beta_{0}} x_{1}^{2}+O\left(x_{1}^{3}\right).
+\end{equation}
+由~(\ref{eq:2.3.17})和条件~\ref{item:4}可知
+\begin{equation}
+  \label{eq:2.3.19}
+\frac{\partial \tilde{V}}{\partial \mu}(0,0)=\frac{2 \pi}{\beta(0)} \alpha^{\prime}(0) \neq 0.
+\end{equation}
+利用隐函数定理,
+存在$\sigma>0$和$0 \leqslant x_{1} \leqslant \sigma$定义的光滑函数
+$\mu=\mu(x_1)$,满足$\mu(0)=0$和
+\begin{equation}
+\label{eq:2.3.20}  
+\tilde{V}\left(x_{1}, \mu\left(x_{1}\right)\right) \equiv 0
+\end{equation}
+至此,定理~\ref{thm:2.3.1}的结论~\ref{item:4}得证.
+为了证明结论~\ref{item:5},从~(\ref{eq:2.3.20})求导得到
+\begin{equation}
+  \label{eq:2.3.21}
+  \left\{
+    \frac{\partial \tilde{V}}{\partial x_{1}}+\frac{\tilde{\partial} \tilde{V}}{\partial \mu} \mu^{\prime}\left(x_{1}\right)=0\\
+    \frac{\partial^{2} \tilde{V}}{\partial x_{1}^{2}}+2 \frac{\partial^{2} \tilde{V}}{\partial \mu \partial x_{1}} \mu^{\prime}\left(x_{1}\right)+\frac{\partial^{2} \tilde{V}}{\partial \mu^{2}}\left(\mu^{\prime}\left(x_{1}\right)\right)^{2}+\frac{\partial \tilde{V}}{\partial \mu} \mu^{\prime \prime}\left(x_{1}\right)=0
+    \right.
+  \end{equation}
+  利用~(\ref{eq:2.3.18})及条件~\ref{item:3}可得
+  $$
+\mu^{\prime}(0)=0 \quad \mu^{"}(0)=-2 \frac{\operatorname{Re} c_{1}}{\alpha^{\prime}(0)}
+$$
+由此得定理的结论~\ref{item:5}.
+\end{proof}
+从以上证明立得以下结论,
+\begin{corollary}
+  \label{corollary:2.3.7}
+  设条件~\ref{item:1},~\ref{item:2}和~\ref{item:3}成立,
+  则存在$\sigma > 0$和$x=0$的领域$U$,使得
+  
+\begin{enumerate}
+\item\label{item:8}
+  当$|\mu|<\sigma, \operatorname{Rec}_{1} \alpha^{\prime}(0) \mu<0$时,
+  系统~(\ref{eq:2.3.1})在$U$内恰有一个极限环,
+  当$\operatorname{Rec_1}\alpha^{\prime}(0)\mu < 0(>0)$时,
+  它是稳定(不稳定)的;
+  并且当$\mu \to 0$时,它缩向奇点$x=0$;
+\item\label{item:9}
+当$|\mu|<\sigma, \operatorname{Rec}_{1} \alpha^{\prime}(0) \mu\geqslant 0$时,
+  系统~(\ref{eq:2.3.1})在$U$内没有极限环.
+\end{enumerate}
+\end{corollary}
+
+\begin{remark}
+  \label{rem:2.3.8}
+  在应用定理~\ref{thm:2.3.6}时,需要首先判断未扰动系统$X_{0}$以$O$为细焦点的阶数,
+  也就是确定满足条件~(\ref{eq:2.3.5})的$k$.
+  在实际计算时,经常应用下面介绍的 \textbf{Liapunov系数法},
+  细节请见 ?????????????????????????????????[ZDHD].
+  设$X_{0}$具有如下的形式
+  
+\begin{ode}
+\label{eq:2.3.22}
+{\dot{x}=-\beta_{0} y+p(x, y)} ,\\
+{\dot{y}=\beta_{0} x+q(x, y)},
+\end{ode}
+其中 $x,y \in \RR,p, q=O\left(|x, y|^{2}\right), \beta_{0} \neq 0$.
+我们利用待定系数法,
+寻找$V_j \in \RR ,j =1,2,\dots$和函数
+$$ F(x, y)=\frac{\beta_{0}}{2}\left(x^{2}+y^{2}\right)+O\left(|x, y|^{3}\right),$$
+使得
+\begin{equation}
+\label{eq:2.3.23}
+\left.\frac{\mathrm{d} F}{\mathrm{d} t}\right|
+(\ref{eq:2.3.22})
+=\sum_{j=1}^{m} V_{j}\left(x^{2}+y^{2}\right)^{j+1}
+\end{equation}
+满足上式的$\{V_j\}$称为 (\ref{eq:2.3.16})的Liapunov系数.
+在下面定理的意义下,它与Hopf分岔系数$\{\operatorname{Re}(C_{j})\}$是等价的.
+\end{remark}
+
+\begin{theorem}
+  $V_{1}=\dots-V_{k-1}=0, V_{k}>0(\text{或}<0)$,
+  当且仅当
+  $\operatorname{Re} c_{1}=\dots=\operatorname{Re} c_{k-1}=0, \operatorname{Re} c_{k}>0(\text{或}<0)$.
+\end{theorem}
+
+定理的证明见?????????????????????????????????[BL].
+下文中,我们把$\{V_j\}$或$\{\operatorname{Re}(c_j)\}$
+称为系统的 \textbf{焦点量}.
+\subsection{应用}
+\label{sec:2.3.3}
+
+\begin{example}
+  \label{exam:2.3.10}
+  考虑二维系统
+  
+\begin{ode}
+  \label{eq:2.3.24}
+  {\dot{x}&=y} ,\\
+  {\dot{y}&=-1+x^{2}+\mu_{1} y+\mu_{2} x y+\mu_{3} x^{3} y+\mu_{4} x^{4} y}.
+\end{ode}
+此系统有两个奇点$(\pm 1,0)$,而$(1,0)$是鞍点.
+% 错别字?
+所以只需(?????????????????????????????????)
+考虑奇点$(-1,0)$附近发生Hopf分岔的可能性.
+令$\xi=x+1$,
+系统~(\ref{eq:2.3.24})变为
+\begin{ode}
+  \label{eq:2.3.25}
+  \dot{\xi}= &y,\\
+  \dot{y}= &-2 \xi+y\left(\mu_{1}-\mu_{2}-\mu_{3}+\mu_{4}\right)+\xi^{2}+\left(\mu_{2}+3 \mu_{3}-4 \mu_{4}\right) \xi_{y}\\
+  & +\left(-3 \mu_{3}+6 \mu_{4}\right) \xi^{2} y+\left(\mu_{3}-4 \mu_{4}\right) \xi^{3} y+\mu_{4} \xi^{4} y.
+\end{ode}
+
+这个系统在$(0,0)$的线性部分矩阵有一对纯虚特征根的条件为
+\begin{equation}
+\label{eq:2.3.26}
+\mu_{1}-\mu_{2}-\mu_{3}+\mu_{4}=0.
+\end{equation}
+令$y=-\sqrt{2} \eta$,则在条件~(\ref{eq:2.3.26})下,方程~(\ref{eq:2.3.25})变成
+\begin{ode*}
+  \dot{\xi}=-\sqrt{2} \eta, \\
+  \dot{\eta}=\sqrt{2} \xi-\frac{1}{\sqrt{2}} \xi^{2}+\left(\mu_{2}+3 \mu_{3}-4 \mu_{4}\right) \xi \eta+\\
+  \left(-3 \mu_{3}+6 \mu_{4}\right) \xi^{2} \eta+\left(\mu_{3}-4 \mu_{4}\right) \xi^{3} \eta+\mu_{4} \xi^{4} \eta.
+  \end{ode*}
+
+  应用Liapunov系数法,可以得到
+  $$
+  \begin{array}{l}
+    
+    {V_{1}=\frac{1}{16}\left(\mu_{2}-3 \mu_{3}+8 \mu_{4}\right)} \\
+    {V_{2}=\frac{1}{96 \sqrt{2}}\left(5 \mu_{3}-14 \mu_{4}\right)}\end{array},\text{当}V_1=0,\\
+  V_{3}=\frac{14}{5} \mu_{4},\text{当}V_{1}=V_{2}=0.
+$$
+由此应用定理~\ref{thm:2.3.6},可得下列结论:
+\begin{enumerate}
+\item\label{item:10}
+  若$\mu_{3}=\mu_{4}=0, \mu_{2} \neq 0$,则当$\mu_1=\mu_2$时发生一阶Hopf分岔,
+  并且系统~(\ref{eq:2.3.24})在原点附近存在唯一极限环的参数区域是
+  $$
+\mu_{2}\left(\mu_{1}-\mu_{2}\right)<0,0<\left|\mu_{1}-\mu_{2}\right| \ll\left|\mu_{2}\right| \ll 1
+$$
+\item\label{item:11}
+  若$\mu_4=0,\mu_3\neq 0$,则当$\mu_{1}=4 \mu_{3}, \mu_{2}=3 \mu_{3}$时发生二阶Hopf分岔,~(\ref{eq:2.3.24})在原点附近存在两个极限环的参数区域是
+  $$
+\begin{array}{c}{\mu_{3}\left(\mu_{2}-3 \mu_{3}\right)<0, \mu_{3}\left(\mu_{1}-\mu_{2}-\mu_{3}\right)>0} \\ {0<\left|\mu_{1}-\mu_{2}-\mu_{0}\right| \ll\left|\mu_{2}-3 \mu_{9}\right| \ll\left|\mu_{3}\right| \ll 1}\end{array}
+$$
+\item\label{item:12}
+  若$\mu_4 \neq 0$,则三阶Hopf分岔发生的条件是
+  $$
+\mu_{1}=\frac{11}{5} \mu_{4}, \mu_{2}=\frac{2}{5} \mu_{4}, \mu_{3}=\frac{14}{5} \mu_{4}
+$$
+而系统~(\ref{eq:2.3.24})在原点附近存在三个极限环的参数区域是
+$$
+\begin{array}{c}{\mu_{4}\left(5 \mu_{3}-14 \mu_{4}\right)<0, \mu_{4}\left(\mu_{2}-3 \mu_{3}+8 \mu_{4}\right)>0} \\ {\mu_{4}\left(\mu_{1}-\mu_{2}-\mu_{3}+\mu_{4}\right)<0}\\
+  0<\left|\mu_{1}-\mu_{2}-\mu_{3}+\mu_{4}\right| \ll\left|\mu_{2}-3 \mu_{3}+8 \mu_{4}\right|\\
+  \ll\left|5 \mu_{3}-14 \mu_{4}\right| \ll\left|\mu_{4}\right| \ll 1
+\end{array}
+$$
+\end{enumerate}
+Bautin对右端是二次多项式的平面微分系统(简称二次系统)的一种标准形式导出了著名的焦点量公式(见[Ba]),
+并证明了二次系统细焦点的阶数至多为3
+(他的第三个焦点量公式在符号及数值上都有误,在[QL],及[FLLL]中得到纠正).
+下面介绍的结果把他的公式推广到一般形式的二次系统上,应用较方便.
+\end{example}
+
+\begin{example}[[Lc]]
+  \label{example:2.3.11}
+  设
+\begin{ode}
+  \label{eq:2.3.27}
+  {\dot{x}=-y+a_{20} x^{2}+a_{11} x y+a_{02} y^{2}} \\
+  {\dot{y}=x+b_{20} x^{2}+b_{11} x y+b_{02} y^{2}}
+\end{ode}
+记
+\begin{align*}
+  A=a_{20}+a_{02}, B=b_{20}+b_{02}, \alpha=a_{11}+2 b_{02}, \beta=b_{11}+2 a_{20},\\
+  \gamma=b_{20} A^{3}-\left(a_{20}-b_{11}\right) A^{2} B+\left(b_{02}-a_{11}\right) A B^{2}-a_{01} B^{3}  ,\\
+  \delta=a_{02}^{3}+b_{20}^{2}+a_{02} A+b_{20} B,
+\end{align*}
+则(不计正数因子)
+
+\end{example}
+
+\begin{align}
+  \label{eq:2.3.28}
+  {V_{1}=A \alpha-B \beta} \\
+  {V_{2}=[\beta(5 A-\beta)+\alpha(5 B-\alpha)] \gamma}\text{如果}V_1=0,\\
+  V_{3}=(A \alpha+B \beta) r \delta,\text{如果} V_1=V_2=0,
+  V_{k}=0,\text{当} k>3,\text{如果}V_{1}=V_{2}=V_{3}=0.
+\end{align}
+在最后一种情形下,系统可积,$(0,0)$为中心点.
+
+\begin{remark}
+  \label{remark:2.3.12}
+  从原则上说,
+  当$X_0$以$O$为细焦点时,总可以通过有限步运算确定细焦点的阶数$k$.
+  但是当$k$较大时,
+  对一般系统想用~(\ref{eq:2.3.28})的方式来表达焦点量公式,
+  计算量非常大.
+  例如,当把方程~(\ref{eq:2.3.27})右端关于$(x,y)$的齐二次项替换成齐三次项时,
+  细焦点的最高阶数为5(见[Si]);
+  但如果在~(\ref{eq:2.3.27})右端补充上三次项时,
+  则它的焦点量公式非常复杂;
+  即使利用计算机,目前也仅推导出前几个焦点量公式.
+  确定焦点阶数和求焦点量公式,与区分中心与焦点这个困难问题紧密相关.
+  在这里我们仅列举我国学者这方面的一些新工作:
+  蔡燧林、马晖[CM]给出了判别广义Lienard方程中心和焦点的较一般的方法；
+  黄启昌等[HWW]研究了泛函微分方程的Hopf分岔问题；
+  沈家齐、井竹君[SI]给出了判别存在Hopf分岔的一种新方法；
+  黄文灶[Hw]证明，当非线性方程零点的拓扑度变号时，
+  会产生连通的分岔曲线，等等．
+\end{remark}
+\begin{remark}
+  \label{rem:2.3.13}
+  若将条件~\ref{item:3}换成
+  
+\begin{enumerate}
+\item\label{item:13}(($H_{3}$)')
+  $  F(x, \mu) \in C^{\omega}\left(U \times(-\sigma, \sigma),
+    \RR^{2}\right)  $,
+\end{enumerate}
+其中$U$是$\RR^{2}$中原点的一个开集，
+则当条件~\ref{item:1},~\ref{item:2}和~\ref{item:13}成立时，
+或者系统~(\ref{eq:2.3.1})当$\mu=0$时以原点为中心，
+或者当$\mu \in (-\sigma,0)$或$(0,\sigma)$时~(\ref{eq:2.3.1})在U内的奇点外围有唯一闭轨，
+并且当$\mu \to 0$时，
+此闭轨缩向奇点．
+这是Hopf分岔定理的另一种形式，
+证明可以参考[Zj].
+注意,此处$F(x,\mu)\in C^{\omega}$的条件不能减弱为
+$F(x,\mu) \in C^{\infty}$,
+请看下列．
+\end{remark}
+
+\begin{example}
+  \label{exam:2.3.14}
+  \begin{ode}
+    \label{eq:2.3.29}
+  \dxdt=x \sin \mu+y \cos \mu+(-x \cos \mu+y \sin \mu) \tan A,
+ \dydt=-x \cos \mu+y \sin \mu+(-x \sin \mu-y \cos \mu) \tan A,
+\end{ode}
+其中$A=\mathrm{e}^{-\frac{1}{r}}\left(2+\sin r^{-\frac{3}{2}}\right), r=\sqrt{x^{2}+y^{2}}, 0<\mu<\frac{\pi}{2}$.
+容易验证，对此系统而言，条件
+\ref{item:1},~\ref{item:2}满足，
+且右端函数是$C^{\infty}$的，
+但不解析．
+所以~\ref{item:13}不满足．
+由于
+\begin{equation}
+\label{eq:2.3.30}
+$\left.\frac{\mathrm{d} r}{\mathrm{d} t}\right|_{~\ref{eq:2.3.29}_{\mu}}=
+-r \cos \mu\left[\tan \left(\mathrm{e}^{-\frac{1}{r}}\left(2+\sin r^{-\frac{3}{2}}\right)-\tan \mu\right]\right.$,
+\end{equation}
+其中$0<r<1$.故原点是$~(\ref{eq:2.3.29})_{0}$的渐近稳定焦点．
+\par
+考虑$(r,\mu)$平面上由下式定义的曲线
+\begin{equation}
+\label{eq:2.3.31}
+\gamma : \quad \mu=\mathrm{e}^{-\frac{1}{r}}\left(2+\sin r^{-\frac{3}{2}}\right)
+\end{equation}
+它显然界于曲线$\gamma_{1}: \mu=\mathrm{e}^{-\frac{1}{r}}$
+与曲线$\gamma_{2}: \mu=3 \mathrm{e}^{-\frac{1}{r}}$之间(见图2-2).
+由于
+$$
+\frac{\mathrm{d} \mu}{\mathrm{d} r}=r^{-\frac{5}{2}} \mathrm{e}^{-\frac{1}{r}}\left(r^{\frac{1}{2}}\left(2+\sin r^{-\frac{3}{2}}\right)-\frac{3}{2} \cos r^{-\frac{3}{2}}\right)
+$$
+在$r=0$的任意小领域内都改变其符号，
+所以对任意小的$\mu>0,$
+存在$r_{1}(\mu) \neq r_{2}(\mu), r_{i}(\mu) \rightarrow 0$
+当$\mu \to 0$,
+使得$r=r_{i}(\mu)$均满足方程~(\ref{eq:2.3.31})($i=1,2$).
+从而由~(\ref{eq:2.3.30})和~(\ref{eq:2.3.31})得到$\frac{\mathrm{d} r_{i}(\mu)}{\mathrm{d} t} \equiv 0$.
+这就说明对任意小的$\mu$,系统$~(\ref{eq:2.3.29})_{\mu}$在原点附近都至少有两条闭轨．
+因此，上述结论的条件
+$F(x, \mu) \in C^{\omega}$
+不能减弱为$F(x, \mu) \in C^{\infty}$.
+\par
+请读者验算，此例中对一切正整数$k$,
+都有$\operatorname{Re} c_k=0$时，
+奇点不见得是中心．
+\end{example}
+
+\subsection{对参数一致的Hopf分岔定理}
+\label{sec:2.3.4}
+
+考虑$C^{\infty}$平面系统
+\begin{ode}
+  \label{eq:2.3.32}
+  \dxdt = -\frac{\partial H}{\partial y}+\delta f(x, y, \mu, \delta)  ,\\
+  \dydt = \frac{\partial H}{\partial x}+\delta g(x, y, \mu, \delta) ,
+\end{ode}
+其中函数$H=H(x,y)$,
+参数$\delta,\mu \in \RR^1$,
+且$\delta$为小参数.
+设系统有奇点$x=0$,
+而且在该点的线性部分矩阵有特征根$\alpha(\mu,\delta)\pm i \beta(\mu,\delta)$.
+若存在$\delta>0$及在$0<\delta<\sigma$定义的函数$\mu=\mu(\delta)$,
+满足条件
+\begin{enumerate}
+\item[(H1*)]\label{item:14}
+  $$\alpha(\mu(\delta),\delta)=0,\beta(\mu(\delta),\delta) \neq 0$$,
+\end{enumerate}
+则在一定的附加条件下，当
+$\mu=\mu(\delta),\delta \in (0,\sigma)$时，
+系统~(\ref{eq:2.3.32})
+可在$x=0$点发生Hopf分岔．
+对每一个固定的$\delta \in (0,\sigma)$,
+利用推论~\ref{corollary:2.3.7}可知，
+存在$\epsilon(\delta)>0$,
+使得当$|\mu-\mu(\delta)|<\epsilon(\delta)$
+且$\mu>\mu(\delta)$(或$\mu<\mu(\delta)$)时，系统无极限环.
+问题是:当$\delta \to 0$时，可能有$\epsilon(\delta)>0$.
+我们希望找到系统满足的条件，以保证存在正数$\delta_0$和$\epsilon_0 \to 0$.
+我们希望找到系统满足的条件，
+以保证存在正数$\delta_0$和$\epsilon_0$,
+使得对所有的$\delta\in (0,\delta_{0})$,都有$\epsilon(\delta)\geqslant \epsilon_0$.
+这就是所谓的对参数一致的Hopf分岔问题,见图2-3???.
+
+代替定理~\ref{thm:2.3.1}中条件~\ref{item:2}和~\ref{item:3},下文需要的条件是
+\begin{enumerate}
+\item\label{item:15}  ($H_2^*$) $
+\alpha^{*}=\lim _{\delta \rightarrow 0} \frac{1}{\delta} \frac{\partial \alpha(\mu(\delta), \delta)}{\partial \mu} \neq 0,
+$
+\item\label{item:16}  ($H_3^*$)
+  $c_{1}^{*}=\lim _{\delta \rightarrow 0} \frac{1}{\delta} \operatorname{Re}\left[c_{1}(\mu(\delta), \delta)\right] \neq 0.$
+\end{enumerate}
+
+\begin{theorem}
+  \label{thm2.3.15}
+  设系统~(\ref{eq:2.3.32})有奇点$(x_0,y_0)$,
+  系统在此奇点的线性部分矩阵有特征根$\alpha(\mu, \delta) \pm \mathrm{i} \beta(\mu, \delta).$
+  又设存在$\delta_1>0$和在$0<\delta<\delta_1$定义的函数$\mu=\mu(\delta)$,使条件~\ref{item:14},~\ref{item:15}和~\ref{item:16}成立.
+  则存在$\delta_{2}>0\left(\delta_{2} \leqslant \delta_{1}\right), \sigma>0$
+  和在
+  $x_{0}<x \leqslant x_{0}+\sigma, 0<\delta<\delta_2$上定义的唯一函数
+  $\mu=h(x,\delta)$,
+  满足$h(x_0,0)=0,$
+  而且
+  \begin{enumerate}
+  \item\label{item:18}
+    当$\mu=h(x, \delta), x_{0}<x \leqslant x_{0}+\sigma, 0<\delta<\delta_{2}$时,
+    (\ref{eq:2.3.32})过xy平面上的点$(x_{0},0)$的轨道是它的唯一闭轨$\Gamma_{\delta}$.
+    当$c_1^{*}<0$时,$\Gamma_{\delta}$是稳定的极限环;
+    当$c_{1}^{*}>0$时,$\Gamma_{\delta}$是不稳定的极限环;
+  \item\label{item:19}
+    当$\alpha^{*} c_{1}^{*}<0$时,$\frac{\partial h}{\partial x}(x, \delta)>0$;
+    当$\alpha^{*} c_{1}^{*}<0$时,$\frac{\partial h}{\partial x}(x, \delta)<0$.
+  \end{enumerate}
+\end{theorem}
+
+\begin{proof}
+  不妨取$\left(x_{0}, y_{0}\right)=(0,0)$.
+  与定理~\ref{thm:2.3.1}的证明类似,
+  所不同的是以$\mu-\mu(\delta)$代替那里的$\mu$,
+  而以$\delta$为参数,
+  则那里的后继函数$V(x,\mu)$变为$V(x, \mu-\mu(\delta), \delta)$的形式.
+  注意到$\delta=0$时,
+  (\ref{eq:2.3.32})为Hamilton系统,
+  因此$V(x, \mu-\mu(0), 0) \equiv $.
+  代替~(\ref{eq:2.3.16}),
+  我们有
+  $$
+V(x, \mu-\mu(\delta), \delta)=\delta x V^{*}(x, \mu-\mu(\delta), \delta).
+$$
+从条件~\ref{item:15},~\ref{item:16}可得
+$$
+\frac{\partial V^{*}}{\partial \mu}(0,0,0) \neq 0, \quad \frac{\partial^{2} V^{*}}{\partial x^{2}}(0,0,0) \neq 0.
+$$
+对$V^{*}(x, \mu-\mu(\delta), \delta)$在$(x, \mu-\mu(\delta), \delta)=(0,0,0)$
+点用隐函数定理即可.
+其它推理与定理~\ref{thm:2.3.1}的证明相同.
+\end{proof}
+
+\begin{collory}
+  \label{col2.3.16}
+  在定理~\ref{thm2.3.15}的条件下,
+  存在$\delta_{2}>0\left(\delta_{2} \leqslant \delta_{1}\right), \sigma>0$和$(x_{0},y_{0})$的领域$U$,使得
+  \begin{enumerate}
+  \item\label{item:20}
+    当$0<\delta<\delta_{2},|\mu-\mu(\delta)|<\sigma,$
+    且$\alpha^{*} c_{1}^{*}(\mu-\mu(\delta))<0$时,
+    系统~(\ref{eq:2.3.32})在U内恰有一个闭轨.
+    当$c_{1}^{*}<0>0 )$时,
+    它是稳定(不稳定)的极限环.
+  \item\label{item:21}
+    当$0<\delta<\delta_{2},|\mu-\mu(\delta)|<\sigma$,
+    且$\alpha^{*} C_{1}^{*}(\mu-\mu(\delta))>0$时,
+    系统~(\ref{eq:2.3.32})在$U$内无闭轨.
+  \end{enumerate}
+\end{collory}
+
+在第三章~\ref{sec:3.1}中,我们将看到这种对参数一致的Hopf分岔定理的作用.

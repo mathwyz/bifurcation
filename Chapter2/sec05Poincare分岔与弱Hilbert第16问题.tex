@@ -1,0 +1,87 @@
+\section{Poincare分岔与弱Hilbert第16问题}
+本节考虑平面向量场族
+\begin{equation}
+  \label{eq:2.5.1}
+  \left(X_{\mu}\right): \quad \dxdt=f(x)+\mu g(x, \mu),
+\end{equation}
+其中$f \in C^{r}\left(\RR^{2}, \RR^{2}\right), g \in C^{r}\left(\RR^{2} \times \RR, \RR^{2}\right), r \geqslant 2.$
+设$X_0$具有周期环域,既存在一系列闭轨
+$$
+\Gamma_{h}: \quad\left\{x | H(x)=h, h_{1}<h<h_{2}\right\},
+$$
+其中函数$H \in C^{r+1}.$
+我们关心的问题是:
+$X_0$的哪些闭轨$\Gamma_{h_{0}}\left(h_{1}<h_0<h_2\right)$
+经扰动$(|\mu| \ll 1)$能成为$X_{\mu}$的极限环$L_{\mu}$(既当$\mu \to 0$时,$L_{\mu} \to \Gamma_{h_0}$)?
+并且究竟能从$\Gamma_{h_0}$扰动出$X_{\mu}$的几个极限环?
+这就是Poincare分岔问题.
+
+\subsection{Poincare分岔}
+本节的一个基本假设是,
+闭轨族$\Gamma_h$关于$h$(在$h_0$附近)单调排列(当$X_0$为Hamilton系统,
+且H为相应的Hamilton函数时,这个假设总是成立的.)
+因此过$\Gamma_{h_0}$上任意一点的无切线可用$h$参数化.
+设
+\begin{equation}
+  \label{eq:2.5.2}
+  \Gamma_{h}: \quad x=\varphi(t, h), \quad 0 \leqslant t \leqslant T_{h},
+\end{equation}
+其中$T_h$是$\Gamma_h$的周期.
+为了考察当$\mu \neq 0$时$X_{\mu}$过$\varphi(0,h)$的解能否成为闭轨,
+我们沿$\Gamma_h$在$\varphi(0,h)$点的法线方向$f^{\perp}(\varphi(0, h))$取无切线$L$.
+设$x=x(t,h,\mu)$是系统~(\ref{eq:2.5.1})的解,满足初值条件$x(0,h,\mu)=\varphi(0,h)$.
+设此解当$t=T(h,\mu)$时再次与$L$相交,则由微分方程初值问题的解的唯一性知
+\begin{equation}
+  \label{eq:2.5.3}
+  x(t, h, 0)=\varphi(t, h), \quad T(h, 0)=T_{h}
+\end{equation}
+定义后继函数
+\begin{equation}
+  \label{eq:2.5.4}
+  G(h, \mu)=\left\langle x(T(h, \mu), h, \mu)-x(0, h, \mu), f^{\perp}(\varphi(0, h))\right\rangle,
+\end{equation}
+则显然当$0 \leqslant|\mu| \ll 1$时,
+$G(h,\mu)$关于$h$的零点对应于$X_{\mu}$的闭轨,且$G\in C^r$.
+\par
+由于$X_0$在$\Gamma_{h_0}$附近均为闭轨,
+故利用~(\ref{eq:2.5.3})和$\Gamma_h$以$T_h$为周期,可以从~(\ref{eq:2.5.4})得到
+$$
+G(h, 0)=\left\langle x\left(T_{h}, h, 0\right)-x(0, h, 0), f^{\perp}(\varphi(0, h))\right\rangle \equiv 0,
+$$
+$\left|h-h_{0}\right| \ll 1$.因此
+\begin{equation}
+  \label{eq:2.5.5}
+  G(h, \mu)=\mu(\Phi(h)+\mu \Psi(h, \mu)).
+\end{equation}
+\begin{theorem}
+  \label{thm:2.5.1}
+  \begin{enumerate}
+  \item\label{item:25}
+    若$h=\overline{h}, 0<|\mu| \ll 1$时,
+    $x(t, \overline{h}, \mu)$为$X_{\mu}$的闭轨,
+    则必有$\Phi(\overline{h}) = 0$;
+  \item\label{item:26}
+    若存在自然数$k, 1 \leqslant k \leqslant r$,使
+    \begin{equation}
+      \label{eq:2.5.6}
+      \Phi(\overline{h})=\Phi(\overline{h})=\dots=\Phi^{(k-1)}(\overline{h})=0, \Phi^{(k)}(\overline{h}) \neq 0,
+    \end{equation}
+    则存在$\sigma>0, \delta>0$,
+    使当$0<|\mu|<\sigma$时,
+    $X_{\mu}$在$\Gamma_{\overline{h}}$的$\delta$领域内至多有$k$个闭轨,
+    它们是$X_{\mu}$的极限环.
+    特别,
+    若$\Phi(\overline{h})=0, \Phi^{\prime}(\overline{h}) \neq 0$,
+    则当
+    时,
+    $X_{\mu}$在$\Gamma_{\overline{h}}$的$\delta$领域内恰有一个极限环.
+  \end{enumerate}
+\end{theorem}
+\begin{proof}
+  \begin{enumerate}
+\item\label{item:27}
+    若
+  \item\label{item:28}
+    
+  \end{enumerate}
+\end{proof}
