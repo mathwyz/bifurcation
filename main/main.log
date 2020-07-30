@@ -1,9 +1,9 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/Debian) (preloaded format=xelatex 2020.7.16)  16 JUL 2020 15:53
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/Debian) (preloaded format=xelatex 2020.7.16)  16 JUL 2020 17:03
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**main/main.tex
-(./main/main.tex
+**main.tex
+(./main.tex
 LaTeX2e <2020-02-02> patch level 2
 L3 programming layer <2020-02-14>
 (/usr/share/texlive/texmf-dist/tex/latex/elegantbook/elegantbook.cls
@@ -1272,8 +1272,7 @@ Type  H <return>  for immediate help.
                                                   
 l.441 }
        
-? S
-OK, entering \scrollmode...
+? 
 ) (/usr/share/texlive/texmf-dist/tex/latex/base/latexsym.sty
 Package: latexsym 1998/08/17 v2.2e Standard LaTeX package (lasy symbols)
 \symlasy=\mathgroup7
@@ -1551,10 +1550,7 @@ Type  H <return>  for immediate help.
                                                   
 l.40 \newtheorem{theorem}
                          {\hskip 2em 定理}[section]
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
+? 
 
 ! LaTeX Error: Missing \begin{document}.
 
@@ -1564,9 +1560,7 @@ Type  H <return>  for immediate help.
                                                   
 l.40 \newtheorem{theorem}{\hskip
                                  2em 定理}[section]
-You're in trouble here.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
+? 
 
 ! LaTeX Error: No counter 'theorem' defined.
 
@@ -1576,10 +1570,7 @@ Type  H <return>  for immediate help.
                                                   
 l.41 \newtheorem{lemmma}[theorem]{\hskip 2em 引理}
                                                 
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
+? 
 
 ! LaTeX Error: Command \proposition already defined.
                Or name \end... illegal, see p.192 of the manual.
@@ -1590,10 +1581,8 @@ Type  H <return>  for immediate help.
                                                   
 l.42 \newtheorem{proposition}
                              [theorem]{\hskip 2em 命题}
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
+? S
+OK, entering \scrollmode...
 
 ! LaTeX Error: Command \corollary already defined.
                Or name \end... illegal, see p.192 of the manual.
@@ -1744,4 +1733,14 @@ Please type another output file name:
                                                   \immediate \write \@partau...
 l.6 \include{其他/basic_info}
                            
-(Press Enter to retry, or Control-D to exit; defau
+(Press Enter to retry, or Control-D to exit; default file extension is `.tex')
+Please type another output file name: 
+! I can't write on file `其他/basic_info.aux'.
+\@include ...\immediate \openout \@partaux #1.aux 
+                                                  \immediate \write \@partau...
+l.6 \include{其他/basic_info}
+                           
+(Press Enter to retry, or Control-D to exit; default file extension is `.tex')
+Please type another output file name: 
+! I can't write on file `其他/basic_info.aux'.
+\@include ...\immed
