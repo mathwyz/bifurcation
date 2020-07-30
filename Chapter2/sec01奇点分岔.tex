@@ -1,0 +1,402 @@
+\section{奇点分岔}
+考虑一个光滑的依赖于参数并且有奇点的向量场。
+当参数变动时，我们关心奇点个数及其附近的轨道结构如何变化。
+这种分岔现象称为\textbf{奇点分岔}.
+\subsection{一般理论}
+\begin{defination}\label{def2.1.1}
+  向量场\(X\) 的奇点 \( p \in M \) 称为\textbf{非退化}的，
+  如果他在\(p\) 点的线性部分算子是非奇异的,
+  即它的所有特征根均非零.
+  否则称为退化的。
+  \label{def2.1.1}
+\end{defination}
+
+\begin{theorem}\label{thm2.1.2}
+  光滑的依赖于变量和参数的向量场,
+  如果它的奇点是非退化的,
+  则奇点本身也光滑地依赖于参数。
+  \label{thm2.1.2}
+\end{theorem}
+
+\begin{proof}
+  设向量场由微分方程
+  \begin{equation}
+    \frac{\mathrm{d} x}{\mathrm{d} t}=v(x, \mu)
+    \label{eq1.1}
+  \end{equation}
+  给出
+  其中
+  \(v \in C^{r}\left(\mathbf{R}^{n} \times \mathbf{R}^{k}, \mathbf{R}^{n}\right), r \geqslant 1, k \geqslant 1  \).
+  　设当\(\mu = \mu_{0}\)时，
+  \(x=x_{0}\)为　\ref{eq1.1}
+  的非退化奇点，
+  既
+  \(
+  v\left(x_{0}, \mu_{0}\right)=0,\left.\frac{\partial v(x, \mu)}{\partial x}\right|_{\left(x_{0}, \mu_{0}\right)}
+  \)
+  非奇异。
+  由隐函数定理，
+  在\(x_{0},\mu_{0}\) 附近存在光滑函数
+  \(x= \Gamma (\mu)\),
+  使得　\(\Gamma ( \mu_{0}) = x_{0}\),
+  且
+  \(
+v(\gamma(\mu), \mu) \equiv 0
+  \).
+  定理得证。
+\end{proof}
+
+\begin{remark}
+  \label{rmk2.1.3}
+  定理　\ref{thm2.1.2}说明，
+  当奇点非退化时，
+  奇点的个数在微小变化下不变，
+  它的位置也光滑的依赖于参数的变化。
+  需要注意，奇点的非退化性与双曲性是不同的概念。
+  例如，一个向量场在奇点处的线性部分是一对纯虚根时，
+  按照定义\ref{def2.1.1},它是非退化的，但它是双曲的。
+  此时在扰动下，虽然奇点个数(在小领域内)不发生变化，
+  但其附近的轨道结构可能变化,
+  出现Hopf分岔，或Poincare分岔，
+  我们将在\ref{sec2.3}与\ref{sec2.3}中分别予以讨论。
+\end{remark}
+
+\begin{theorem}\label{thm2.1.4}
+  设M是n维紧致流形，
+  \(r \geqslant 1\),
+  则
+  \(\mathscr{X}^{r}(M)\)中仅有非退化奇点(它们必是孤立奇点)或无奇点的向量场集合形成一个开稠子集.
+\end{theorem}
+\begin{proof}
+  设$X \in \mathscr{X}^{r}(M)$相应于微分方程
+  \begin{equation}
+\frac{\mathrm{d} x}{\mathrm{d} t}=f(x), \quad x \in U(\xi),
+\end{equation}
+其中\(f \in C^{r}(M, M), U(\xi)\)为\(M\)中\(\xi\) 点的领域.
+如同第一章\ref{1.5}的讨论，考虑投影
+\begin{equation*}
+j^{\circ} f_{2} \quad \mathscr{X}^{r}(M) \rightarrow J^{\circ}(M, M) : \quad X \mapsto(\xi, \tilde{f}),
+\end{equation*}
+其中
+\(\tilde{f}=f(\xi)\).
+具有奇点的向量场集合在空间\(J^{0}(M, M)\) 中有表示式
+\begin{equation*}
+S=\{(\xi, \tilde{f}) | \tilde{f}=0\},
+\end{equation*}
+它是\(J^{0}(M, M)\) 中的光滑闭子流形(因为M是紧空间).
+设向量场\(f(x)\) 在\(\xi\) 点非退化，
+既\(\left.\frac{\partial f}{\partial x}\right|_{\xi}\) 非奇异,
+从而由附录\ref{fuluC}中定理\ref{C.13}知，
+\(j {\circ} f\) 与子流形S横截相交。
+注意,不想交也是横截.
+再利用定理\ref{C.15},
+得知仅有非退化奇点或无奇点的向量场在\(\mathscr{X}^{r}(M)\) 中形成开稠子集。
+\end{proof}
+\par
+这个定理说明,向量场的一个退化奇点可以经过任意小的扰动转化为(多个)非退化奇点，或经扰动使奇点消失.
+但如果我们考虑向量场族\(v(x,\mu)\),
+则奇点的退化性往往是不可避免的.
+事实上,
+虽然小扰动可以把对应于\(\mu=\mu_{1}\) 的退化奇点\(x=x_{1}\) 扰动为非退化的,
+但在\(x_{1}\) 附近的\(x_{2}\) 点,
+相应于\(\mu_{1}\) 附近的\(\mu_{2}\) 却可能是新的退化奇点.
+对一个具体的奇点分岔问题,
+通常有两种处理方法:
+一种是利用中心流形定理,
+把问题归结在中心流形上,
+见第一章例\ref{exam1.3.12};
+另一种称为Liapunov-Schmidt方法,
+或称为更替法(alternative method).
+为了说明这个方法的基本思想,
+我们先看一种特殊情形.
+设变量\(x=(y,z)\),
+在\(x=0\)附近微分方程具有下列形式
+\begin{equation}
+  \label{eq2.1.2}
+  \frac{\mathrm{d} y}{\mathrm{d} t}=\boldsymbol{A} y+f(y, z, \lambda),
+  \quad
+  \frac{\mathrm{d} z}{\mathrm{d} t}=\boldsymbol{B} z+g(y, x, \lambda),
+  \end{equation}
+  其中\(\boldsymbol{A}\)的特征根均为零,
+  而\(\boldsymbol{B}\)的特征根均不为零;
+  \(f ; g \in C^{r}, r \geqslant 2\);
+  \( f(0,0,0)=0, g(0,0,0)=0, f, g=O\left(|y, z|^{2}\right)\).
+为了研究奇点的分布,
+在\(x=0\)和\(\lambda=0\)附近考虑方程
+\begin{equation}
+  \label{eq2.1.3}
+  \mathbf{A}{y}+f(y, z, \lambda)=0,
+  \quad
+  \mathbf{B}z+g(y, z, \lambda)=0
+\end{equation}
+由隐函数定理,
+存在\((y, \lambda)=(0,0)\)
+的领域U和\(C^{r}\)函数
+\(z=\varphi(y,\lambda)\),使得
+\begin{equation*}
+  B \varphi(y, \lambda)+g(y, \varphi(y, \lambda), \lambda) \equiv 0,
+  \quad
+  \forall(y, \lambda) \in U .
+\end{equation*}
+把函数\(z=\varphi(y,\lambda)\)代入
+\ref{eq2.1.3}的第一个方程左端,可得\(C^{r}\)函数
+\begin{equation}
+  \label{eq2.1.4}
+  G(y, \lambda) \stackrel{\mathrm{d}}{\longrightarrow} A y+f(y, \varphi(y, \lambda), \lambda)
+\end{equation}
+记
+\begin{equation*}
+  S=\{(y, \lambda) \in U | G(y, \lambda)=0\rangle,
+  \quad
+  S_{\lambda_{0}}=S  \cap\left\{\lambda=\lambda_{0}\right\}
+\end{equation*}
+则对不同的\(\lambda,|\lambda| \ll 1, S_{\lambda}\)结构的变化反应了奇点个数的变化规律.
+这样就把对\ref{eq2.1.3}的讨论转化为对
+\( G(y, \lambda)=0  \)的讨论,
+使空间维数得到降低,
+通常称\eqref{eq2.1.4}为方程\eqref{eq2.1.2}的\textbf{分岔函数}.
+为了应用上的便利,下面在更一般的框架下讨论这个问题.
+\subsection{Liapunov-Schmidt方法}
+设\(X,Z\)和 \(\Lambda\)为实 \(Banach\)空间,
+U和W分别为X和\(\Lambda\)中零点的领域.
+\(C^{1}\)映射
+\(M : U \times W \subset X \times \Lambda \rightarrow Z\),
+满足
+\(M(0,0)=0\).
+我们要研究方程
+\begin{equation}
+  \label{eq2.1.5}
+  M(x ,\lambda)=0
+\end{equation}
+在\(U \times W\)中 \((0,0)\)点的某领域内解的结构.
+为此,
+设\( A=D_{x} M(0,0)\),
+并记
+\(\mathscr{N}(A) \text {和} \mathscr{R}(A)\)
+分别为A在X中的零空间和A在Z中的值域空间.
+本节的一个基本假设是
+\par
+(H)\(\mathscr{N}(A)\)在X中存在补空间;
+\(\mathscr{R}(A)\)是Z中的闭集,
+并且在Z中存在补空间.
+(当A为Fredholm算子时,这个假设总是成立的.在下文的应用中,经常是这种情形.)
+\par
+因此,在X上存在投影P,在P上存在投影Q,使得
+\begin{equation}
+  \label{eq2.1.6}
+  \mathscr{R}(P)=\mathscr{N}(A), \quad \mathscr{R}(Q)=\mathscr{R}(A).
+\end{equation}
+\(\forall x \in U\),
+可写成
+\(
+x=u+v, \text{其中}  u=P x \in \mathscr{N}(A)=X_{P},
+v=(I-P) x \in \mathscr{N}(P)=X_{I-P}.
+\)
+这里I是恒同映射,
+\(X_{p}\)和\(X_{!-P}\)表示投影
+P和I-P的值域.
+显然,方程\eqref{eq2.1.5}等价于
+\begin{align}
+  \label{eq2.1.7}
+  {Q M(u+v, \lambda)=0}  \\
+  {(I-Q) M(u+v, \lambda)=0}
+\end{align}
+定义映射
+\(\psi : X_{P} \times X_{I-P} \times \Lambda \rightarrow \mathscr{R}(A)\),
+\begin{equation*}
+\psi(u, v, \lambda)=Q M(u+v, \lambda)
+\end{equation*}
+则\(\phi(0,0,0)=0, \text{且} \mathrm{D}_{v} \psi(0,0,0)=\left.A\right|_{\mathcal{N}(P)}\)是\(\mathscr{N}(P)\)与\(\mathscr{R}(A)\)间的同构.
+由隐函数定理,
+存在
+\(X_{p}\)在原点的领域\( U_{0}\),
+\( X_{I-P}\)在原点的领域\(V_{0}\),
+\(\Lambda\)在原点的领域\(W_{0}\),
+以及\(C^{1}\)映射\(v^{*}: U_{0} \times W_{0} \rightarrow V_{0}\),
+使
+\(U_{0} \times W_{0} \subset U, W_{0} \subset W\),且
+\begin{equation*}
+Q M\left(u+v^{*}(u, \lambda), \lambda\right) \equiv 0, \quad \forall(u, \lambda) \in U_{0} \times W_{0},
+\end{equation*}
+并且
+\(  v^{*} .(0,0)=0, D_{u} v^{*}(0,0)=0\).
+利用\(v^{*}\),定义
+\(C^{1}\)映射\(x^{*}:U_{0}\times W_{0}\rightarrow U\),
+和\(C^{1}\)映射\(G : U_{0} \times W_{0} \rightarrow \mathscr{N}(Q)\),
+\begin{equation}
+x^{*}(u, \lambda)=u+v^{*}(u, \lambda)
+\end{equation}
+\begin{equation}
+G(u, \lambda)=(I-Q) M\left(u+v^{*}(u, \lambda), \lambda\right)
+\end{equation}
+
+容易验证,\(x^{*}(0,0)=0, D_{u} x^{*}(0,0)=I_{M(A)},G(0,0)=0,\mathrm{D}_{u} G(0,0)=0\).
+总结上面的讨论,我们有下面的结果.
+\begin{theorem}
+  \label{thm2.1.5}
+  如果条件(H)成立,\(U_{0}, V_{0}, W_{0}\)如上.
+  则
+  \(\forall u \in U_{0}, x \in U_{0} \times V_{0} \subset X, \text{和}
+  \lambda \in W_{0} \subset \Lambda\),
+  如下两组结论等价
+\begin{itemize}
+\item \(P x=u, \quad M(x, \lambda)=0\);
+\item \(x=x^{*}(u, \lambda), \quad G(u, \lambda)=0\);
+\end{itemize}
+其中\(x^{*}\)与G分别有\eqref{2.1.8}和eqref{2.1.9}定义.
+\end{theorem}
+
+定理\ref{thm2.1.5}说明,
+原来的奇点分岔问题
+\(M(x, \lambda)=0\)转化为求解
+\textbf{分岔方程}\(G(u,\lambda)=0\).
+注意\(x \in X, M(x, \lambda) \in Z\),
+而
+\(u \in X_{P}=\mathscr{N}(A), G(u, \lambda) \in Z_{I-\mathrm{Q}}=\mathscr{N}(Q)\),
+因而使问题的定义域及值域都作了显著的约化.
+这就是Liapinov-Schmidt方法的核心思想.
+\par
+现在我们把上面的一般理论用于$\R^{n}$
+上的向量场奇点分岔问题.
+考虑依赖于参数\(\lambda\)的向量场
+\begin{equation}
+  \label{eq2.1.10}
+  \frac{\mathrm{d} x}{\mathrm{d} t}=f(x, \lambda),
+\end{equation}
+其中
+\(
+f \in C^{r}\left(\mathbf{R}^{n} \times \mathbf{R}^{k}, \mathbf{R}^{n}\right), r \geqslant 2 ; f(0,0)=0, \mathrm{D}_{x} f(0,0)=\boldsymbol{A}.
+\)
+考虑奇点分岔问题,就是要在
+\(\mathbf{R}^{n} \times \mathbf{R}^{k}\)的原点附件考察方程
+\begin{equation}
+  \label{eq2.1.11}
+  f(x, \lambda)=\boldsymbol{A} x-N(x, \lambda)=0
+\end{equation}
+其中
+\(
+N \in C^{r}\left(\mathbf{R}^{n} \times \mathbf{R}^{k}, \mathbf{R}^{n}\right), N(0,0)=0, \mathrm{D}_{x} N(0,0)=0.
+\)
+与前面的一般情况对比,
+此时有
+\(X=Z=\mathbf{R}^{n}, \Lambda=\mathbf{R}^{k}\).
+假设又有
+\(\operatorname{dim} \mathscr{r}(\boldsymbol{A})=\operatorname{codim} \mathscr{R}(\boldsymbol{A})=1\),
+则存在投影
+\(P, Q : \mathbf{R}^{n} \rightarrow \mathbf{R}^{n}\),
+满足\eqref{eq2.1.6}.
+从而存在
+\(u_{0} \in \mathscr{N}(A), w_{0} \in \mathscr{N}(Q)\),使
+\begin{equation*}
+  \mathscr{N}(\boldsymbol{A})=\operatorname{Span}\left\{\boldsymbol{u}_{0}\right\},
+  \quad
+  \mathscr{N}(\boldsymbol{Q})=\operatorname{Span}\left\{w_{0}\right\rangle.
+\end{equation*}
+从上面的一般理论知道,
+存在\(\delta>0, \sigma>0\)和\(G^{r}\)函数
+\(v=v^{*}(a, \lambda) \in X_{I-P}\),
+满足\(v^{*}(0,0)=0, D_{a} v^{*}(0,0)=0\),
+使当\(|a|<\delta,|\lambda|<\sigma\)时,
+\begin{equation*}
+\mathbf{Q}f\left(a u_{0}+v^{*}(a, \lambda), \lambda\right) \equiv 0.
+\end{equation*}
+由定理\ref{thm2.1.5},
+\(
+x=a u_{0}+v, v \in X_{I-P}
+\)
+是\eqref{eq2.1.11}的解,
+当且仅当
+\(v=v^{*}(a, \lambda) \)且
+\((a,\lambda)\)满足\textbf{分岔方程}
+\begin{equation*}
+g(a, \lambda)=0,
+\end{equation*}
+这里\textbf{分岔函数}g由下式定义:
+\begin{equation}
+  \label{eq2.1.12}
+  g(a, \lambda) w_{0}=(I-Q) f\left(a u_{0}+v^{*}(a, \lambda), \lambda\right)
+\end{equation}
+
+\begin{example}
+\label{exam2.1.6}  
+用Liapunov-Schmidt方法重新考虑第一章例\ref{exam1.3.12}.
+我们考虑\(\R ^{2}\)中一类更广泛的微分方程
+\begin{equation}
+  \label{exam2.1.13}
+  \left\{
+    \begin{array}{l}
+      {\frac{\mathrm{d} x}{\mathrm{d} t}=y}, \\
+      {\frac{\mathrm{d} y}{\mathrm{d} t}=\beta y+x^{2}+x y(1+\varphi(x))+y^{2} \Phi(x, y)}
+    \end{array}
+  \right.
+\end{equation}
+其中\(\beta \neq 0, \varphi, \Phi \in C^{\infty}, \varphi(0)=0\).
+考虑它的奇点\((0,0)\)在扰动下的分岔问题.
+此时线性部分矩阵为
+\(
+A=\left(
+  \begin{array}{ll}
+    {0} & {1} \\
+    {0} & {\beta}
+  \end{array}
+\right),
+\operatorname{dim} \mathscr{N}(\boldsymbol{A})=\operatorname{codim} \mathscr{R}(\boldsymbol{A})=1.
+\)
+取满足\eqref{eq2.1.6}的投影
+\(P, Q \cdot \mathbf{R}^{2} \rightarrow \mathbf{R}^{2}\).
+令
+\begin{equation*}
+u_{0}=\left( \begin{array}{l}{1} \\ {0}\end{array}\right), v_{0}=\left( \begin{array}{l}{0} \\ {1}\end{array}\right), w_{0}=\left( \begin{array}{l}{0} \\ {1}\end{array}\right), s_{0}=\left( \begin{array}{l}{1} \\ {\beta}\end{array}\right)
+\end{equation*}
+则
+\begin{equation*}
+\mathscr{N}(\boldsymbol{A})=X_{P}=\operatorname{Span}\left\{u_{0}\right\}, X_{I-P}=\operatorname{Span}\left\{\boldsymbol{v}_{0}\right\}
+\end{equation*}
+\begin{equation*}
+  \mathscr{R}(\boldsymbol{A})=\mathscr{R}(Q)=\operatorname{Span}\left\{s_{0}\right\}.
+\end{equation*}
+取\(\mathscr{N}(Q)=\operatorname{Span}\left\{w_{0}\right\}\).
+函数\(v=v^{*}(a)=\left( \begin{array}{l}{0} \\ {v_{2}}\end{array}\right) \in X_{I-P}\)由方程
+\(Q f\left(a u_{0}+v^{*}(a)\right)=0\)确定,既
+\begin{equation*}
+0=Q\left\{v_{2} s_{0}+\left[a^{2}+a v_{2}(1+\varphi(\alpha))+y^{2} \Phi\left(\alpha, v_{2}\right)\right] w_{0}\right\}=v_{2} s_{0}.
+\end{equation*}
+因此
+\(v=v^{*}(a) \equiv 0\).
+把它代入\eqref{eq2.1.12},得到
+\begin{equation*}
+\begin{array}{c}{g(a) w_{0}=(I-Q) f\left(a u_{0}+v^{*}(a)\right)} \\ {=(I-Q) f \left( \begin{array}{l}{a} \\ {0}\end{array}\right)=(I-Q) \left( \begin{array}{l}{0} \\ {a^{2}}\end{array}\right)=a^{2} w_{0}}\end{array}
+\end{equation*}
+从而分岔函数\(g(a)=a^{2}\).
+\end{example}
+\par
+如果我们考虑方程\eqref{eq2.1.13}的\(C^{2}\)扰动,
+扰动参数为\(\lambda\),
+则扰动后方程的分岔函数\(g(a,\lambda)\)
+满足\(g(a,0)=a^{2}\).
+利用隐函数定理易知,
+存在\(\delta>0\)和\(C^{0}\)函数
+\(a=a(\lambda)\),
+使得\(a(0)=0, D_{a} g(a(\lambda), \lambda) \equiv 0,
+\mathrm{D}_{a}^{2} g(a(\lambda), \lambda) \neq 0, \forall|\lambda|<\delta\).
+利用Taylor公式可得,
+当\(|\lambda| \ll 1,|a-a(\lambda)| \ll 1 \),有
+\begin{equation*}
+g(a, \lambda)=\mu(\lambda)+D_{a}^{2} g(a(\lambda), \lambda)(a-a(\lambda))^{2}+o\left(|a-a(\lambda)|^{2}\right)
+\end{equation*}
+其中
+\(\mu(\lambda)=g(a(\lambda), \lambda)\).
+因此,
+在\((a,\lambda)=(0,0)\)附近,
+方程\(g(a,\lambda)=0\)当\(\mu(\lambda) \mathrm{D}_{a}^{2}(0,0)<0\)时有两个零点.
+应用定理\ref{thm2.1.5}可知,
+原系统\eqref{2.1.13}在扰动下发生鞍结点分岔.
+注意,当扰动方程为\(C^{\infty}\)时,
+最后的讨论可从第一章定理\ref{thm2.2.12}直接得到.
+\begin{note}
+  本节中讨论的奇点分岔问题,主要着重于奇点个数随参数变动而发生变化的规律.
+  实际上,在奇点个数发生变化的同时(甚至在奇点个数不变时,见附注\ref{ruzhu1.3}),
+  轨道结构还可能发生其他变化.
+  例如闭轨、同宿轨、异宿轨等的产生或消失.
+  这些情形在下章中将会看到.
+\end{note}

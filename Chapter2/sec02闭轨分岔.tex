@@ -1,0 +1,307 @@
+\section{闭轨分岔}
+考虑微分方程族
+\begin{equation}
+  \left(X_{\lambda}\right) : \quad \frac{d x}{d t}=v(x, \lambda)
+  \label{eq2.2.1}
+\end{equation}
+其中\(v \in C^{r}\left(\mathbf{R}^{n} \times \mathbf{R}^{k}, \mathbf{R}^{n}\right), r \geqslant 1, k \geqslant 1\).
+设\(X_{0}\)有一条孤立闭轨\(\gamma\).
+当\(\lambda \neq 0,|\lambda| \ll 1\)时,
+我们关心\(X_{\lambda}\)在\(\gamma\) 的领域内是否还有闭轨?
+有几条闭轨?
+这就是\textbf{闭轨分岔}问题.
+当\(\gamma\)为双曲闭轨时,问题是平凡的(见第一章\ref{1.1}).
+因此,我们要找到一些方法,来判别\(\gamma\)的双曲性,
+以及当\(\gamma\)非双曲时如何研究闭轨的分岔问题.
+至于\(\gamma\)为方程\eqref{eq2.2.1}的非孤立闭轨的情形,我们留待\ref{2.5}中讨论.
+\par
+从原则上说,可以把闭轨分岔问题转化为它的Poincare映射的不动点的不动点的分岔问题,
+从而可利用上节的方法,事实上,任取
+\(p\in \gamma\),存在过\(p\)的\(n-1\)维"无切截面"
+\(U' \subset U\),
+按第一章定义\ref{def1.1.6}所述,
+可定义Poincare映射\(P: U^{\prime} \times W \rightarrow U\),
+它是\(C^{r}\)的,
+其中W是\(\mathbf{R}^{k}\)中原点的领域,
+满足\(P(p, 0)=p\).
+\( X_{\lambda}\)的闭轨相应于
+\(M(x, \lambda)=\underline{\mathrm{d}}P(x, \lambda)-x
+\text{在}
+(x, \lambda) \in U^{\prime} \times W
+\)
+内的零点.
+因此,\ref{2.1}中的方法都是适用的.
+注意,如果把坐标原点平移到\(p\)点,
+就会满足\ref{1.1}中\(M(0,0)=0\)的条件.
+\par
+在解决具体问题时,困难在于如何实施上述原则.
+下面,我们就平面向量场的情形作进一步的讨论,
+顺便介绍曲线坐标方法和某些重要结论.
+\par
+考虑平面上的微分方程族
+\begin{equation}
+  \label{eq2.2.2}
+\left(X_{\lambda}\right):\frac{d x}{d t}=v(x, \lambda)
+\end{equation}
+
+其中\(
+v \in C^{r}\left(\mathbf{R}^{2} \times \mathbf{R}^{k}, \mathbf{R}^{2}\right), r \geqslant 2, k \geqslant 1.
+\)
+设\(X_{0}\)有闭轨\(\gamma\),
+它有如下的参数表示
+\begin{equation*}
+\gamma: \quad x=\varphi(t)=\left( \begin{array}{l}{\varphi(t)} \\ {\varphi_{2}(t)}\end{array}\right).
+\end{equation*}
+设\(\gamma\)以T为周期,
+并且为负定向,
+既当t增大时,\(\varphi(t)\)沿\(\gamma\)顺时针方向旋转.
+取\(\gamma\)在\(\varphi(t)\)点沿外法向的单位向量
+\begin{equation}
+  \label{eq2.2.3}
+\zeta(t)=\frac{1}{\left|\varphi^{\prime}(t)\right|} \left( \begin{array}{c}{-\varphi_{2}^{\prime}(t)} \\ {\varphi_{1}^{\prime}(t)}\end{array}\right).
+\end{equation}
+由\(\zeta(t) \perp \varphi^{\prime}(t) \text{及}|\zeta(t)|=1\)易知,
+\(\forall 0 \leqslant t \leqslant T\),
+\begin{equation}
+  \label{2.2.4}
+\left\langle\zeta(t), \varphi^{\prime}(t)\right\rangle \equiv 0, \quad\left\langle\zeta(t), \zeta^{\prime}(t)\right\rangle \equiv 0,
+\end{equation}
+其中\(\langle \dot ,\dot \rangle\)表示\(\mathbb{R}^{2}\)中的内积.
+取坐标变换
+\begin{equation}
+  \label{eq2.2.5}
+  x=\varphi(s)+\xi(s) n
+\end{equation}
+其中x在\(\gamma\)附近;
+\(0 \leqslant s \leqslant T,|n| \ll 1 \).
+坐标
+\(
+(s,n)
+\)
+可以这样理解:从\(\varphi(0)\)沿\(\gamma\)经过时间s到达\(\varphi(s)\),
+再从\(\varphi(s)\)点沿\(\gamma\)的外法向\(\xi(s)\)移动长度n到达x点
+(当n<0时,表示向内法向移动),
+见图\ref{pic2.2-1(a)}.
+注意,\{ n=常数\}与\{s=常数\}在平面上形成蛛网形坐标曲线(见图\ref{pic2.2-1(b)}),称\((s,n)\)为\textbf{曲线坐标}.
+我们先把方程\eqref{eq2.2.2}转换成曲线坐标系下的方程,
+然后建立Poincare映射.
+把\eqref{eq2.2.5}对t求导,
+并应用\eqref{2.2.2}得
+\begin{equation}
+  \label{eq2.2.6}
+  v(\varphi(s)+\zeta(s) n, \lambda)=\frac{\mathrm{d} x}{\mathrm{d} t}=\left(\varphi^{\prime}(s)+\xi^{\prime}(s) n\right) \frac{\mathrm{d} s}{\mathrm{d} t}+\zeta(s) \frac{\mathrm{d} n}{\mathrm{d} t}
+\end{equation}
+分别以\(\zeta(s) \text{及} \varphi^{\prime}(s)\)对上式作内积,
+利用\ref{eq2.2.4}及\(|\zeta(s)|=1\)得
+\begin{equation*}
+\frac{\mathrm{d} n}{\mathrm{d} t}=\langle\zeta(s), v(\varphi(s)+\zeta(s) n, \lambda)\rangle,
+\end{equation*}
+\begin{equation*}
+\frac{d s}{d t}=\frac{\left\langle\varphi^{\prime}(s), v(\varphi(s)+\zeta(s) n, \lambda)\right\rangle}{\left|\varphi^{\prime}(s)\right|^{2}+n\left\langle\varphi^{\prime}(s), \zeta^{\prime}(s)\right\rangle}
+\end{equation*}
+消去t得
+\begin{equation}
+  \frac{d n}{d s}=
+  \frac{\left(\left|\varphi^{\prime}(s)\right|^{2}+n\left\langle\varphi^{\prime}(s), \zeta^{\prime}(s)\right\rangle\right)\langle\zeta(s), v(\varphi(s)+\xi(s) n, \lambda)\rangle}{\left\langle\varphi^{\prime}(s), v(\varphi(s)+\xi(s) n, \lambda)\right\rangle}
+  \stackrel{\mathrm{d}}{=} F(n, s, \lambda),
+\end{equation}
+由于\(x=\varphi(s)\)为\(X_{0}\)的解,
+故
+\begin{equation}
+  \varphi^{\prime}(s)=v(\varphi(s), 0);
+  \label{eq2.2.8}
+\end{equation}
+利用\eqref{eq2.2.8}和\eqref{eq2.2.4},可从\eqref{eq2.2.7}算得
+\begin{equation*}
+F(0, s, 0)=0,
+\end{equation*}
+
+\begin{equation}
+  \label{eq2.2.9}
+\left.\frac{\partial F}{\partial n}\right|_{n=0, \lambda=0}=\left\langle\zeta(s), \frac{\partial v}{\partial x}(\varphi(s), 0) \zeta(s)\right\rangle \cdot= H(s)
+\end{equation}
+从而\eqref{eq2.2.7}可写成
+\begin{equation}
+  \label{eq2.2.10}
+  \frac{d n}{d s}=\left(H(s)+F_{1}(n, s, \lambda)\right) n,
+\end{equation}
+其中,\(\left.F_{1}\right|_{\lambda=0}=O(|n|)\).
+因此,\eqref{eq2.2.10}满足初值条件\(\left.n\right|_{s=0}=a\)的解可表示为
+\begin{equation}
+  \label{eq2.2.11}
+  n(s, a, \lambda)=a\left(\exp \int_{0}^{s}\left[H(t)+F_{1}(n(t, a, \lambda), t, \lambda)\right] \mathrm{d} t\right).
+\end{equation}
+\par
+现在,取\(X_{0}\) 的闭轨\(\gamma\) 上的点
+\( x_{0}=\varphi(0)\),
+过\(x_{0}\) 以法线\(n_{0}\) 为方向取一截线L,
+建立\ref{eq2.2.11}的Poincare映射
+(见第一章定义\ref{def1.1.6},但此时与参数\(\lambda\)有关 )
+\( P:(a, \lambda) \mapsto n(T, a, \lambda)\),
+这里的函数\(n(s,a,\lambda)\)由\ref{eq2.2.11}定义.
+显然,\( n(T, 0,0)=0 \).
+定义\textbf{后继函数}
+\begin{equation}
+  \label{eq2.2.12}
+G(a, \lambda)=n(T, a, \lambda)-a,
+\end{equation}
+则对每个\(\lambda,|\lambda| \ll 1, G(a, \lambda)\)关于a的零点与\(X_{\lambda}\)在\(\gamma\)附近的闭轨相对应.
+注意\eqref{eq2.2.2}中\(v \in C^{r}, r \geqslant 2, F\)关于
+\(n,\lambda\)为\(C^{r}\)的,
+关于s为\(C^{r-1}\)的,
+故\eqref{eq2.2.11}中的解\(n \in C^{r}\),
+从而\eqref{eq2.2.12}中的函数\(G \in C^{r}\).
+\begin{defination}
+  \label{def2.2.1}
+  若存在\(\epsilon>0\),
+  使得\( \forall a \in (0,\epsilon)\),
+  都有\( G (a,\lambda)<0(>0)\),
+  则称\(\gamma\)为\textbf{外侧稳定(外侧不稳定)的极限环}.
+  若存在\(\epsilon>0\),
+  使\(\forall a \in (-\epsilon ,0)\),
+  都有\(G(a, \lambda)>0(<0)\),
+  则称\(\gamma\)为\textbf{内侧稳定(内侧不稳定)的极限环}.
+  双侧均稳定(均不稳定)的极限环称为\textbf{稳定(不稳定)极限环};
+  双侧稳定性不同时,称\(\gamma\)为\textbf{半稳定极限环}.
+\end{defination}
+从上述定义可知,稳定(不稳定)极限环w必为孤立闭轨.
+下面定义中的$\gamma$为非孤立闭轨.
+
+\begin{defination}
+  \label{def2.2.2}
+  若$\forall \varepsilon>0, \exists a_{1}, a_{2} \in(0, \varepsilon)$
+  使得$G(a_{1},\lambda)=0$,
+  但$G(a_{2},\lambda)\neq 0$,
+  则称$\gamma$为\textbf{外侧复型极限环}.
+  若存在$\epsilon>0$,
+  使$\forall a \in (0,\epsilon)$,
+  都有$G(a,\lambda)=0$,
+  则称$\gamma$为\textbf{外侧周期环域}.
+\end{defination}
+类似可定义内侧复型极限环与内侧周期环域.
+\begin{theorem}
+  \label{thm2.2.3}
+  解析向量场不存在复型极限环.
+\end{theorem}
+
+\begin{proof}
+  由于在$X_{0}$的闭轨$  \gamma_{1}\{
+  x=\varphi(t) | 0 \leqslant t \leqslant T
+  \}$
+  上无奇点,
+  利用方程\eqref{2.2.8}和$\gamma$的紧致性可知存在
+  $\delta>0$,使得当
+  $|n|<\delta,|\lambda|<\delta$时,
+  $\left\langle\varphi^{\prime}(s), v(\varphi(s)+\zeta(s) n, \lambda)\right\rangle$恒正.
+  因此,方程\eqref{eq2.2.7}的右端函数$F(n,s,\lambda)$i解析,
+  从而$G(a,\lambda)$解析.
+  由于解析函数的非孤立零点必存在一个领域,使函数在其中恒为零.因此定理得证.
+\end{proof}
+
+\begin{defination}
+  若存在$\exists \epsilon >0$和正整数$k,l \leqslant k \leqslant r$,
+  使当$|a|< \epsilon$时,
+  有
+  \begin{equation}
+    \label{eq2.2.13}
+G(a, 0)=c_{k} a^{k}+o\left(|a|^{k}\right), \quad c_{k} \neq 0
+\end{equation}
+则称
+$\gamma$为$X_{0}$的\textbf{k重极限环}.
+当$k=1$时称为\textbf{单重极限环},
+当$k>1$时,称为\textbf{多重极限环}.
+\end{defination}
+显然,当$k$为奇数时,
+$c_k<0$表明$\gamma$为稳定的极限环,
+而$c_k>0$表明$\gamma$为不稳定的极限环;
+当$k$为偶数时,$\gamma$为半稳定的极限环.
+注意,这里说得稳定性为轨道稳定性,而不是结构稳定性.
+事实上,与\ref{1.1}的定义相对照可知,
+单重环是结构稳定(双曲)的,
+而多重环都是结构不稳定(非双曲)的.
+为了判别$\gamma$是否为单重的,我们记
+\begin{equation}
+  \label{eq2.2.14}
+  \sigma=\int_{0}^{T} \operatorname{tr} \frac{\partial v}{\partial x}(\varphi(s), 0) d s
+\end{equation}
+\begin{theorem}
+  \label{thm:2.2.5}
+  若$\sigma \neq 0,$,则$\gamma$为$X_{0}$的单重环.
+  当$\sigma < 0$时$\gamma$为稳定的;
+  当$\sigma>0$时$\gamma$为不稳定的.
+\end{theorem}
+
+\begin{proof}
+  由~(\ref{eq2.2.11}),~(\ref{eq2.2.12})得到
+  \begin{equation*}
+G(a, 0)=a\left(\exp \int_{0}^{T}\left[H(s)+F_{1}(n(s, a, 0), s, 0)\right] \mathrm{d} s-1\right).
+\end{equation*}
+故由$F_{1}(n, s, 0)=O(|n|)$,和$n(T, 0,0)=0$,可得
+\begin{equation}
+  \label{eq2.2.15}
+G_{a}^{\prime}(0,0)=\lim _{a \rightarrow 0} \frac{G(a, 0)-G(0,0)}{a}=\exp \int_{0}^{T} H(s) \mathrm{d} s-1
+\end{equation}
+另一方面,
+把~(\ref{eq2.2.9})式的内积按分量展开,
+并利用~(\ref{eq2.2.3}),~(\ref{eq2.2.8})可得
+\begin{equation*}
+\begin{aligned} H(s) &=\left\langle\xi(s), \frac{\partial v}{\partial x}(\varphi(s), 0) \zeta(s)\right\rangle \\ &=\operatorname{tr} \frac{\partial v}{\partial x}(\varphi(s), 0)-\frac{1}{\left|\phi^{\prime}(s)\right|^{2}} \Phi \\ &=\operatorname{tr} \frac{\partial v}{\partial x}(\varphi(s), 0)-\frac{1}{\langle v, v\rangle}\left\langle v, \frac{\partial v}{\partial x} v\right\rangle \\ &=\operatorname{tr} \frac{\partial v}{\partial x}(\varphi(s), 0)-\frac{d}{d s} \ln |v| \end{aligned},
+\end{equation*}
+其中,$v=v(\varphi(s),0)$,
+\begin{equation*}
+\Phi=\frac{\partial v_{1}}{\partial x_{1}}\left(\varphi^{\prime}\right)^{2}+\frac{\partial v_{1}}{\partial x_{2}} \varphi^{\prime} \varphi_{2}^{\prime}+\frac{\partial v_{2}}{\partial x_{1}} \Phi^{\prime} \varphi_{1}^{\prime}+\frac{\partial v_{2}}{\partial x_{2}}\left(\varphi_{2}^{\prime}\right)^{2}.
+\end{equation*}
+注意到$\gamma$以T为周期,因此
+\begin{equation*}
+\int_{0}^{T} H(s) \mathrm{d} s=\int_{0}^{T} \operatorname{tr} \frac{\partial v}{\partial x}(\varphi(s), 0) \mathrm{d} s=\sigma,
+\end{equation*}
+代入~(\ref{eq2.2.15})得
+\begin{equation*}
+G_{a}^{\prime}(0,0)=\mathrm{e}^{\sigma}-1
+\end{equation*}
+当$\sigma \neq 0$时,得到$G(0,0)=0, G_{a}^{\prime}(0,0) \neq 0$.
+故,$\gamma$是单重极限环.
+它的稳定性与$\sigma $的符号之间的关系是显然的.定理得证.
+\end{proof}
+
+\begin{corollary}
+  \label{colory 2.6}
+  当$X_{0}$的闭轨$\gamma$为多重极限环、复型极限环或$\gamma$附近为周期环域时，必有$\sigma=0$.
+\end{corollary}
+
+\begin{theorem}
+  \label{thm2.7}
+  设$\gamma$为$X_{0}$的k重极限环($k \geqslant 1$),则对于$X_{\lambda}$
+  \begin{itemize}
+\item 存在$\gamma$的(环形)领域U和正数$\delta$,使只要$|\lambda|<\delta$,$X_{\lambda}$在U内至多有k个极限环.
+\item $\forall i, 1 \leqslant i \leqslant k, \forall \delta>0$,对任给的$\gamma$的(环形)领域 $\boldsymbol{V} \subset \boldsymbol{U}$,
+  $\exists X_{0}$的扰动系统$X_{\lambda},|\lambda|<\delta$,
+  使得$X_{\lambda}$在$ \boldsymbol{V} $内恰有$i$个极限环.
+  当$k$为偶数时,上述结论可扩充至$i=0$.
+\item 当$k$为奇数时,$\forall V \subset U, \exists \delta>0$,
+  使当$|\lambda|<\delta$时,$X_{\lambda}$在$V$内至少有一个极限环.
+\end{itemize}
+\end{theorem}
+
+\begin{proof}
+  当扰动系统$X_{\lambda}$对应的~(\ref{eq2.2.2})中的$v \in C^{\infty}$时,
+  可由Malgrange 定理(第一章定理 \ref{sec:thm1.2.12})直接推得以上结论.
+  当$v \in C^{r}$时,可利用隐函数定理和中值定理证明.详细推导从略.
+\end{proof}
+
+\begin{example}
+  \label{exam:2.8}
+  考虑 $\R^{2}$上的系统
+  $$\frac{\mathrm{d} x}{\mathrm{d} t}=y, \quad \frac{\mathrm{d} y}{\mathrm{d} t}=\lambda_{1}+\lambda_{2} y+a x^{2}+b x y^{2},$$
+  其中参数$\lambda_{2} \neq 0$.设存在闭轨 $\gamma$,周期为T,则
+  $\sigma=\int_{0}^{T} \operatorname{tr}\left.\frac{\partial v}{\partial(x, y)}\right|_{\gamma} \mathrm{d} t=\int_{0}^{T}\left.\left(\lambda_{2}+2 b x y\right)\right|_{\gamma} \mathrm{d} t=\lambda_{\mathrm{z}} T \neq 0,$
+  这里利用系统的第一个方程得到$2 x y \mathrm{d} t=2 x \mathrm{d} x=\mathrm{d}\left(x^{2}\right)$.
+  因此,这闭轨也是双曲的.
+\end{example}
+
+\begin{corollary}
+  \label{corollary:2.9}
+  上例表明,在一些具体问题中,利用~(\ref{eq2.2.14})计算$\sigma$时,可以不必知道$\phi(s)$的表达式,这就给利用定理~\ref{thm:2.2.5}判别闭轨的双曲性提供了方便.
+  当$\sigma=0$时,需要从~(\ref{eq2.2.12})进一步计算~(\ref{eq2.2.13})式中第一个不为零的$c_k$,以便按定义~\ref{def2.2.4}判断 $\gamma$的重次.
+  这时一般来说计算量就大.
+\end{corollary}
