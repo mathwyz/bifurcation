@@ -1,22 +1,20 @@
-\contentsline {section}{\tocsection {}{1}{前言}}{4}%
-\contentsline {chapter}{\tocchapter {Chapter}{1}{常见的局部与非局部分岔}}{9}%
-\contentsline {section}{\tocsection {}{1}{奇点分岔}}{9}%
-\contentsline {subsection}{\tocsubsection {}{1.1}{一般理论}}{9}%
-\contentsline {subsection}{\tocsubsection {}{1.2}{Liapunov-Schmidt方法}}{11}%
-\contentsline {section}{\tocsection {}{2}{闭轨分岔}}{15}%
-\contentsline {section}{\tocsection {}{3}{Hopf 分岔}}{20}%
-\contentsline {subsection}{\tocsubsection {}{3.1}{金典的Hopf分岔定理}}{20}%
-\contentsline {subsection}{\tocsubsection {}{3.2}{退化Hopf分岔定理}}{21}%
-\contentsline {subsection}{\tocsubsection {}{3.3}{应用}}{27}%
-\contentsline {subsection}{\tocsubsection {}{3.4}{对参数一致的Hopf分岔定理}}{30}%
-\contentsline {section}{\tocsection {}{4}{平面上的同宿分岔}}{31}%
-\contentsline {subsection}{\tocsubsection {}{4.1}{对参数一致的同宿分岔}}{40}%
-\contentsline {section}{\tocsection {}{5}{Poincare分岔与弱Hilbert第16问题}}{40}%
-\contentsline {subsection}{\tocsubsection {}{5.1}{Poincare分岔}}{41}%
-\contentsline {section}{\tocsection {}{6}{几类余维2的平面向量场分岔}}{43}%
-\contentsline {subsection}{\tocsubsection {}{6.1}{二重零特征根:Bogdanov-Takens系统}}{44}%
-\contentsline {subsection}{\tocsubsection {}{6.2}{分岔图,轨线的拓扑分类}}{44}%
-\contentsline {section}{\tocsection {}{7}{关于单峰映射稳定周期点的存在性}}{46}%
-\contentsline {section}{\tocsection {}{8}{$ F（x,a） = 1 - ax^2$的基本桂质}}{50}%
-\contentsline {section}{\tocsection {}{9}{F(x,a)不存在稳定周期轨问题}}{55}%
-\contentsline {section}{\tocsection {}{10}{分布问题}}{69}%
+\contentsline {section}{\tocsection {}{1}{前言}}{5}{section.0.1}%
+\contentsline {chapter}{\tocchapter {Chapter}{1}{常见的局部与非局部分岔}}{9}{chapter.1}%
+\contentsline {section}{\tocsection {}{1}{奇点分岔}}{9}{section.1.1}%
+\contentsline {subsection}{\tocsubsection {}{1.1}{一般理论}}{9}{subsection.1.1.1}%
+\contentsline {section}{\tocsection {}{2}{闭轨分岔}}{14}{section.1.2}%
+\contentsline {section}{\tocsection {}{3}{Hopf 分岔}}{17}{section.1.3}%
+\contentsline {subsection}{\tocsubsection {}{3.1}{金典的Hopf分岔定理}}{18}{subsection.1.3.1}%
+\contentsline {subsection}{\tocsubsection {}{3.2}{退化Hopf分岔定理}}{18}{subsection.1.3.2}%
+\contentsline {subsection}{\tocsubsection {}{3.3}{应用}}{20}{subsection.1.3.3}%
+\contentsline {subsection}{\tocsubsection {}{3.4}{对参数一致的Hopf分岔定理}}{22}{subsection.1.3.4}%
+\contentsline {section}{\tocsection {}{4}{平面上的同宿分岔}}{23}{section.1.4}%
+\contentsline {subsection}{\tocsubsection {}{4.1}{对参数一致的同宿分岔}}{28}{subsection.1.4.1}%
+\contentsline {section}{\tocsection {}{5}{Poincare分岔与弱Hilbert第16问题}}{28}{section.1.5}%
+\contentsline {subsection}{\tocsubsection {}{5.1}{Poincare分岔}}{28}{subsection.1.5.1}%
+\contentsline {section}{\tocsection {}{6}{几类余维2的平面向量场分岔}}{43}{section.1.6}%
+\contentsline {subsection}{\tocsubsection {}{6.1}{分岔图,轨线的拓扑分类}}{43}{subsection.1.6.1}%
+\contentsline {section}{\tocsection {}{7}{关于单峰映射稳定周期点的存在性}}{46}{section.1.7}%
+\contentsline {section}{\tocsection {}{8}{$ F（x,a） = 1 - ax^2$的基本桂质}}{50}{section.1.8}%
+\contentsline {section}{\tocsection {}{9}{F(x,a)不存在稳定周期轨问题}}{54}{section.1.9}%
+\contentsline {section}{\tocsection {}{10}{分布问题}}{67}{section.1.10}%
